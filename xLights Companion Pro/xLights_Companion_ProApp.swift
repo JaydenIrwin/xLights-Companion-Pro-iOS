@@ -11,7 +11,13 @@ import SwiftUI
 struct xLights_Companion_ProApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                HomeView()
+                ARPropsView()
+                ToolsView()
+                LinksView()
+                SearchView()
+            }
         }
     }
 }
