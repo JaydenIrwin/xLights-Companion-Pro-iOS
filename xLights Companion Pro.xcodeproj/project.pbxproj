@@ -14,7 +14,6 @@
 		1BC2702B25C668650034761E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC2702A25C668650034761E /* SearchView.swift */; };
 		1BC2702E25C6687C0034761E /* ARPropsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC2702D25C6687C0034761E /* ARPropsView.swift */; };
 		1BC2703125C668910034761E /* ToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC2703025C668910034761E /* ToolsView.swift */; };
-		1BC2703425C669460034761E /* LinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC2703325C669460034761E /* LinksView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		1BC2702A25C668650034761E /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		1BC2702D25C6687C0034761E /* ARPropsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARPropsView.swift; sourceTree = "<group>"; };
 		1BC2703025C668910034761E /* ToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsView.swift; sourceTree = "<group>"; };
-		1BC2703325C669460034761E /* LinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +62,6 @@
 				1BC2702725C668560034761E /* HomeView.swift */,
 				1BC2702D25C6687C0034761E /* ARPropsView.swift */,
 				1BC2703025C668910034761E /* ToolsView.swift */,
-				1BC2703325C669460034761E /* LinksView.swift */,
 				1BC2702A25C668650034761E /* SearchView.swift */,
 				1B5CB9AE25B35A870009CC59 /* Assets.xcassets */,
 				1B5CB9B325B35A870009CC59 /* Info.plist */,
@@ -154,7 +151,6 @@
 				1BC2702B25C668650034761E /* SearchView.swift in Sources */,
 				1BC2702E25C6687C0034761E /* ARPropsView.swift in Sources */,
 				1BC2702825C668560034761E /* HomeView.swift in Sources */,
-				1BC2703425C669460034761E /* LinksView.swift in Sources */,
 				1BC2703125C668910034761E /* ToolsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,7 +15,6 @@ struct xLights_Companion_ProApp: App {
                 HomeView()
                 ARPropsView()
                 ToolsView()
-                LinksView()
                 SearchView()
             }
         }

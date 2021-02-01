@@ -10,51 +10,72 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         NavigationView {
-            ScrollView {
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text("Getting Started".uppercased())
-                            .font(.headline)
-                            .foregroundColor(Color(UIColor.secondaryLabel))
-                        Text("Preview Props In AR")
-                            .font(.title)
+            List {
+                Section {
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("Getting Started".uppercased())
+                                .font(.headline)
+                                .foregroundColor(Color(UIColor.secondaryLabel))
+                            Text("Preview Props In AR")
+                                .font(.title)
+                        }
+                        Spacer()
                     }
-                    Spacer()
+                    .padding()
                 }
-                .padding()
-                .background(Color(UIColor.secondarySystemBackground))
-                .cornerRadius(8)
-                .padding()
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text("Setup Your Lights".uppercased())
-                            .font(.headline)
-                            .foregroundColor(Color(UIColor.secondaryLabel))
-                        Text("Power Calculator")
-                            .font(.title)
+                Section {
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("Setup Your Lights".uppercased())
+                                .font(.headline)
+                                .foregroundColor(Color(UIColor.secondaryLabel))
+                            Text("Power Calculator")
+                                .font(.title)
+                        }
+                        Spacer()
                     }
-                    Spacer()
+                    .padding()
                 }
-                .padding()
-                .background(Color(UIColor.secondarySystemBackground))
-                .cornerRadius(8)
-                .padding()
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text("Jam Out".uppercased())
-                            .font(.headline)
-                            .foregroundColor(Color(UIColor.secondaryLabel))
-                        Text("Search For Songs")
-                            .font(.title)
+                Section {
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("Jam Out".uppercased())
+                                .font(.headline)
+                                .foregroundColor(Color(UIColor.secondaryLabel))
+                            Text("Search For Songs")
+                                .font(.title)
+                        }
+                        Spacer()
                     }
-                    Spacer()
+                    .padding()
                 }
-                .padding()
-                .background(Color(UIColor.secondarySystemBackground))
-                .cornerRadius(8)
-                .padding()
+                Section(header: Label("Links", systemImage: "link")) {
+                    Link(destination: URL(string: "www.apple.com")!) {
+                        Label("xLights Discord", systemImage: "gamecontroller")
+                    }
+                    Link(destination: URL(string: "www.apple.com")!) {
+                        Label("xLights Reddit", systemImage: "face.smiling")
+                    }
+                    Link(destination: URL(string: "www.apple.com")!) {
+                        Label("xLights Website", systemImage: "globe")
+                    }
+                    Link(destination: URL(string: "www.apple.com")!) {
+                        Label("Music Store 1", systemImage: "music.note.list")
+                    }
+                    Link(destination: URL(string: "www.apple.com")!) {
+                        Label("Music Store 2", systemImage: "music.note.list")
+                    }
+                    Link(destination: URL(string: "www.apple.com")!) {
+                        Label("Music Store 3", systemImage: "music.note.list")
+                    }
+                    Link(destination: URL(string: "www.apple.com")!) {
+                        Label("Beginer's Tutorial Videos", systemImage: "play.rectangle")
+                    }
+                }
             }
-            .frame(idealWidth: 512, maxWidth: .infinity)
+            .listStyle(InsetGroupedListStyle())
+            .frame(maxWidth: 512)
             .navigationTitle("Home")
         }
         .navigationViewStyle(StackNavigationViewStyle())

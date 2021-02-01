@@ -10,20 +10,49 @@ import SwiftUI
 struct ToolsView: View {
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack(alignment: .leading) {
-                    Text("Getting Started".uppercased())
-                        .font(.headline)
-                        .foregroundColor(Color(UIColor.secondaryLabel))
-                    Text("Preview Props In AR")
-                        .font(.title)
+            List {
+                Section {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Label("Power Calculator", systemImage: "bolt.fill")
+                                .font(.title)
+                                .foregroundColor(Color(UIColor.systemYellow))
+                            Text("Determine which props will work on which curcuits.")
+                                .foregroundColor(Color(UIColor.secondaryLabel))
+                        }
+                        Spacer()
+                    }
+                    .padding()
                 }
-                .padding()
-                .background(Color(UIColor.secondarySystemBackground))
-                .cornerRadius(8)
-                .padding()
+                Section {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Label("Outlet Organizer", systemImage: "power")
+                                .font(.title)
+                                .foregroundColor(Color(UIColor.systemBlue))
+                            Text("Keep track of which props are plugged into which outlets.")
+                                .foregroundColor(Color(UIColor.secondaryLabel))
+                        }
+                        Spacer()
+                    }
+                    .padding()
+                }
+                Section {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Label("Tree Lights Calculator", systemImage: "leaf.fill")
+                                .font(.title)
+                                .foregroundColor(Color(UIColor.systemGreen))
+                            Text("How many lights will my tree need?")
+                                .foregroundColor(Color(UIColor.secondaryLabel))
+                        }
+                        Spacer()
+                    }
+                    .padding()
+                }
             }
-            .frame(idealWidth: 512, maxWidth: .infinity)
+            .listStyle(InsetGroupedListStyle())
+            .frame(maxWidth: 512)
             .navigationTitle("Tools")
         }
         .navigationViewStyle(StackNavigationViewStyle())
