@@ -12,43 +12,64 @@ struct HomeView: View {
         NavigationView {
             List {
                 Section {
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text("Getting Started".uppercased())
-                                .font(.headline)
-                                .foregroundColor(Color(UIColor.secondaryLabel))
-                            Text("Preview Props In AR")
-                                .font(.title)
-                        }
+                    VStack {
                         Spacer()
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text("Getting Started".uppercased())
+                                    .font(.headline)
+                                    .foregroundColor(Color(UIColor.secondaryLabel))
+                                Text("Preview Props In AR")
+                                    .font(.title)
+                            }
+                            Spacer()
+                        }
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color(.displayP3, white: 0.0, opacity: 0.75))
                     }
-                    .padding()
+                    .frame(minWidth: 0, maxWidth: .infinity, idealHeight: 200, alignment: .bottom)
+                    .listRowBackground(Image("Home 1").resizable())
                 }
                 Section {
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text("Setup Your Lights".uppercased())
-                                .font(.headline)
-                                .foregroundColor(Color(UIColor.secondaryLabel))
-                            Text("Power Calculator")
-                                .font(.title)
-                        }
+                    VStack {
                         Spacer()
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text("Setup Your Lights".uppercased())
+                                    .font(.headline)
+                                    .foregroundColor(Color(UIColor.secondaryLabel))
+                                Text("Power Calculator")
+                                    .font(.title)
+                            }
+                            Spacer()
+                        }
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color(.displayP3, white: 0.0, opacity: 0.75))
                     }
-                    .padding()
+                    .frame(minWidth: 0, maxWidth: .infinity, idealHeight: 200, alignment: .bottom)
+                    .listRowBackground(Image("Home 2").resizable())
                 }
                 Section {
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text("Jam Out".uppercased())
-                                .font(.headline)
-                                .foregroundColor(Color(UIColor.secondaryLabel))
-                            Text("Search For Songs")
-                                .font(.title)
-                        }
+                    VStack {
                         Spacer()
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text("Jam Out".uppercased())
+                                    .font(.headline)
+                                    .foregroundColor(Color(UIColor.secondaryLabel))
+                                Text("Search For Songs")
+                                    .font(.title)
+                            }
+                            Spacer()
+                        }
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color(.displayP3, white: 0.0, opacity: 0.75))
                     }
-                    .padding()
+                    .frame(minWidth: 0, maxWidth: .infinity, idealHeight: 200, alignment: .bottom)
+                    .listRowBackground(Image("Home 1").resizable())
                 }
                 Section(header: Label("Links", systemImage: "link")) {
                     Link(destination: URL(string: "www.apple.com")!) {
@@ -61,13 +82,19 @@ struct HomeView: View {
                         Label("xLights Website", systemImage: "globe")
                     }
                     Link(destination: URL(string: "www.apple.com")!) {
-                        Label("Music Store 1", systemImage: "music.note.list")
+                        Label("Zoom", systemImage: "video")
                     }
                     Link(destination: URL(string: "www.apple.com")!) {
-                        Label("Music Store 2", systemImage: "music.note.list")
+                        Label("Remote Falcon", systemImage: "swift")
                     }
                     Link(destination: URL(string: "www.apple.com")!) {
-                        Label("Music Store 3", systemImage: "music.note.list")
+                        Label("Parts Store 1", systemImage: "bag")
+                    }
+                    Link(destination: URL(string: "www.apple.com")!) {
+                        Label("Parts Store 2", systemImage: "bag")
+                    }
+                    Link(destination: URL(string: "www.apple.com")!) {
+                        Label("Parts Store 3", systemImage: "bag")
                     }
                     Link(destination: URL(string: "www.apple.com")!) {
                         Label("Beginer's Tutorial Videos", systemImage: "play.rectangle")

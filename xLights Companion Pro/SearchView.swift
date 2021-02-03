@@ -26,7 +26,7 @@ struct SearchView: View {
                     .foregroundColor(Color.accentColor)
                 Button("Jingle Bells", action: { })
                     .foregroundColor(Color.accentColor)
-                Button("Discord", action: { })
+                Button("Zoom", action: { })
                     .foregroundColor(Color.accentColor)
                 Button("Videos", action: { })
                     .foregroundColor(Color.accentColor)

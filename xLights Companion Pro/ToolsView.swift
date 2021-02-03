@@ -12,43 +12,49 @@ struct ToolsView: View {
         NavigationView {
             List {
                 Section {
-                    HStack {
-                        VStack(alignment: .leading, spacing: 4) {
-                            Label("Power Calculator", systemImage: "bolt.fill")
-                                .font(.title)
-                                .foregroundColor(Color(UIColor.systemYellow))
-                            Text("Determine which props will work on which curcuits.")
-                                .foregroundColor(Color(UIColor.secondaryLabel))
+                    NavigationLink(destination: PowerCalculator()) {
+                        HStack {
+                            VStack(alignment: .leading, spacing: 4) {
+                                Label("Power Calculator", systemImage: "bolt.fill")
+                                    .font(.title)
+                                    .foregroundColor(Color(UIColor.systemYellow))
+                                Text("Determine which props will work on which curcuits.")
+                                    .foregroundColor(Color(UIColor.secondaryLabel))
+                            }
+                            Spacer()
                         }
-                        Spacer()
+                        .padding()
                     }
-                    .padding()
                 }
                 Section {
-                    HStack {
-                        VStack(alignment: .leading, spacing: 4) {
-                            Label("Outlet Organizer", systemImage: "power")
-                                .font(.title)
-                                .foregroundColor(Color(UIColor.systemBlue))
-                            Text("Keep track of which props are plugged into which outlets.")
-                                .foregroundColor(Color(UIColor.secondaryLabel))
+                    NavigationLink(destination: OutletOrganizer()) {
+                        HStack {
+                            VStack(alignment: .leading, spacing: 4) {
+                                Label("Outlet Organizer", systemImage: "power")
+                                    .font(.title)
+                                    .foregroundColor(Color(UIColor.systemBlue))
+                                Text("Keep track of which props are plugged into which outlets.")
+                                    .foregroundColor(Color(UIColor.secondaryLabel))
+                            }
+                            Spacer()
                         }
-                        Spacer()
+                        .padding()
                     }
-                    .padding()
                 }
                 Section {
-                    HStack {
-                        VStack(alignment: .leading, spacing: 4) {
-                            Label("Tree Lights Calculator", systemImage: "leaf.fill")
-                                .font(.title)
-                                .foregroundColor(Color(UIColor.systemGreen))
-                            Text("How many lights will my tree need?")
-                                .foregroundColor(Color(UIColor.secondaryLabel))
+                    NavigationLink(destination: TreeLightsCalculator()) {
+                        HStack {
+                            VStack(alignment: .leading, spacing: 4) {
+                                Label("Tree Lights Calculator", systemImage: "leaf.fill")
+                                    .font(.title)
+                                    .foregroundColor(Color(UIColor.systemGreen))
+                                Text("How many lights will my tree need?")
+                                    .foregroundColor(Color(UIColor.secondaryLabel))
+                            }
+                            Spacer()
                         }
-                        Spacer()
+                        .padding()
                     }
-                    .padding()
                 }
             }
             .listStyle(InsetGroupedListStyle())
