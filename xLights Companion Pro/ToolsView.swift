@@ -12,10 +12,25 @@ struct ToolsView: View {
         NavigationView {
             List {
                 Section {
-                    NavigationLink(destination: PowerCalculator()) {
+                    NavigationLink(destination: ConsumptionCalculator()) {
                         HStack {
                             VStack(alignment: .leading, spacing: 4) {
-                                Label("Power Calculator", systemImage: "bolt.fill")
+                                Label("Consumption Calculator", systemImage: "dollarsign.circle.fill")
+                                    .font(.title)
+                                    .foregroundColor(Color(UIColor.systemRed))
+                                Text("Determine the cost to run your display.")
+                                    .foregroundColor(Color(UIColor.secondaryLabel))
+                            }
+                            Spacer()
+                        }
+                        .padding()
+                    }
+                }
+                Section {
+                    NavigationLink(destination: ACDCCalculator()) {
+                        HStack {
+                            VStack(alignment: .leading, spacing: 4) {
+                                Label("AC/DC Calculator", systemImage: "bolt.fill")
                                     .font(.title)
                                     .foregroundColor(Color(UIColor.systemYellow))
                                 Text("Determine which props will work on which curcuits.")

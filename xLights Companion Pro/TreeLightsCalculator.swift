@@ -26,6 +26,11 @@ struct TreeLightsCalculator: View {
                     Spacer()
                     Text("2m")
                 }
+                HStack {
+                    Text("Light Spacing")
+                    Spacer()
+                    Text("Normal")
+                }
             }
             Section(header: Text("Result")) {
                 Text("This tree will use about 50 meters of lights.")

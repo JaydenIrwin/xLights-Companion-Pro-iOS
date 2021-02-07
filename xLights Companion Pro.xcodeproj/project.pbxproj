@@ -10,7 +10,8 @@
 		1B5CB9AB25B35A810009CC59 /* xLights_Companion_ProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5CB9AA25B35A810009CC59 /* xLights_Companion_ProApp.swift */; };
 		1B5CB9AF25B35A870009CC59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B5CB9AE25B35A870009CC59 /* Assets.xcassets */; };
 		1B5CB9B225B35A870009CC59 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B5CB9B125B35A870009CC59 /* Preview Assets.xcassets */; };
-		1B7F2CE325CA6A640005813E /* PowerCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F2CE225CA6A640005813E /* PowerCalculator.swift */; };
+		1B62573725CE0B09003528FD /* ACDCCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B62573625CE0B09003528FD /* ACDCCalculator.swift */; };
+		1B7F2CE325CA6A640005813E /* ConsumptionCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F2CE225CA6A640005813E /* ConsumptionCalculator.swift */; };
 		1B7F2CE625CA6A770005813E /* TreeLightsCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F2CE525CA6A770005813E /* TreeLightsCalculator.swift */; };
 		1B7F2CE925CA6A8F0005813E /* OutletOrganizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F2CE825CA6A8F0005813E /* OutletOrganizer.swift */; };
 		1BC2702825C668560034761E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC2702725C668560034761E /* HomeView.swift */; };
@@ -25,7 +26,8 @@
 		1B5CB9AE25B35A870009CC59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B5CB9B125B35A870009CC59 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1B5CB9B325B35A870009CC59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1B7F2CE225CA6A640005813E /* PowerCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerCalculator.swift; sourceTree = "<group>"; };
+		1B62573625CE0B09003528FD /* ACDCCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACDCCalculator.swift; sourceTree = "<group>"; };
+		1B7F2CE225CA6A640005813E /* ConsumptionCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumptionCalculator.swift; sourceTree = "<group>"; };
 		1B7F2CE525CA6A770005813E /* TreeLightsCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeLightsCalculator.swift; sourceTree = "<group>"; };
 		1B7F2CE825CA6A8F0005813E /* OutletOrganizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletOrganizer.swift; sourceTree = "<group>"; };
 		1BC2702725C668560034761E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -68,7 +70,8 @@
 				1BC2702725C668560034761E /* HomeView.swift */,
 				1BC2702D25C6687C0034761E /* ARPropsView.swift */,
 				1BC2703025C668910034761E /* ToolsView.swift */,
-				1B7F2CE225CA6A640005813E /* PowerCalculator.swift */,
+				1B62573625CE0B09003528FD /* ACDCCalculator.swift */,
+				1B7F2CE225CA6A640005813E /* ConsumptionCalculator.swift */,
 				1B7F2CE525CA6A770005813E /* TreeLightsCalculator.swift */,
 				1B7F2CE825CA6A8F0005813E /* OutletOrganizer.swift */,
 				1BC2702A25C668650034761E /* SearchView.swift */,
@@ -157,8 +160,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B5CB9AB25B35A810009CC59 /* xLights_Companion_ProApp.swift in Sources */,
-				1B7F2CE325CA6A640005813E /* PowerCalculator.swift in Sources */,
+				1B7F2CE325CA6A640005813E /* ConsumptionCalculator.swift in Sources */,
 				1BC2702B25C668650034761E /* SearchView.swift in Sources */,
+				1B62573725CE0B09003528FD /* ACDCCalculator.swift in Sources */,
 				1BC2702E25C6687C0034761E /* ARPropsView.swift in Sources */,
 				1BC2702825C668560034761E /* HomeView.swift in Sources */,
 				1B7F2CE625CA6A770005813E /* TreeLightsCalculator.swift in Sources */,

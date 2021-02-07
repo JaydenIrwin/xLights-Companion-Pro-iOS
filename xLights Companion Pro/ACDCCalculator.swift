@@ -1,13 +1,13 @@
 //
-//  PowerCalculator.swift
+//  ACDCCalculator.swift
 //  xLights Companion Pro
 //
-//  Created by Jayden Irwin on 2021-02-03.
+//  Created by Jayden Irwin on 2021-02-05.
 //
 
 import SwiftUI
 
-struct PowerCalculator: View {
+struct ACDCCalculator: View {
     var body: some View {
         Form {
             Section(header: Text("Components")) {
@@ -33,12 +33,12 @@ struct PowerCalculator: View {
         }
         .listStyle(InsetGroupedListStyle())
         .frame(maxWidth: 512)
-        .navigationTitle("Power Calculator")
+        .navigationTitle("AC/DC Calculator")
     }
 }
 
-struct PowerCalculator_Previews: PreviewProvider {
+struct ACDCCalculator_Previews: PreviewProvider {
     static var previews: some View {
-        PowerCalculator()
+        ACDCCalculator()
     }
 }
