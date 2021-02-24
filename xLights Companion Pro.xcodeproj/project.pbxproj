@@ -18,6 +18,8 @@
 		1BC2702B25C668650034761E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC2702A25C668650034761E /* SearchView.swift */; };
 		1BC2702E25C6687C0034761E /* ARPropsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC2702D25C6687C0034761E /* ARPropsView.swift */; };
 		1BC2703125C668910034761E /* ToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC2703025C668910034761E /* ToolsView.swift */; };
+		1BF80FA925E5E7C300EB41CD /* ARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF80FA825E5E7C200EB41CD /* ARView.swift */; };
+		1BF80FAC25E5EA9D00EB41CD /* ARPropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF80FAB25E5EA9D00EB41CD /* ARPropView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		1BC2702A25C668650034761E /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		1BC2702D25C6687C0034761E /* ARPropsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARPropsView.swift; sourceTree = "<group>"; };
 		1BC2703025C668910034761E /* ToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsView.swift; sourceTree = "<group>"; };
+		1BF80FA825E5E7C200EB41CD /* ARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARView.swift; sourceTree = "<group>"; };
+		1BF80FAB25E5EA9D00EB41CD /* ARPropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARPropView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				1B5CB9AA25B35A810009CC59 /* xLights_Companion_ProApp.swift */,
 				1BC2702725C668560034761E /* HomeView.swift */,
 				1BC2702D25C6687C0034761E /* ARPropsView.swift */,
+				1BF80FAB25E5EA9D00EB41CD /* ARPropView.swift */,
+				1BF80FA825E5E7C200EB41CD /* ARView.swift */,
 				1BC2703025C668910034761E /* ToolsView.swift */,
 				1B62573625CE0B09003528FD /* ACDCCalculator.swift */,
 				1B7F2CE225CA6A640005813E /* ConsumptionCalculator.swift */,
@@ -164,10 +170,12 @@
 				1BC2702B25C668650034761E /* SearchView.swift in Sources */,
 				1B62573725CE0B09003528FD /* ACDCCalculator.swift in Sources */,
 				1BC2702E25C6687C0034761E /* ARPropsView.swift in Sources */,
+				1BF80FA925E5E7C300EB41CD /* ARView.swift in Sources */,
 				1BC2702825C668560034761E /* HomeView.swift in Sources */,
 				1B7F2CE625CA6A770005813E /* TreeLightsCalculator.swift in Sources */,
 				1B7F2CE925CA6A8F0005813E /* OutletOrganizer.swift in Sources */,
 				1BC2703125C668910034761E /* ToolsView.swift in Sources */,
+				1BF80FAC25E5EA9D00EB41CD /* ARPropView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

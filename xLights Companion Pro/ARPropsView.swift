@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ARPropsView: View {
+    
+    @State var selectedProp = false
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -19,13 +22,20 @@ struct ARPropsView: View {
                             .aspectRatio(1, contentMode: ContentMode.fit)
                             .background(Color(UIColor.secondarySystemGroupedBackground))
                             .cornerRadius(16)
+                            .onTapGesture {
+                                selectedProp = true
+                            }
                     }
                 }
                 .padding()
             }
+            .background(Color(UIColor.systemGroupedBackground))
             .navigationTitle("AR Props")
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        .fullScreenCover(isPresented: $selectedProp) {
+            ARPropView()
+        }
         .tabItem { Label("AR Props", systemImage: "arkit") }
     }
 }
