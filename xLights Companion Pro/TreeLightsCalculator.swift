@@ -21,7 +21,7 @@ struct TreeLightsCalculator: View {
     @State var bottomDiameter : Double?
     @State var circumferenceCovered : Double?
     @State var numberOfStrings: Int?
-    @State var LightToTopSpacing : Double?
+    @State var lightToTopSpacing : Double?
     @State var bottomToLightSpacing : Double?
     @State var lightSpacing : Double?
     @State var lightsPerString : Int?
@@ -29,7 +29,7 @@ struct TreeLightsCalculator: View {
     //Computed variables
     var computedHeight : Double? {
         if autoHeight {
-            if let LightToTopSpacing = LightToTopSpacing, let bottomToLightSpacing = bottomToLightSpacing, let lightSpacing = lightSpacing, let lightsPerString = lightsPerString {
+            if let LightToTopSpacing = lightToTopSpacing, let bottomToLightSpacing = bottomToLightSpacing, let lightSpacing = lightSpacing, let lightsPerString = lightsPerString {
                 return (LightToTopSpacing + bottomToLightSpacing + (Double((lightsPerString - 1)) * lightSpacing))/100
             }
             return nil
@@ -68,6 +68,72 @@ struct TreeLightsCalculator: View {
         }
     }
     
+    var bottomSpacing : Double? {
+        if let bottomCircumference = bottomCircumference, let circumferenceCovered = circumferenceCovered, let numberOfStrings = numberOfStrings {
+            let circumference = Measurement(value: ((bottomCircumference * (circumferenceCovered/100))/Double(numberOfStrings)), unit: unit == .metric ? UnitLength.meters : UnitLength.feet)
+            if unit == .metric {
+                return circumference.converted(to: .centimeters).value
+            } else {
+                return circumference.converted(to: .inches).value
+            }
+        } else {
+            return nil
+        }
+    }
+    
+    var slantLength : Double? {
+        if let height = enteredHeight, let bottomDiameter = bottomDiameter{
+            let radius = bottomDiameter / 2
+            return sqrt(pow(radius, 2) + pow(height, 2))
+        } else {
+            return nil
+        }
+    }
+    
+    var computedLightsPerString : Int? {
+        if !autoHeight {
+            if let bottomToLightSpacing = bottomToLightSpacing, let lightToTopSpacing = lightToTopSpacing, let lightSpacing = lightSpacing, let slant = slantLength {
+                var top : Double?
+                var bottom : Double?
+                var spacing : Double?
+                
+                let bottomUnitContainer = Measurement(value: bottomToLightSpacing, unit: unit == .metric ? UnitLength.centimeters : UnitLength.inches)
+                let topUnitContainer = Measurement(value: lightToTopSpacing, unit: unit == .metric ? UnitLength.centimeters : UnitLength.inches)
+                let spacingContainer = Measurement(value: lightSpacing, unit: unit == .metric ? UnitLength.centimeters : UnitLength.inches)
+                
+                if unit == .metric {
+                    bottom = bottomUnitContainer.converted(to: .meters).value
+                    top = topUnitContainer.converted(to: .meters).value
+                    spacing = spacingContainer.converted(to: .meters).value
+                } else {
+                    bottom = bottomUnitContainer.converted(to: .feet).value
+                    top = topUnitContainer.converted(to: .feet).value
+                    spacing = spacingContainer.converted(to: .feet).value
+                }
+                
+                if let top = top, let bottom = bottom, let spacing = spacing {
+                    let strandLights = Int(((slant - top - bottom) / spacing).rounded(.toNearestOrAwayFromZero))
+                    return strandLights
+                }
+            }
+        } else {
+            return lightsPerString
+        }
+        return nil
+    }
+    
+    var numberOfLights : Int? {
+        if let numberOfStrings = numberOfStrings, let lightsPerString = lightsPerString {
+            return lightsPerString * numberOfStrings
+        }
+        if let computedLightsPerString = computedLightsPerString, let numberOfStrings = numberOfStrings{
+            return computedLightsPerString * numberOfStrings
+        }
+        return nil
+    }
+    
+    
+    
     //Main view
     var body: some View {
         Form {
@@ -85,19 +151,20 @@ struct TreeLightsCalculator: View {
             //Input
             Section(header: Text("Tree")) {
                 if !autoHeight {
-                    DoubleInputRow(title: "Height", placeholder: autoHeight ? "" : "6.0", unit: unit == .metric ? "m" : "ft", disabled: autoHeight, value: $enteredHeight)
+                    DoubleInputRow(title: "Height", placeholder: autoHeight ? "" : "6.0", unit: unit == .metric ? "m" : "ft.", disabled: autoHeight, value: $enteredHeight)
                 }
                 DoubleInputRow(title: "Top Diameter", placeholder: "0.5", unit: unit == .metric ? "m" : "ft.", disabled: false, value: $topDiameter)
                 DoubleInputRow(title: "Bottom Diameter", placeholder: "1.0", unit: unit == .metric ? "m" : "ft.", disabled: false, value: $bottomDiameter)
                 DoubleInputRow(title: "Circumference Covered", placeholder: "100", unit: "%", disabled: false, value: $circumferenceCovered)
                 IntegerInputRow(title: "Number of Strings", placeholder: "12", unit: "Strings", value: $numberOfStrings)
-                DoubleInputRow(title: "Space to Top Light", placeholder: "2.0", unit: unit == .metric ? "cm" : "in.", disabled: false, value: $LightToTopSpacing)
+                DoubleInputRow(title: "Space to Top Light", placeholder: "2.0", unit: unit == .metric ? "cm" : "in.", disabled: false, value: $lightToTopSpacing)
                 DoubleInputRow(title: "Space After Bottom Light", placeholder: "5.0", unit: unit == .metric ? "cm" : "in.", disabled: false, value: $bottomToLightSpacing)
                 DoubleInputRow(title: "Spacing Between Lights", placeholder: "4.0", unit: unit == .metric ? "cm" : "in.", disabled: false, value: $lightSpacing)
                 if autoHeight {
                     IntegerInputRow(title: "Lights per String", placeholder: "50", unit: "Lights", value: $lightsPerString)
                 }
             }
+            .onTapGesture {hideKeyboard()}
             //Results
             Section(header: Text("Result")) {
                 HStack {
@@ -125,13 +192,6 @@ struct TreeLightsCalculator: View {
                 }
                 
                 HStack {
-                    Text("Number of lights")
-                    Spacer()
-                    
-                    Text("Lights")
-                }
-                
-                HStack {
                     Text("Top Spacing")
                     Spacer()
                     if let topSpacing = topSpacing {
@@ -142,14 +202,32 @@ struct TreeLightsCalculator: View {
                 HStack {
                     Text("Bottom Spacing")
                     Spacer()
-                    Text("")
+                    if let bottomSpacing = bottomSpacing {
+                        Text(mixedLengthString(bottomSpacing))
+                    }
                 }
                 
+                HStack {
+                    Text("Lights per String")
+                    Spacer()
+                    if let computedLightsPerString = computedLightsPerString {
+                        Text("\(computedLightsPerString) Lights")
+                    }
+                }
+                
+                HStack {
+                    Text("Number of lights")
+                    Spacer()
+                    if let numberOfLights = numberOfLights {
+                        Text("\(numberOfLights) Lights")
+                    }
+                }
+
             }
+            .onTapGesture {hideKeyboard()}
         }
         .listStyle(InsetGroupedListStyle())
         .navigationTitle("Tree Lights Calculator")
-        .onTapGesture {hideKeyboard()}
     }
     
     func hideKeyboard() {

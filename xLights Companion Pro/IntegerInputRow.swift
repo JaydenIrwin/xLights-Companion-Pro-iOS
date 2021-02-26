@@ -32,7 +32,7 @@ struct IntegerInputRow: View {
                 value = Int(newValue)
             }))
             .multilineTextAlignment(.trailing)
-            .keyboardType(.decimalPad)
+            .keyboardType(.numberPad)
             .accessibility(label: Text(title))
             Text(unit)
         }
