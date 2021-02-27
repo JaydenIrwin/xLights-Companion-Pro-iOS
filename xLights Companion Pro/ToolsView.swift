@@ -16,14 +16,13 @@ struct ToolsView: View {
                         HStack {
                             VStack(alignment: .leading, spacing: 4) {
                                 Label("Consumption Calculator", systemImage: "dollarsign.circle.fill")
-                                    .font(.title)
+                                    .font(.title2)
                                     .foregroundColor(Color(UIColor.systemRed))
                                 Text("Determine the cost to run your display.")
                                     .foregroundColor(Color(UIColor.secondaryLabel))
                             }
                             Spacer()
                         }
-                        .padding()
                     }
                 }
                 Section {
@@ -31,14 +30,13 @@ struct ToolsView: View {
                         HStack {
                             VStack(alignment: .leading, spacing: 4) {
                                 Label("AC/DC Calculator", systemImage: "bolt.fill")
-                                    .font(.title)
+                                    .font(.title2)
                                     .foregroundColor(Color(UIColor.systemYellow))
                                 Text("Determine which props will work on which curcuits.")
                                     .foregroundColor(Color(UIColor.secondaryLabel))
                             }
                             Spacer()
                         }
-                        .padding()
                     }
                 }
                 Section {
@@ -46,14 +44,13 @@ struct ToolsView: View {
                         HStack {
                             VStack(alignment: .leading, spacing: 4) {
                                 Label("Outlet Organizer", systemImage: "power")
-                                    .font(.title)
+                                    .font(.title2)
                                     .foregroundColor(Color(UIColor.systemBlue))
                                 Text("Keep track of which props are plugged into which outlets.")
                                     .foregroundColor(Color(UIColor.secondaryLabel))
                             }
                             Spacer()
                         }
-                        .padding()
                     }
                 }
                 Section {
@@ -61,22 +58,19 @@ struct ToolsView: View {
                         HStack {
                             VStack(alignment: .leading, spacing: 4) {
                                 Label("Tree Lights Calculator", systemImage: "leaf.fill")
-                                    .font(.title)
+                                    .font(.title2)
                                     .foregroundColor(Color(UIColor.systemGreen))
                                 Text("How many lights will my tree need?")
                                     .foregroundColor(Color(UIColor.secondaryLabel))
                             }
                             Spacer()
                         }
-                        .padding()
                     }
                 }
             }
             .listStyle(InsetGroupedListStyle())
-            .frame(maxWidth: 512)
             .navigationTitle("Tools")
         }
-        .navigationViewStyle(StackNavigationViewStyle())
         .tabItem { Label("Tools", systemImage: "hammer.fill") }
     }
 }

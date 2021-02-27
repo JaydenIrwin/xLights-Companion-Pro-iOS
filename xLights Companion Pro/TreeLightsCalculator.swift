@@ -146,7 +146,7 @@ struct TreeLightsCalculator: View {
                         .tag(UnitSystem.imperial)
                 }
                 .pickerStyle(SegmentedPickerStyle())
-                Toggle("Would you like to calculate the height of the tree using light spacing and lights per string?", isOn: $autoHeight)
+                Toggle("Calculate the tree height using light spacing and lights per string", isOn: $autoHeight)
             }
             //Input
             Section(header: Text("Tree")) {
