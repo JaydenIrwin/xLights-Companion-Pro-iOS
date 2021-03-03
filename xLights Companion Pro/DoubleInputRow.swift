@@ -37,17 +37,19 @@ struct DoubleInputRow: View {
             }, set: { (newValue) in
                 value = Double(newValue)
             }))
+            .frame(width: 35)
             .multilineTextAlignment(.trailing)
             .keyboardType(.decimalPad)
             .accessibility(label: Text(title))
             .disabled(disabled)
             Text(unit)
+                .frame(width: 25, alignment: .trailing)
         }
     }
 }
 
 struct DoubleInputRow_Previews: PreviewProvider {
     static var previews: some View {
-        DoubleInputRow(title: "", placeholder: "", unit: "", disabled: false, value: .constant(1))
+        DoubleInputRow(title: "Hello", placeholder: "Hello", unit: "m", disabled: false, value: .constant(1))
     }
 }

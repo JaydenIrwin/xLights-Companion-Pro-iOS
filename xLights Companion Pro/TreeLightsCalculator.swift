@@ -9,12 +9,7 @@ import SwiftUI
 
 struct TreeLightsCalculator: View {
     
-    enum UnitSystem {
-        case imperial
-        case metric
-    }
-    
-    @State var unit = UnitSystem.metric
+    @State var unitSystem = UnitSystem.metric
     @State var autoHeight = false
     @State var enteredHeight : Double?
     @State var topDiameter : Double?
@@ -57,8 +52,8 @@ struct TreeLightsCalculator: View {
     
     var topSpacing : Double? {
         if let topCircumference = topCircumference, let circumferenceCovered = circumferenceCovered, let numberOfStrings = numberOfStrings {
-            let circumference = Measurement(value: ((topCircumference * (circumferenceCovered/100))/Double(numberOfStrings)), unit: unit == .metric ? UnitLength.meters : UnitLength.feet)
-            if unit == .metric {
+            let circumference = Measurement(value: ((topCircumference * (circumferenceCovered/100))/Double(numberOfStrings)), unit: unitSystem == .metric ? UnitLength.meters : UnitLength.feet)
+            if unitSystem == .metric {
                 return circumference.converted(to: .centimeters).value
             } else {
                 return circumference.converted(to: .inches).value
@@ -70,8 +65,8 @@ struct TreeLightsCalculator: View {
     
     var bottomSpacing : Double? {
         if let bottomCircumference = bottomCircumference, let circumferenceCovered = circumferenceCovered, let numberOfStrings = numberOfStrings {
-            let circumference = Measurement(value: ((bottomCircumference * (circumferenceCovered/100))/Double(numberOfStrings)), unit: unit == .metric ? UnitLength.meters : UnitLength.feet)
-            if unit == .metric {
+            let circumference = Measurement(value: ((bottomCircumference * (circumferenceCovered/100))/Double(numberOfStrings)), unit: unitSystem == .metric ? UnitLength.meters : UnitLength.feet)
+            if unitSystem == .metric {
                 return circumference.converted(to: .centimeters).value
             } else {
                 return circumference.converted(to: .inches).value
@@ -97,11 +92,11 @@ struct TreeLightsCalculator: View {
                 var bottom : Double?
                 var spacing : Double?
                 
-                let bottomUnitContainer = Measurement(value: bottomToLightSpacing, unit: unit == .metric ? UnitLength.centimeters : UnitLength.inches)
-                let topUnitContainer = Measurement(value: lightToTopSpacing, unit: unit == .metric ? UnitLength.centimeters : UnitLength.inches)
-                let spacingContainer = Measurement(value: lightSpacing, unit: unit == .metric ? UnitLength.centimeters : UnitLength.inches)
+                let bottomUnitContainer = Measurement(value: bottomToLightSpacing, unit: unitSystem == .metric ? UnitLength.centimeters : UnitLength.inches)
+                let topUnitContainer = Measurement(value: lightToTopSpacing, unit: unitSystem == .metric ? UnitLength.centimeters : UnitLength.inches)
+                let spacingContainer = Measurement(value: lightSpacing, unit: unitSystem == .metric ? UnitLength.centimeters : UnitLength.inches)
                 
-                if unit == .metric {
+                if unitSystem == .metric {
                     bottom = bottomUnitContainer.converted(to: .meters).value
                     top = topUnitContainer.converted(to: .meters).value
                     spacing = spacingContainer.converted(to: .meters).value
@@ -133,13 +128,12 @@ struct TreeLightsCalculator: View {
     }
     
     
-    
     //Main view
     var body: some View {
         Form {
             //Settings
             Section(header: Text("Settings")) {
-                Picker("Unit of Measurement", selection: $unit) {
+                Picker("Unit of Measurement", selection: $unitSystem) {
                     Text("Metric")
                         .tag(UnitSystem.metric)
                     Text("Imperial")
@@ -151,62 +145,30 @@ struct TreeLightsCalculator: View {
             //Input
             Section(header: Text("Tree")) {
                 if !autoHeight {
-                    DoubleInputRow(title: "Height", placeholder: autoHeight ? "" : "6.0", unit: unit == .metric ? "m" : "ft.", disabled: autoHeight, value: $enteredHeight)
+                    DoubleInputRow(title: "Height", placeholder: autoHeight ? "" : "6.0", unit: unitSystem == .metric ? "m" : "ft.", disabled: autoHeight, value: $enteredHeight)
                 }
-                DoubleInputRow(title: "Top Diameter", placeholder: "0.5", unit: unit == .metric ? "m" : "ft.", disabled: false, value: $topDiameter)
-                DoubleInputRow(title: "Bottom Diameter", placeholder: "1.0", unit: unit == .metric ? "m" : "ft.", disabled: false, value: $bottomDiameter)
+                DoubleInputRow(title: "Top Diameter", placeholder: "0.5", unit: unitSystem == .metric ? "m" : "ft.", disabled: false, value: $topDiameter)
+                DoubleInputRow(title: "Bottom Diameter", placeholder: "1.0", unit: unitSystem == .metric ? "m" : "ft.", disabled: false, value: $bottomDiameter)
                 DoubleInputRow(title: "Circumference Covered", placeholder: "100", unit: "%", disabled: false, value: $circumferenceCovered)
+                
+                DoubleInputRow(title: "Space to Top Light", placeholder: "2.0", unit: unitSystem == .metric ? "cm" : "in.", disabled: false, value: $lightToTopSpacing)
+                DoubleInputRow(title: "Space After Bottom Light", placeholder: "5.0", unit: unitSystem == .metric ? "cm" : "in.", disabled: false, value: $bottomToLightSpacing)
+                DoubleInputRow(title: "Spacing Between Lights", placeholder: "4.0", unit: unitSystem == .metric ? "cm" : "in.", disabled: false, value: $lightSpacing)
                 IntegerInputRow(title: "Number of Strings", placeholder: "12", unit: "Strings", value: $numberOfStrings)
-                DoubleInputRow(title: "Space to Top Light", placeholder: "2.0", unit: unit == .metric ? "cm" : "in.", disabled: false, value: $lightToTopSpacing)
-                DoubleInputRow(title: "Space After Bottom Light", placeholder: "5.0", unit: unit == .metric ? "cm" : "in.", disabled: false, value: $bottomToLightSpacing)
-                DoubleInputRow(title: "Spacing Between Lights", placeholder: "4.0", unit: unit == .metric ? "cm" : "in.", disabled: false, value: $lightSpacing)
                 if autoHeight {
                     IntegerInputRow(title: "Lights per String", placeholder: "50", unit: "Lights", value: $lightsPerString)
                 }
             }
             .onTapGesture {hideKeyboard()}
+            
             //Results
             Section(header: Text("Result")) {
-                HStack {
-                    Text("Height")
-                    Spacer()
-                    if let computedHeight = computedHeight {
-                        Text(mixedLengthString(computedHeight))
-                    }
-                }
-                
-                HStack {
-                    Text("Top Circumference")
-                    Spacer()
-                    if let topCircumference = topCircumference {
-                        Text(mixedLengthString(topCircumference))
-                    }
-                }
-                
-                HStack {
-                    Text("Bottom Circumference")
-                    Spacer()
-                    if let bottomCircumference = bottomCircumference {
-                        Text(mixedLengthString(bottomCircumference))
-                    }
-                }
-                
-                HStack {
-                    Text("Top Spacing")
-                    Spacer()
-                    if let topSpacing = topSpacing {
-                        Text(mixedLengthString(topSpacing))
-                    }
-                }
-                
-                HStack {
-                    Text("Bottom Spacing")
-                    Spacer()
-                    if let bottomSpacing = bottomSpacing {
-                        Text(mixedLengthString(bottomSpacing))
-                    }
-                }
-                
+                MixedLengthResultRow(title: "Height", length: Binding(get: {computedHeight}, set: {newValue in}), unitSystem: $unitSystem)
+                MixedLengthResultRow(title: "Top Circumference", length: Binding(get: {topCircumference}, set: {newValue in}), unitSystem: $unitSystem)
+                MixedLengthResultRow(title: "Bottom Circumference", length: Binding(get: {bottomCircumference}, set: {newValue in}), unitSystem: $unitSystem)
+                MixedLengthResultRow(title: "Top Spacing", length: Binding(get: {topSpacing}, set: {newValue in}), unitSystem: $unitSystem)
+                MixedLengthResultRow(title: "Bottom Spacing", length: Binding(get: {bottomSpacing}, set: {newValue in}), unitSystem: $unitSystem)
+
                 HStack {
                     Text("Lights per String")
                     Spacer()
@@ -214,7 +176,7 @@ struct TreeLightsCalculator: View {
                         Text("\(computedLightsPerString) Lights")
                     }
                 }
-                
+
                 HStack {
                     Text("Number of lights")
                     Spacer()
@@ -234,30 +196,10 @@ struct TreeLightsCalculator: View {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
     
-    func mixedLengthString(_ value: Double) -> String {
-        let formatter = MeasurementFormatter()
-        formatter.unitOptions = .providedUnit
-        formatter.unitStyle = .medium
-        formatter.numberFormatter.maximumFractionDigits = 0
-        
-        if unit == .metric {
-            let rounded = value.rounded(.towardZero)
-            let meters = Measurement(value: rounded, unit: UnitLength.meters)
-            let cms = Measurement(value: value - rounded, unit: UnitLength.meters).converted(to: .centimeters)
-            return "\(formatter.string(from: meters)) \(formatter.string(from: cms))"
-        } else {
-            let rounded = value.rounded(.towardZero)
-            let feet = Measurement(value: rounded, unit: UnitLength.feet)
-            let inches = Measurement(value: value - rounded, unit: UnitLength.feet).converted(to: .inches)
-            return "\(formatter.string(from: feet)) \(formatter.string(from: inches))"
-        }
-    }
-    
-    
 }
 
 struct TreeLightsCalculator_Previews: PreviewProvider {
     static var previews: some View {
-        TreeLightsCalculator()
+        TreeLightsCalculator(unitSystem: .metric, autoHeight: false, enteredHeight: 3, topDiameter: 0.5, bottomDiameter: 1, circumferenceCovered: 90, numberOfStrings: 12, lightToTopSpacing: 2, bottomToLightSpacing: 3, lightSpacing: 8, lightsPerString: nil)
     }
 }

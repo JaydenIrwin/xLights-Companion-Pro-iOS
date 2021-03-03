@@ -20,3 +20,8 @@ struct xLights_Companion_ProApp: App {
         }
     }
 }
+
+enum UnitSystem {
+    case imperial
+    case metric
+}

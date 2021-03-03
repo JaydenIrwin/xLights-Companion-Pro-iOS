@@ -22,6 +22,7 @@
 		1BF80FAC25E5EA9D00EB41CD /* ARPropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF80FAB25E5EA9D00EB41CD /* ARPropView.swift */; };
 		1BF80FAF25E75BF200EB41CD /* DoubleInputRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF80FAE25E75BF200EB41CD /* DoubleInputRow.swift */; };
 		1BF80FB225E75C1E00EB41CD /* IntegerInputRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF80FB125E75C1E00EB41CD /* IntegerInputRow.swift */; };
+		E1F3355825EEB7B500B64478 /* MixedLengthResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F3355725EEB7B500B64478 /* MixedLengthResultRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		1BF80FAB25E5EA9D00EB41CD /* ARPropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARPropView.swift; sourceTree = "<group>"; };
 		1BF80FAE25E75BF200EB41CD /* DoubleInputRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleInputRow.swift; sourceTree = "<group>"; };
 		1BF80FB125E75C1E00EB41CD /* IntegerInputRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerInputRow.swift; sourceTree = "<group>"; };
+		E1F3355725EEB7B500B64478 /* MixedLengthResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixedLengthResultRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				1B7F2CE525CA6A770005813E /* TreeLightsCalculator.swift */,
 				1BF80FAE25E75BF200EB41CD /* DoubleInputRow.swift */,
 				1BF80FB125E75C1E00EB41CD /* IntegerInputRow.swift */,
+				E1F3355725EEB7B500B64478 /* MixedLengthResultRow.swift */,
 				1B7F2CE825CA6A8F0005813E /* OutletOrganizer.swift */,
 				1BC2702A25C668650034761E /* SearchView.swift */,
 				1B5CB9AE25B35A870009CC59 /* Assets.xcassets */,
@@ -176,6 +179,7 @@
 				1BF80FAF25E75BF200EB41CD /* DoubleInputRow.swift in Sources */,
 				1BC2702B25C668650034761E /* SearchView.swift in Sources */,
 				1BF80FB225E75C1E00EB41CD /* IntegerInputRow.swift in Sources */,
+				E1F3355825EEB7B500B64478 /* MixedLengthResultRow.swift in Sources */,
 				1B62573725CE0B09003528FD /* ACDCCalculator.swift in Sources */,
 				1BC2702E25C6687C0034761E /* ARPropsView.swift in Sources */,
 				1BF80FA925E5E7C300EB41CD /* ARView.swift in Sources */,
@@ -313,7 +317,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"xLights Companion Pro/Preview Content\"";
-				DEVELOPMENT_TEAM = VA3SY54YU8;
+				DEVELOPMENT_TEAM = 67HDD4RTGM;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "xLights Companion Pro/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -335,7 +339,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"xLights Companion Pro/Preview Content\"";
-				DEVELOPMENT_TEAM = VA3SY54YU8;
+				DEVELOPMENT_TEAM = 67HDD4RTGM;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "xLights Companion Pro/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
