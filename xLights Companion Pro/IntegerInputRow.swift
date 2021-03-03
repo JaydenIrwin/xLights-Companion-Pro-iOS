@@ -35,6 +35,7 @@ struct IntegerInputRow: View {
             .keyboardType(.numberPad)
             .accessibility(label: Text(title))
             Text(unit)
+                .frame(width: 60, alignment: .trailing)
         }
     }
 }

@@ -18,10 +18,12 @@ struct DoubleInputRow: View {
     
     @State var title: String
     @State var placeholder: String
-    let unit: String
     @State var disabled: Bool
     
     @Binding var value: Double?
+    
+    let unit : String
+    let unitFrame : Int
     
     var body: some View {
         HStack {
@@ -43,13 +45,13 @@ struct DoubleInputRow: View {
             .accessibility(label: Text(title))
             .disabled(disabled)
             Text(unit)
-                .frame(width: 25, alignment: .trailing)
+                .frame(minWidth: CGFloat(unitFrame), idealWidth: CGFloat(unitFrame), alignment: .trailing)
         }
     }
 }
 
 struct DoubleInputRow_Previews: PreviewProvider {
     static var previews: some View {
-        DoubleInputRow(title: "Hello", placeholder: "Hello", unit: "m", disabled: false, value: .constant(1))
+        DoubleInputRow(title: "Hello", placeholder: "Hello", disabled: false, value: .constant(1), unit: "m", unitFrame: 25)
     }
 }

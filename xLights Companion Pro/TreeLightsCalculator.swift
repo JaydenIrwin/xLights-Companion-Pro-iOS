@@ -145,15 +145,15 @@ struct TreeLightsCalculator: View {
             //Input
             Section(header: Text("Tree")) {
                 if !autoHeight {
-                    DoubleInputRow(title: "Height", placeholder: autoHeight ? "" : "6.0", unit: unitSystem == .metric ? "m" : "ft.", disabled: autoHeight, value: $enteredHeight)
+                    DoubleInputRow(title: "Height", placeholder: autoHeight ? "" : "6.0", disabled: autoHeight, value: $enteredHeight, unit: unitSystem == .metric ? "m" : "ft.", unitFrame: 25)
                 }
-                DoubleInputRow(title: "Top Diameter", placeholder: "0.5", unit: unitSystem == .metric ? "m" : "ft.", disabled: false, value: $topDiameter)
-                DoubleInputRow(title: "Bottom Diameter", placeholder: "1.0", unit: unitSystem == .metric ? "m" : "ft.", disabled: false, value: $bottomDiameter)
-                DoubleInputRow(title: "Circumference Covered", placeholder: "100", unit: "%", disabled: false, value: $circumferenceCovered)
+                DoubleInputRow(title: "Top Diameter", placeholder: "0.5", disabled: false, value: $topDiameter, unit: unitSystem == .metric ? "m" : "ft.", unitFrame: 25)
+                DoubleInputRow(title: "Bottom Diameter", placeholder: "1.0", disabled: false, value: $bottomDiameter, unit: unitSystem == .metric ? "m" : "ft.", unitFrame: 25)
+                DoubleInputRow(title: "Circumference Covered", placeholder: "100", disabled: false, value: $circumferenceCovered, unit: "%", unitFrame: 25)
                 
-                DoubleInputRow(title: "Space to Top Light", placeholder: "2.0", unit: unitSystem == .metric ? "cm" : "in.", disabled: false, value: $lightToTopSpacing)
-                DoubleInputRow(title: "Space After Bottom Light", placeholder: "5.0", unit: unitSystem == .metric ? "cm" : "in.", disabled: false, value: $bottomToLightSpacing)
-                DoubleInputRow(title: "Spacing Between Lights", placeholder: "4.0", unit: unitSystem == .metric ? "cm" : "in.", disabled: false, value: $lightSpacing)
+                DoubleInputRow(title: "Space to Top Light", placeholder: "2.0", disabled: false, value: $lightToTopSpacing, unit: unitSystem == .metric ? "cm" : "in.", unitFrame: 25)
+                DoubleInputRow(title: "Space After Bottom Light", placeholder: "5.0", disabled: false, value: $bottomToLightSpacing, unit: unitSystem == .metric ? "cm" : "in.", unitFrame: 25)
+                DoubleInputRow(title: "Spacing Between Lights", placeholder: "4.0", disabled: false, value: $lightSpacing, unit: unitSystem == .metric ? "cm" : "in.", unitFrame: 25)
                 IntegerInputRow(title: "Number of Strings", placeholder: "12", unit: "Strings", value: $numberOfStrings)
                 if autoHeight {
                     IntegerInputRow(title: "Lights per String", placeholder: "50", unit: "Lights", value: $lightsPerString)
@@ -173,7 +173,7 @@ struct TreeLightsCalculator: View {
                     Text("Lights per String")
                     Spacer()
                     if let computedLightsPerString = computedLightsPerString {
-                        Text("\(computedLightsPerString) Lights")
+                        Text("\(computedLightsPerString)  Lights")
                     }
                 }
 
@@ -181,7 +181,7 @@ struct TreeLightsCalculator: View {
                     Text("Number of lights")
                     Spacer()
                     if let numberOfLights = numberOfLights {
-                        Text("\(numberOfLights) Lights")
+                        Text("\(numberOfLights)  Lights")
                     }
                 }
 
@@ -200,6 +200,8 @@ struct TreeLightsCalculator: View {
 
 struct TreeLightsCalculator_Previews: PreviewProvider {
     static var previews: some View {
-        TreeLightsCalculator(unitSystem: .metric, autoHeight: false, enteredHeight: 3, topDiameter: 0.5, bottomDiameter: 1, circumferenceCovered: 90, numberOfStrings: 12, lightToTopSpacing: 2, bottomToLightSpacing: 3, lightSpacing: 8, lightsPerString: nil)
+        NavigationView {
+            TreeLightsCalculator(unitSystem: .metric, autoHeight: false, enteredHeight: 3, topDiameter: 0.5, bottomDiameter: 1, circumferenceCovered: 90, numberOfStrings: 12, lightToTopSpacing: 2, bottomToLightSpacing: 3, lightSpacing: 8, lightsPerString: nil)
+        }
     }
 }
