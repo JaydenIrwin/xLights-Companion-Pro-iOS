@@ -74,45 +74,120 @@ struct HomeView: View {
                     .foregroundColor(Color.white)
                     VStack(alignment: .leading, spacing: 14) {
                         Group {
-                        Label("Links", systemImage: "link")
-                        Divider()
-                        Link(destination: URL(string: "www.apple.com")!) {
-                            Label("xLights Discord", systemImage: "gamecontroller")
-                        }
-                        Divider()
-                        Link(destination: URL(string: "www.apple.com")!) {
-                            Label("xLights Reddit", systemImage: "face.smiling")
-                        }
-                        Divider()
-                        Link(destination: URL(string: "www.apple.com")!) {
-                            Label("xLights Website", systemImage: "globe")
-                        }
-                        Divider()
-                        Link(destination: URL(string: "www.apple.com")!) {
-                            Label("Zoom", systemImage: "video")
-                        }
+                            Label("Links", systemImage: "link")
+                            Divider()
+                            Link(destination: URL(string: "www.apple.com")!) {
+                                Label("xLights Discord", systemImage: "gamecontroller")
+                            }
+                            Divider()
+                            Link(destination: URL(string: "www.apple.com")!) {
+                                Label("xLights Reddit", systemImage: "face.smiling")
+                            }
+                            Divider()
+                            Link(destination: URL(string: "www.apple.com")!) {
+                                Label("xLights Website", systemImage: "globe")
+                            }
+                            Divider()
+                            Link(destination: URL(string: "https://us02web.zoom.us/j/175801909")!) {
+                                Label("Zoom", systemImage: "video")
+                            }
                         }
                         Group {
-                        Divider()
-                        Link(destination: URL(string: "www.apple.com")!) {
-                            Label("Remote Falcon", systemImage: "swift")
+                            Divider()
+                            Link(destination: URL(string: "www.apple.com")!) {
+                                Label("Remote Falcon", systemImage: "swift")
+                            }
+                            Divider()
+                            Link(destination: URL(string: "www.apple.com")!) {
+                                Label("Parts Store 1", systemImage: "bag")
+                            }
+                            Divider()
+                            Link(destination: URL(string: "www.apple.com")!) {
+                                Label("Parts Store 2", systemImage: "bag")
+                            }
+                            Divider()
+                            Link(destination: URL(string: "www.apple.com")!) {
+                                Label("Parts Store 3", systemImage: "bag")
+                            }
+                            Divider()
+                            Link(destination: URL(string: "www.apple.com")!) {
+                                Label("Beginer's Tutorial Videos", systemImage: "play.rectangle")
+                            }
                         }
-                        Divider()
-                        Link(destination: URL(string: "www.apple.com")!) {
-                            Label("Parts Store 1", systemImage: "bag")
+                    }
+                    .padding()
+                    .frame(idealWidth: 500, maxWidth: 500, alignment: .leading)
+                    .background(Color(UIColor.secondarySystemGroupedBackground))
+                    .cornerRadius(16)
+                    VStack(alignment: .leading, spacing: 14) {
+                        Group {
+                            Label("Facebook Groups", systemImage: "person.2.circle")
+                            Divider()
+                            Link(destination: URL(string: "https://www.facebook.com/groups/233383237101011/")!) {
+                                Label("Group", systemImage: "person.2.circle")
+                            }
+                            Divider()
+                            Link(destination: URL(string: "https://www.facebook.com/groups/2260596274198602/")!) {
+                                Label("Group", systemImage: "person.2.circle")
+                            }
+                            Divider()
+                            Link(destination: URL(string: "https://www.facebook.com/groups/469315706587218/")!) {
+                                Label("Group", systemImage: "person.2.circle")
+                            }
+                            Divider()
+                            Link(destination: URL(string: "https://www.facebook.com/groups/HolidayThinkTank/")!) {
+                                Label("Holiday Think Tank", systemImage: "person.2.circle")
+                            }
                         }
-                        Divider()
-                        Link(destination: URL(string: "www.apple.com")!) {
-                            Label("Parts Store 2", systemImage: "bag")
+                        Group {
+                            Divider()
+                            Link(destination: URL(string: "https://www.facebook.com/groups/HolidayLightShowVendors/")!) {
+                                Label("Holiday Light Show Vendors", systemImage: "person.2.circle")
+                            }
+                            Divider()
+                            Link(destination: URL(string: "https://www.facebook.com/groups/353601265519768/")!) {
+                                Label("Group", systemImage: "person.2.circle")
+                            }
+                            Divider()
+                            Link(destination: URL(string: "https://www.facebook.com/groups/socalchristmas/")!) {
+                                Label("Social Christmas", systemImage: "person.2.circle")
+                            }
+                            Divider()
+                            Link(destination: URL(string: "https://www.facebook.com/groups/186301722156865/")!) {
+                                Label("Group", systemImage: "person.2.circle")
+                            }
+                            Divider()
+                            Link(destination: URL(string: "https://www.facebook.com/groups/PixelProU/")!) {
+                                Label("Pixel Pro U", systemImage: "person.2.circle")
+                            }
                         }
-                        Divider()
-                        Link(destination: URL(string: "www.apple.com")!) {
-                            Label("Parts Store 3", systemImage: "bag")
+                        Group {
+                            Divider()
+                            Link(destination: URL(string: "https://www.facebook.com/groups/pixel2things/")!) {
+                                Label("Pixel 2 Things", systemImage: "person.2.circle")
+                            }
+                            Divider()
+                            Link(destination: URL(string: "https://www.facebook.com/pixelprodisplays")!) {
+                                Label("Pixel Pro Displays", systemImage: "person.2.circle")
+                            }
+                            Divider()
+                            Link(destination: URL(string: "https://www.facebook.com/groups/xLights/")!) {
+                                Label("xLights", systemImage: "person.2.circle")
+                            }
+                            Divider()
+                            Link(destination: URL(string: "https://www.facebook.com/groups/1901299436791951/")!) {
+                                Label("Group", systemImage: "person.2.circle")
+                            }
+                            Divider()
+                            Link(destination: URL(string: "https://www.facebook.com/jdeation/")!) {
+                                Label("jdeation", systemImage: "person.2.circle")
+                            }
                         }
-                        Divider()
-                        Link(destination: URL(string: "www.apple.com")!) {
-                            Label("Beginer's Tutorial Videos", systemImage: "play.rectangle")
-                        }
+                        Group {
+                            Divider()
+                            Link(destination: URL(string: "https://www.facebook.com/HSSUSC/")!) {
+                                Label("HSSUSC", systemImage: "person.2.circle")
+                            }
                         }
                     }
                     .padding()

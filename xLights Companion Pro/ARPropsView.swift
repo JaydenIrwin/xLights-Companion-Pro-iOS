@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ARPropsView: View {
     
+    @Environment(\.presentationMode) var presentationMode
+    
     @State var selectedProp = false
     
     var body: some View {
@@ -33,10 +35,11 @@ struct ARPropsView: View {
             .navigationTitle("AR Props")
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .fullScreenCover(isPresented: $selectedProp) {
-            ARPropView()
+        .toolbar {
+            Button("Done") {
+                presentationMode.wrappedValue.dismiss()
+            }
         }
-        .tabItem { Label("AR Props", systemImage: "arkit") }
     }
 }
 
