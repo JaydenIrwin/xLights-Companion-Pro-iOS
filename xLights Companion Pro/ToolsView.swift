@@ -23,6 +23,7 @@ struct ToolsView: View {
                             }
                             Spacer()
                         }
+                        .padding(.vertical, 4)
                     }
                 }
                 Section {
@@ -37,6 +38,7 @@ struct ToolsView: View {
                             }
                             Spacer()
                         }
+                        .padding(.vertical, 4)
                     }
                 }
                 Section {
@@ -51,6 +53,7 @@ struct ToolsView: View {
                             }
                             Spacer()
                         }
+                        .padding(.vertical, 4)
                     }
                 }
                 Section {
@@ -65,6 +68,7 @@ struct ToolsView: View {
                             }
                             Spacer()
                         }
+                        .padding(.vertical, 4)
                     }
                 }
             }

@@ -13,7 +13,7 @@ struct xLights_Companion_ProApp: App {
         WindowGroup {
             TabView {
                 HomeView()
-                ARPropsView()
+                ARPropView()
                 ToolsView()
                 SearchView()
             }

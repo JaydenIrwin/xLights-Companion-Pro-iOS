@@ -9,15 +9,22 @@ import SwiftUI
 
 struct ARPropView: View {
     
-    @Environment(\.presentationMode) var presentationMode
+    @State var showingPropPicker = false
     
     var body: some View {
         ARView()
             .overlay(Button(action: {
-                presentationMode.wrappedValue.dismiss()
+                showingPropPicker = true
             }, label: {
-                Image(systemName: "xmark.circle.fill")
-            }).padding(), alignment: .topLeading)
+                Image(systemName: "plus.circle.fill")
+                    .imageScale(.large)
+                    .font(.title)
+                    .foregroundColor(.white)
+            }).padding(), alignment: .bottom)
+            .sheet(isPresented: $showingPropPicker) {
+                ARPropsView()
+            }
+            .tabItem { Label("AR Props", systemImage: "arkit") }
     }
 }
 
