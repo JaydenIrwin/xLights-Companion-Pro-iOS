@@ -2,7 +2,7 @@
 //  IntegerInputRow.swift
 //  xLights Companion Pro
 //
-//  Created by Jayden Irwin on 2021-02-24.
+//  Created by Nicholas Long on 2021-02-24.
 //
 
 import SwiftUI

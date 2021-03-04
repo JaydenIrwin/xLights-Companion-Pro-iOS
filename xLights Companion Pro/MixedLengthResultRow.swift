@@ -51,6 +51,6 @@ struct MixedLengthResultRow: View {
 
 struct MixedLengthResultRow_Previews: PreviewProvider {
     static var previews: some View {
-        MixedLengthResultRow(title: "Hello", length: .constant(5), unitSystem: .constant(.metric))
+        MixedLengthResultRow(title: "Hello", length: .constant(5.172), unitSystem: .constant(.metric))
     }
 }

@@ -2,7 +2,7 @@
 //  TreeLightsCalculator.swift
 //  xLights Companion Pro
 //
-//  Created by Jayden Irwin on 2021-02-03.
+//  Created by Nicholas Long on 2021-02-03.
 //
 
 import SwiftUI
