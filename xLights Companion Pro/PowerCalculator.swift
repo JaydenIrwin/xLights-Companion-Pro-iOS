@@ -148,7 +148,7 @@ struct ACDCCalculator: View {
         }
         .listStyle(InsetGroupedListStyle())
         .frame(maxWidth: 512)
-        .navigationTitle("AC/DC Calculator")
+        .navigationTitle("Power Calculator")
     }
 }
 
