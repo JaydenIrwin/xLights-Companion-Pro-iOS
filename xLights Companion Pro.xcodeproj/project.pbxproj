@@ -14,6 +14,8 @@
 		1B7F2CE325CA6A640005813E /* ConsumptionCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F2CE225CA6A640005813E /* ConsumptionCalculator.swift */; };
 		1B7F2CE625CA6A770005813E /* TreeLightsCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F2CE525CA6A770005813E /* TreeLightsCalculator.swift */; };
 		1B7F2CE925CA6A8F0005813E /* OutletOrganizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F2CE825CA6A8F0005813E /* OutletOrganizer.swift */; };
+		1B89581425FC16410090FDED /* RelatedWebsite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B89581325FC16410090FDED /* RelatedWebsite.swift */; };
+		1B89581725FC16CE0090FDED /* Prop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B89581625FC16CE0090FDED /* Prop.swift */; };
 		1BC2702825C668560034761E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC2702725C668560034761E /* HomeView.swift */; };
 		1BC2702B25C668650034761E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC2702A25C668650034761E /* SearchView.swift */; };
 		1BC2702E25C6687C0034761E /* ARPropsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC2702D25C6687C0034761E /* ARPropsView.swift */; };
@@ -36,6 +38,8 @@
 		1B7F2CE225CA6A640005813E /* ConsumptionCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumptionCalculator.swift; sourceTree = "<group>"; };
 		1B7F2CE525CA6A770005813E /* TreeLightsCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeLightsCalculator.swift; sourceTree = "<group>"; };
 		1B7F2CE825CA6A8F0005813E /* OutletOrganizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletOrganizer.swift; sourceTree = "<group>"; };
+		1B89581325FC16410090FDED /* RelatedWebsite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedWebsite.swift; sourceTree = "<group>"; };
+		1B89581625FC16CE0090FDED /* Prop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prop.swift; sourceTree = "<group>"; };
 		1BC2702725C668560034761E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1BC2702A25C668650034761E /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		1BC2702D25C6687C0034761E /* ARPropsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARPropsView.swift; sourceTree = "<group>"; };
@@ -80,9 +84,9 @@
 			children = (
 				1B5CB9AA25B35A810009CC59 /* xLights_Companion_ProApp.swift */,
 				1BC2702725C668560034761E /* HomeView.swift */,
-				1BC2702D25C6687C0034761E /* ARPropsView.swift */,
 				1BF80FAB25E5EA9D00EB41CD /* ARPropView.swift */,
 				1BF80FA825E5E7C200EB41CD /* ARView.swift */,
+				1BC2702D25C6687C0034761E /* ARPropsView.swift */,
 				1BC2703025C668910034761E /* ToolsView.swift */,
 				1B62573625CE0B09003528FD /* PowerCalculator.swift */,
 				1B7F2CE525CA6A770005813E /* TreeLightsCalculator.swift */,
@@ -93,6 +97,7 @@
 				E1F3355725EEB7B500B64478 /* MixedLengthResultRow.swift */,
 				1B7F2CE825CA6A8F0005813E /* OutletOrganizer.swift */,
 				1BC2702A25C668650034761E /* SearchView.swift */,
+				1B89581925FC16FC0090FDED /* Models */,
 				1B5CB9AE25B35A870009CC59 /* Assets.xcassets */,
 				1B5CB9B325B35A870009CC59 /* Info.plist */,
 				1B5CB9B025B35A870009CC59 /* Preview Content */,
@@ -106,6 +111,15 @@
 				1B5CB9B125B35A870009CC59 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1B89581925FC16FC0090FDED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1B89581325FC16410090FDED /* RelatedWebsite.swift */,
+				1B89581625FC16CE0090FDED /* Prop.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,8 +194,10 @@
 				1B5CB9AB25B35A810009CC59 /* xLights_Companion_ProApp.swift in Sources */,
 				1B7F2CE325CA6A640005813E /* ConsumptionCalculator.swift in Sources */,
 				1BF80FAF25E75BF200EB41CD /* DoubleInputRow.swift in Sources */,
+				1B89581425FC16410090FDED /* RelatedWebsite.swift in Sources */,
 				1BC2702B25C668650034761E /* SearchView.swift in Sources */,
 				1BF80FB225E75C1E00EB41CD /* IntegerInputRow.swift in Sources */,
+				1B89581725FC16CE0090FDED /* Prop.swift in Sources */,
 				E1F3355E25F148E600B64478 /* ResultRow.swift in Sources */,
 				E1F3355825EEB7B500B64478 /* MixedLengthResultRow.swift in Sources */,
 				1B62573725CE0B09003528FD /* PowerCalculator.swift in Sources */,
@@ -321,7 +337,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"xLights Companion Pro/Preview Content\"";
-				DEVELOPMENT_TEAM = 67HDD4RTGM;
+				DEVELOPMENT_TEAM = VA3SY54YU8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "xLights Companion Pro/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -343,7 +359,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"xLights Companion Pro/Preview Content\"";
-				DEVELOPMENT_TEAM = 67HDD4RTGM;
+				DEVELOPMENT_TEAM = VA3SY54YU8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "xLights Companion Pro/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

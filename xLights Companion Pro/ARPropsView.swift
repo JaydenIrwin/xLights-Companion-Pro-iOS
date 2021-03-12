@@ -17,12 +17,12 @@ struct ARPropsView: View {
         NavigationView {
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 150, maximum: 250))]) {
-                    ForEach(0..<10) { (index) in
-                        Image(systemName: "arkit")
+                    ForEach(Prop.allProps) { prop in
+                        Image(prop.iconName)
                             .resizable()
-                            .padding()
                             .aspectRatio(1, contentMode: ContentMode.fit)
                             .background(Color(UIColor.secondarySystemGroupedBackground))
+                            .overlay(Image(systemName: "arkit").imageScale(.large).foregroundColor(.white).padding(), alignment: .bottomTrailing)
                             .cornerRadius(16)
                             .onTapGesture {
                                 selectedProp = true
