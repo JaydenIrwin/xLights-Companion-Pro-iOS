@@ -8,32 +8,65 @@
 import SwiftUI
 
 struct OutletOrganizer: View {
+    
+    @State var ports = Array(repeating: Port(id: 0, elements: [PortItem(name: "hi", pixels: 100, controller: "ME")]), count: 5)
+    @State var showingPortItem: PortItem?
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                ForEach(0..<10) { (index) in
+                ForEach(ports) { (port) in
                     HStack {
-                        ForEach(0..<Int.random(in: 1...3)) { index2 in
+                        VStack(alignment: .leading) {
+                            Text("Port \(port.id)")
+                            Text("Item details")
+                                .foregroundColor(Color(UIColor.secondaryLabel))
+                        }
+                        .padding()
+                        .background(Color(UIColor.secondarySystemGroupedBackground))
+                        .cornerRadius(16)
+                        ForEach(port.elements) { element in
                             VStack(alignment: .leading) {
-                                Text(index2 == 0 ? "Outlet \(index+1)" : "Item \(index2)")
-                                Text("Item details")
+                                Text("Item \(element.name)")
+                                Text("\(element.pixels) pixels")
                                     .foregroundColor(Color(UIColor.secondaryLabel))
                             }
                             .padding()
                             .background(Color(UIColor.secondarySystemGroupedBackground))
                             .cornerRadius(16)
                         }
+                        Spacer()
                     }
                 }
             }
             .padding()
         }
+        .frame(idealWidth: .infinity, maxWidth: .infinity)
+        .background(Color(UIColor.systemGroupedBackground).ignoresSafeArea())
         .navigationTitle("Outlet Organizer")
+        .toolbar(content: {
+            Button(action: {
+                let newItem = PortItem(name: "", pixels: 0, controller: nil)
+                ports[ports.endIndex - 1].elements.append(newItem)
+                showingPortItem = newItem
+            }, label: {
+                Image(systemName: "plus.circle.fill")
+            })
+        })
+        .sheet(item: $showingPortItem) { (portItem) in
+            PortItemView(portItem: Binding(get: {
+                portItem
+            }, set: { (newValue) in
+                showingPortItem = newValue
+            }))
+        }
     }
 }
 
 struct OutletOrganizer_Previews: PreviewProvider {
     static var previews: some View {
-        OutletOrganizer()
+        NavigationView {
+            OutletOrganizer()
+        }
     }
 }
