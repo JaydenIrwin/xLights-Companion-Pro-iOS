@@ -12,7 +12,7 @@ struct SearchView: View {
     @State var searchString = ""
     
     var results: [RelatedWebsite] {
-        (RelatedWebsite.websites + RelatedWebsite.facebookGroups).filter({ $0.name.lowercased().contains(searchString.lowercased()) })
+        RelatedWebsite.websites.filter({ $0.name.lowercased().contains(searchString.lowercased()) })
     }
     
     var body: some View {
