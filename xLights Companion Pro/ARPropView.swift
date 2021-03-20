@@ -10,9 +10,10 @@ import SwiftUI
 struct ARPropView: View {
     
     @State var showingPropPicker = false
+    @State var selectedProp: Prop?
     
     var body: some View {
-        ARView()
+        ARView(selectedProp: $selectedProp)
             .overlay(Button(action: {
                 showingPropPicker = true
             }, label: {
@@ -22,7 +23,7 @@ struct ARPropView: View {
                     .foregroundColor(.white)
             }).padding(), alignment: .bottom)
             .sheet(isPresented: $showingPropPicker) {
-                ARPropsView()
+                ARPropsView(selectedProp: $selectedProp)
             }
             .tabItem { Label("AR Props", systemImage: "arkit") }
     }

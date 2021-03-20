@@ -11,7 +11,7 @@ struct ARPropsView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    @State var selectedProp = false
+    @Binding var selectedProp: Prop?
     
     var body: some View {
         NavigationView {
@@ -25,7 +25,8 @@ struct ARPropsView: View {
                             .overlay(Image(systemName: "arkit").imageScale(.large).foregroundColor(.white).padding(), alignment: .bottomTrailing)
                             .cornerRadius(16)
                             .onTapGesture {
-                                selectedProp = true
+                                selectedProp = prop
+                                presentationMode.wrappedValue.dismiss()
                             }
                     }
                 }
@@ -45,6 +46,6 @@ struct ARPropsView: View {
 
 struct ARMainView_Previews: PreviewProvider {
     static var previews: some View {
-        ARPropsView()
+        ARPropsView(selectedProp: .constant(Prop(iconName: "", fileName: "")))
     }
 }
