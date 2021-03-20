@@ -13,7 +13,9 @@ struct Port : Identifiable {
     var pixels : Int {
         var totalPixels = 0;
         for element in elements{
-            totalPixels += element.pixels
+            if let pixels = element.pixels {
+                totalPixels += pixels
+            }
         }
         return totalPixels
     }

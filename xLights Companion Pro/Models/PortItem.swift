@@ -11,7 +11,7 @@ struct PortItem : Identifiable {
     var id: UUID {
         UUID()
     }
-    let name : String
-    let pixels : Int
-    let controller : String?
+    var name : String?
+    var pixels : Int?
+    var controller : String?
 }

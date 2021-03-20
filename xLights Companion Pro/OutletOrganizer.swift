@@ -9,8 +9,15 @@ import SwiftUI
 
 struct OutletOrganizer: View {
     
-    @State var ports = Array(repeating: Port(id: 0, elements: [PortItem(name: "hi", pixels: 100, controller: "ME")]), count: 5)
-    @State var showingPortItem: PortItem?
+    @State var ports = [
+        Port(id: 1, elements: [PortItem(name: "hi", pixels: 100, controller: "ME")]),
+        Port(id: 2, elements: [PortItem(name: "hi", pixels: 100, controller: "ME")]),
+        Port(id: 3, elements: [PortItem(name: "hi", pixels: 100, controller: "ME")]),
+        Port(id: 4, elements: [PortItem(name: "hi", pixels: 100, controller: "ME")]),
+        Port(id: 5, elements: [PortItem(name: "hi", pixels: 100, controller: "ME")])
+    ]
+    @State var showingPortItem = false
+    @State var selectedIndex: (Int, Int)?
     
     var body: some View {
         ScrollView {
@@ -25,15 +32,19 @@ struct OutletOrganizer: View {
                         .padding()
                         .background(Color(UIColor.secondarySystemGroupedBackground))
                         .cornerRadius(16)
-                        ForEach(port.elements) { element in
+                        ForEach(Array(port.elements.enumerated()), id: \.offset) { index, element in
                             VStack(alignment: .leading) {
-                                Text("Item \(element.name)")
-                                Text("\(element.pixels) pixels")
+                                Text("Item \(element.name ?? "Item")")
+                                Text("\(element.pixels ?? 0) pixels")
                                     .foregroundColor(Color(UIColor.secondaryLabel))
                             }
                             .padding()
                             .background(Color(UIColor.secondarySystemGroupedBackground))
                             .cornerRadius(16)
+                            .onTapGesture {
+                                selectedIndex = (port.id-1, index)
+                                showingPortItem = true
+                            }
                         }
                         Spacer()
                     }
@@ -46,19 +57,18 @@ struct OutletOrganizer: View {
         .navigationTitle("Outlet Organizer")
         .toolbar(content: {
             Button(action: {
-                let newItem = PortItem(name: "", pixels: 0, controller: nil)
-                ports[ports.endIndex - 1].elements.append(newItem)
-                showingPortItem = newItem
+                let newItem = PortItem(name: nil, pixels: nil, controller: nil)
+                let portIndex = ports.endIndex - 1
+                let elementIndex = ports[portIndex].elements.endIndex
+                ports[portIndex].elements.append(newItem)
+                selectedIndex = (portIndex, elementIndex)
+                showingPortItem = true
             }, label: {
                 Image(systemName: "plus.circle.fill")
             })
         })
-        .sheet(item: $showingPortItem) { (portItem) in
-            PortItemView(portItem: Binding(get: {
-                portItem
-            }, set: { (newValue) in
-                showingPortItem = newValue
-            }))
+        .sheet(isPresented: $showingPortItem) {
+            PortItemView(portItem: $ports[selectedIndex!.0].elements[selectedIndex!.1])
         }
     }
 }
