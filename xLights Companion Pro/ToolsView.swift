@@ -12,13 +12,13 @@ struct ToolsView: View {
         NavigationView {
             List {
                 Section {
-                    NavigationLink(destination: ConsumptionCalculator()) {
+                    NavigationLink(destination: TreeLightsCalculator()) {
                         HStack {
                             VStack(alignment: .leading, spacing: 4) {
-                                Label("Consumption Calculator", systemImage: "dollarsign.circle.fill")
+                                Label("Tree Lights Calculator", systemImage: "leaf.fill")
                                     .font(.title2)
-                                    .foregroundColor(Color(UIColor.systemRed))
-                                Text("Determine the cost to run your display.")
+                                    .foregroundColor(Color(UIColor.systemGreen))
+                                Text("How many lights will my tree need?")
                                     .foregroundColor(Color(UIColor.secondaryLabel))
                             }
                             Spacer()
@@ -30,10 +30,10 @@ struct ToolsView: View {
                     NavigationLink(destination: ACDCCalculator()) {
                         HStack {
                             VStack(alignment: .leading, spacing: 4) {
-                                Label("AC/DC Calculator", systemImage: "bolt.fill")
+                                Label("Power Calculator", systemImage: "bolt.fill")
                                     .font(.title2)
                                     .foregroundColor(Color(UIColor.systemYellow))
-                                Text("Determine which props will work on which curcuits.")
+                                Text("Determine the power consumption of your setup.")
                                     .foregroundColor(Color(UIColor.secondaryLabel))
                             }
                             Spacer()
@@ -56,21 +56,23 @@ struct ToolsView: View {
                         .padding(.vertical, 4)
                     }
                 }
-                Section {
-                    NavigationLink(destination: TreeLightsCalculator()) {
-                        HStack {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Label("Tree Lights Calculator", systemImage: "leaf.fill")
-                                    .font(.title2)
-                                    .foregroundColor(Color(UIColor.systemGreen))
-                                Text("How many lights will my tree need?")
-                                    .foregroundColor(Color(UIColor.secondaryLabel))
-                            }
-                            Spacer()
-                        }
-                        .padding(.vertical, 4)
-                    }
-                }
+                
+//                Section {
+//                    NavigationLink(destination: ConsumptionCalculator()) {
+//                        HStack {
+//                            VStack(alignment: .leading, spacing: 4) {
+//                                Label("Consumption Calculator", systemImage: "dollarsign.circle.fill")
+//                                    .font(.title2)
+//                                    .foregroundColor(Color(UIColor.systemRed))
+//                                Text("Determine the cost to run your display.")
+//                                    .foregroundColor(Color(UIColor.secondaryLabel))
+//                            }
+//                            Spacer()
+//                        }
+//                        .padding(.vertical, 4)
+//                    }
+//                }
+                
             }
             .listStyle(InsetGroupedListStyle())
             .navigationTitle("Tools")
