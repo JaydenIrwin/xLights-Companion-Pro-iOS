@@ -13,7 +13,7 @@ struct ARPropView: View {
     @State var selectedProp: Prop?
     
     var body: some View {
-        ARView(selectedProp: $selectedProp)
+        MyARView(selectedProp: $selectedProp)
             .overlay(Button(action: {
                 showingPropPicker = true
             }, label: {

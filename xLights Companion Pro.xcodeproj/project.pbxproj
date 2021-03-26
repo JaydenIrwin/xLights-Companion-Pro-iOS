@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B0E3CF726058CBC00FBAAC0 /* ARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E3CF626058CBC00FBAAC0 /* ARView.swift */; };
+		1B0E3CF726058CBC00FBAAC0 /* MyARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E3CF626058CBC00FBAAC0 /* MyARView.swift */; };
 		1B5CB9AB25B35A810009CC59 /* xLights_Companion_ProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5CB9AA25B35A810009CC59 /* xLights_Companion_ProApp.swift */; };
 		1B5CB9AF25B35A870009CC59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B5CB9AE25B35A870009CC59 /* Assets.xcassets */; };
 		1B5CB9B225B35A870009CC59 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B5CB9B125B35A870009CC59 /* Preview Assets.xcassets */; };
@@ -32,7 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1B0E3CF626058CBC00FBAAC0 /* ARView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARView.swift; sourceTree = "<group>"; };
+		1B0E3CF626058CBC00FBAAC0 /* MyARView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyARView.swift; sourceTree = "<group>"; };
 		1B5CB9A725B35A810009CC59 /* xLights Companion Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "xLights Companion Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B5CB9AA25B35A810009CC59 /* xLights_Companion_ProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xLights_Companion_ProApp.swift; sourceTree = "<group>"; };
 		1B5CB9AE25B35A870009CC59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 				1B5CB9AA25B35A810009CC59 /* xLights_Companion_ProApp.swift */,
 				1BC2702725C668560034761E /* HomeView.swift */,
 				1BF80FAB25E5EA9D00EB41CD /* ARPropView.swift */,
-				1B0E3CF626058CBC00FBAAC0 /* ARView.swift */,
+				1B0E3CF626058CBC00FBAAC0 /* MyARView.swift */,
 				1BC2702D25C6687C0034761E /* ARPropsView.swift */,
 				1BC2703025C668910034761E /* ToolsView.swift */,
 				1B62573625CE0B09003528FD /* PowerCalculator.swift */,
@@ -205,7 +205,7 @@
 				1BF80FAF25E75BF200EB41CD /* DoubleInputRow.swift in Sources */,
 				1B89581425FC16410090FDED /* RelatedWebsite.swift in Sources */,
 				1BC2702B25C668650034761E /* SearchView.swift in Sources */,
-				1B0E3CF726058CBC00FBAAC0 /* ARView.swift in Sources */,
+				1B0E3CF726058CBC00FBAAC0 /* MyARView.swift in Sources */,
 				1BF80FB225E75C1E00EB41CD /* IntegerInputRow.swift in Sources */,
 				E1534EA726013A00004E63C6 /* Port.swift in Sources */,
 				1B89581725FC16CE0090FDED /* Prop.swift in Sources */,

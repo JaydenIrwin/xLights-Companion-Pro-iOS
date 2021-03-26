@@ -9,17 +9,17 @@ import SwiftUI
 import ARKit
 import RealityKit
 
-struct ARView: UIViewRepresentable {
+struct MyARView: UIViewRepresentable {
     
     @Binding var selectedProp: Prop?
 
-    func makeUIView(context: Context) -> RealityKit.ARView {
-        let uiView = RealityKit.ARView(frame: .zero, cameraMode: .ar, automaticallyConfigureSession: true)
+    func makeUIView(context: Context) -> ARView {
+        let uiView = ARView(frame: .zero, cameraMode: ARView.CameraMode.ar, automaticallyConfigureSession: true)
         uiView.enableObjectRemoval()
         return uiView
     }
     
-    func updateUIView(_ uiView: RealityKit.ARView, context: Context) {
+    func updateUIView(_ uiView: ARView, context: Context) {
         let mesh = MeshResource.generateBox(size: 0.5)
         let material = SimpleMaterial(color: .blue, isMetallic: false)
         let model = ModelEntity(mesh: mesh, materials: [material])
@@ -36,7 +36,7 @@ struct ARView: UIViewRepresentable {
     
 }
 
-extension RealityKit.ARView {
+extension ARView {
     func enableObjectRemoval() {
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
         addGestureRecognizer(longPress)
@@ -52,8 +52,8 @@ extension RealityKit.ARView {
     }
 }
 
-struct ARView_Previews: PreviewProvider {
+struct MyARView_Previews: PreviewProvider {
     static var previews: some View {
-        ARView(selectedProp: .constant(Prop(iconName: "", fileName: "")))
+        MyARView(selectedProp: .constant(Prop(iconName: "", fileName: "")))
     }
 }
