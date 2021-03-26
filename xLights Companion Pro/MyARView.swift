@@ -14,12 +14,17 @@ struct MyARView: UIViewRepresentable {
     @Binding var selectedProp: Prop?
 
     func makeUIView(context: Context) -> ARView {
+        #if targetEnvironment(simulator)
+        let uiView = ARView()
+        #else
         let uiView = ARView(frame: .zero, cameraMode: ARView.CameraMode.ar, automaticallyConfigureSession: true)
         uiView.enableObjectRemoval()
+        #endif
         return uiView
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {
+        #if !targetEnvironment(simulator)
         let mesh = MeshResource.generateBox(size: 0.5)
         let material = SimpleMaterial(color: .blue, isMetallic: false)
         let model = ModelEntity(mesh: mesh, materials: [material])
@@ -30,6 +35,7 @@ struct MyARView: UIViewRepresentable {
         
         model.generateCollisionShapes(recursive: true)
         uiView.installGestures([.translation, .rotation, .scale], for: model)
+        #endif
         
         selectedProp = nil
     }
@@ -49,11 +55,5 @@ extension ARView {
                 anchor.removeFromParent()
             }
         }
-    }
-}
-
-struct MyARView_Previews: PreviewProvider {
-    static var previews: some View {
-        MyARView(selectedProp: .constant(Prop(iconName: "", fileName: "")))
     }
 }
