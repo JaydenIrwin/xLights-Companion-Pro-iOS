@@ -18,7 +18,7 @@ struct SearchView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 16) {
-                TextField("Search", text: $searchString)
+                TextField("Search songs", text: $searchString)
                     .padding(7)
                     .padding(.horizontal, 25)
                     .background(Color(.systemGray6))
