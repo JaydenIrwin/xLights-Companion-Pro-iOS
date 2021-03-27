@@ -9,11 +9,11 @@ import SwiftUI
 
 struct OutletOrganizer: View {
     
-    @State var ports: [Port] = [
+    @AppStorage("outletOrgPorts") var ports: [Port] = [
         Port(id: 1, objects: [PortObject(name: "Placeholder", pixels: 100)]),
-//        Port(id: 2, objects: []),
-//        Port(id: 3, objects: []),
-//        Port(id: 4, objects: [])
+        Port(id: 2, objects: []),
+        Port(id: 3, objects: []),
+        Port(id: 4, objects: [])
     ]
     @State var showingPortItem = false
     @State var selectedIndex: (Int, Int)?
@@ -35,18 +35,18 @@ struct OutletOrganizer: View {
                             Button {
                                 ports.remove(at: port.id-1)
                                 // Recalculate port ids after removal
-//                                for (pIndex) in ports.indices {
-//                                    ports[pIndex].id = pIndex + 1
-//                                }
+                                for (pIndex) in ports.indices {
+                                    ports[pIndex].id = pIndex + 1
+                                }
                             } label : {
                                 Label("Remove", systemImage: "trash")
                             }
                         }
                         
-                        ForEach(Array(port.elements.enumerated()), id: \.offset) { index, element in
+                        ForEach(Array(port.objects.enumerated()), id: \.offset) { index, object in
                             VStack(alignment: .leading) {
-                                Text("\(element.name ?? "Item")")
-                                Text("\(element.pixels ?? 0) pixels")
+                                Text("\(object.name ?? "Item")")
+                                Text("\(object.pixels ?? 0) pixels")
                                     .foregroundColor(Color(UIColor.secondaryLabel))
                             }
                             .padding()
@@ -60,8 +60,8 @@ struct OutletOrganizer: View {
                                 Menu {
                                     ForEach(ports) { newPort in
                                         Button(action: {
-                                            ports[port.id-1].elements.remove(at: index)
-                                            ports[newPort.id-1].elements.append(element)
+                                            ports[port.id-1].objects.remove(at: index)
+                                            ports[newPort.id-1].objects.append(object)
                                         }, label: {
                                             Label("Port \(newPort.id)", systemImage: "power")
                                         })
@@ -70,7 +70,7 @@ struct OutletOrganizer: View {
                                     Label("Move to...", systemImage: "arrow.turn.down.right")
                                 }
                                 Button {
-                                    ports[port.id-1].elements.remove(at: index)
+                                    ports[port.id-1].objects.remove(at: index)
                                 } label : {
                                     Label("Remove", systemImage: "trash")
                                 }
@@ -89,7 +89,7 @@ struct OutletOrganizer: View {
             ToolbarItem {
                 Menu {
                     Button(action: {
-                        ports.append(Port(id: ports.endIndex+1, elements: []))
+                        ports.append(Port(id: ports.endIndex+1, objects: []))
                     }, label: {
                         Label("Add Port", systemImage: "power")
                     })
@@ -97,8 +97,8 @@ struct OutletOrganizer: View {
                         // Show New Object
                         let newItem = PortObject(name: nil, pixels: nil)
                         let portIndex = ports.endIndex - 1
-                        let elementIndex = ports[portIndex].elements.endIndex
-                        ports[portIndex].elements.append(newItem)
+                        let elementIndex = ports[portIndex].objects.endIndex
+                        ports[portIndex].objects.append(newItem)
                         selectedIndex = (portIndex, elementIndex)
                         showingPortItem = true
                     }, label: {
@@ -111,7 +111,7 @@ struct OutletOrganizer: View {
             }
         })
         .sheet(isPresented: $showingPortItem) {
-            ItemView(portObject: $ports[selectedIndex!.0].elements[selectedIndex!.1])
+            ItemView(portObject: $ports[selectedIndex!.0].objects[selectedIndex!.1])
         }
     }
 }
