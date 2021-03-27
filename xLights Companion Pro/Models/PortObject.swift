@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PortObject : Identifiable {
+struct PortObject : Identifiable{//, Codable {
     var id: UUID {
         UUID()
     }

@@ -9,8 +9,11 @@ import SwiftUI
 
 struct OutletOrganizer: View {
     
-    @State var ports = [
-        Port(id: 1, elements: [PortObject(name: "Placeholder", pixels: 100)])
+    @State var ports: [Port] = [
+        Port(id: 1, objects: [PortObject(name: "Placeholder", pixels: 100)]),
+//        Port(id: 2, objects: []),
+//        Port(id: 3, objects: []),
+//        Port(id: 4, objects: [])
     ]
     @State var showingPortItem = false
     @State var selectedIndex: (Int, Int)?
@@ -31,6 +34,10 @@ struct OutletOrganizer: View {
                         .contextMenu {
                             Button {
                                 ports.remove(at: port.id-1)
+                                // Recalculate port ids after removal
+//                                for (pIndex) in ports.indices {
+//                                    ports[pIndex].id = pIndex + 1
+//                                }
                             } label : {
                                 Label("Remove", systemImage: "trash")
                             }
