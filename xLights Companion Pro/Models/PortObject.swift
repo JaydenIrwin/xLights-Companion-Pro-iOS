@@ -7,11 +7,10 @@
 
 import Foundation
 
-struct PortItem : Identifiable {
+struct PortObject : Identifiable {
     var id: UUID {
         UUID()
     }
     var name : String?
     var pixels : Int?
-    var controller : String?
 }

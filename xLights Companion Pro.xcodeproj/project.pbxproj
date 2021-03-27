@@ -24,9 +24,9 @@
 		1BF80FAC25E5EA9D00EB41CD /* ARPropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF80FAB25E5EA9D00EB41CD /* ARPropView.swift */; };
 		1BF80FAF25E75BF200EB41CD /* DoubleInputRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF80FAE25E75BF200EB41CD /* DoubleInputRow.swift */; };
 		1BF80FB225E75C1E00EB41CD /* IntegerInputRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF80FB125E75C1E00EB41CD /* IntegerInputRow.swift */; };
-		E10B3D29260142C9000CD525 /* PortItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B3D28260142C9000CD525 /* PortItemView.swift */; };
+		E10B3D29260142C9000CD525 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B3D28260142C9000CD525 /* ItemView.swift */; };
 		E1534EA726013A00004E63C6 /* Port.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1534EA626013A00004E63C6 /* Port.swift */; };
-		E1534EAA26013B2C004E63C6 /* PortItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1534EA926013B2C004E63C6 /* PortItem.swift */; };
+		E1534EAA26013B2C004E63C6 /* PortObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1534EA926013B2C004E63C6 /* PortObject.swift */; };
 		E1F3355825EEB7B500B64478 /* MixedLengthResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F3355725EEB7B500B64478 /* MixedLengthResultRow.swift */; };
 		E1F3355E25F148E600B64478 /* ResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F3355D25F148E600B64478 /* ResultRow.swift */; };
 /* End PBXBuildFile section */
@@ -51,9 +51,9 @@
 		1BF80FAB25E5EA9D00EB41CD /* ARPropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARPropView.swift; sourceTree = "<group>"; };
 		1BF80FAE25E75BF200EB41CD /* DoubleInputRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleInputRow.swift; sourceTree = "<group>"; };
 		1BF80FB125E75C1E00EB41CD /* IntegerInputRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerInputRow.swift; sourceTree = "<group>"; };
-		E10B3D28260142C9000CD525 /* PortItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortItemView.swift; sourceTree = "<group>"; };
+		E10B3D28260142C9000CD525 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		E1534EA626013A00004E63C6 /* Port.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Port.swift; sourceTree = "<group>"; };
-		E1534EA926013B2C004E63C6 /* PortItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortItem.swift; sourceTree = "<group>"; };
+		E1534EA926013B2C004E63C6 /* PortObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortObject.swift; sourceTree = "<group>"; };
 		E1F3355725EEB7B500B64478 /* MixedLengthResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixedLengthResultRow.swift; sourceTree = "<group>"; };
 		E1F3355D25F148E600B64478 /* ResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,7 +102,7 @@
 				E1F3355D25F148E600B64478 /* ResultRow.swift */,
 				E1F3355725EEB7B500B64478 /* MixedLengthResultRow.swift */,
 				1B7F2CE825CA6A8F0005813E /* OutletOrganizer.swift */,
-				E10B3D28260142C9000CD525 /* PortItemView.swift */,
+				E10B3D28260142C9000CD525 /* ItemView.swift */,
 				1BC2702A25C668650034761E /* SearchView.swift */,
 				1B89581925FC16FC0090FDED /* Models */,
 				1B5CB9AE25B35A870009CC59 /* Assets.xcassets */,
@@ -126,7 +126,7 @@
 				1B89581325FC16410090FDED /* RelatedWebsite.swift */,
 				1B89581625FC16CE0090FDED /* Prop.swift */,
 				E1534EA626013A00004E63C6 /* Port.swift */,
-				E1534EA926013B2C004E63C6 /* PortItem.swift */,
+				E1534EA926013B2C004E63C6 /* PortObject.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -210,8 +210,8 @@
 				E1534EA726013A00004E63C6 /* Port.swift in Sources */,
 				1B89581725FC16CE0090FDED /* Prop.swift in Sources */,
 				E1F3355E25F148E600B64478 /* ResultRow.swift in Sources */,
-				E1534EAA26013B2C004E63C6 /* PortItem.swift in Sources */,
-				E10B3D29260142C9000CD525 /* PortItemView.swift in Sources */,
+				E1534EAA26013B2C004E63C6 /* PortObject.swift in Sources */,
+				E10B3D29260142C9000CD525 /* ItemView.swift in Sources */,
 				E1F3355825EEB7B500B64478 /* MixedLengthResultRow.swift in Sources */,
 				1B62573725CE0B09003528FD /* PowerCalculator.swift in Sources */,
 				1BC2702E25C6687C0034761E /* ARPropsView.swift in Sources */,

@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct PortItemView: View {
+struct ItemView: View {
     
-    @Binding var portItem: PortItem
+    @Binding var portObject: PortObject
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -21,15 +21,17 @@ struct PortItemView: View {
                         Text("Name")
                         Spacer()
                             .frame(width: 20)
-                        TextField("", text: Binding(get: {portItem.name ?? ""}, set: { newValue in
-                            portItem.name = newValue
+                        TextField("", text: Binding(get: {portObject.name ?? ""}, set: { newValue in
+                            portObject.name = newValue
                         }))
                     }
                     HStack {
                         Text("Pixels")
                         Spacer()
                             .frame(width: 20)
-                        TextField("", value: $portItem.pixels, formatter: NumberFormatter())
+                        TextField("", text: Binding(get: {"\(portObject.pixels ?? 0)"}, set: { newValue in
+                            portObject.pixels = Int(newValue)
+                        }))
                             .keyboardType(.numberPad)
                     }
                 }
@@ -49,8 +51,8 @@ struct PortItemView: View {
     }
 }
 
-struct PortItemView_Previews: PreviewProvider {
+struct ItemView_Previews: PreviewProvider {
     static var previews: some View {
-        PortItemView(portItem: .constant(PortItem(name: "", pixels: 0, controller: nil)))
+        ItemView(portObject: .constant(PortObject(name: "", pixels: nil)))
     }
 }

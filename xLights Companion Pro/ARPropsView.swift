@@ -43,9 +43,3 @@ struct ARPropsView: View {
         }
     }
 }
-
-struct ARMainView_Previews: PreviewProvider {
-    static var previews: some View {
-        ARPropsView(selectedProp: .constant(Prop(iconName: "", fileName: "")))
-    }
-}

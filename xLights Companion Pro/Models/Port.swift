@@ -5,11 +5,11 @@
 //  Created by Nicholas Long on 2021-03-16.
 //
 
-import SwiftUI
+import Foundation
 
-struct Port : Identifiable {
+class Port : Identifiable {
     let id : Int
-    var elements : [PortItem]
+    var elements : [PortObject]
     var pixels : Int {
         var totalPixels = 0;
         for element in elements{
@@ -20,4 +20,8 @@ struct Port : Identifiable {
         return totalPixels
     }
     
+    init(id: Int, elements: [PortObject]) {
+        self.id = id
+        self.elements = elements
+    }
 }

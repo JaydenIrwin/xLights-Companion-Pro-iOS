@@ -10,11 +10,7 @@ import SwiftUI
 struct OutletOrganizer: View {
     
     @State var ports = [
-        Port(id: 1, elements: [PortItem(name: "hi", pixels: 100, controller: "ME")]),
-        Port(id: 2, elements: [PortItem(name: "hi", pixels: 100, controller: "ME")]),
-        Port(id: 3, elements: [PortItem(name: "hi", pixels: 100, controller: "ME")]),
-        Port(id: 4, elements: [PortItem(name: "hi", pixels: 100, controller: "ME")]),
-        Port(id: 5, elements: [PortItem(name: "hi", pixels: 100, controller: "ME")])
+        Port(id: 1, elements: [PortObject(name: "Placeholder", pixels: 100)])
     ]
     @State var showingPortItem = false
     @State var selectedIndex: (Int, Int)?
@@ -26,15 +22,23 @@ struct OutletOrganizer: View {
                     HStack {
                         VStack(alignment: .leading) {
                             Text("Port \(port.id)")
-                            Text("Item details")
+                            Text("\(port.pixels) pixels")
                                 .foregroundColor(Color(UIColor.secondaryLabel))
                         }
                         .padding()
                         .background(Color(UIColor.secondarySystemGroupedBackground))
                         .cornerRadius(16)
+                        .contextMenu {
+                            Button {
+                                ports.remove(at: port.id-1)
+                            } label : {
+                                Label("Remove", systemImage: "trash")
+                            }
+                        }
+                        
                         ForEach(Array(port.elements.enumerated()), id: \.offset) { index, element in
                             VStack(alignment: .leading) {
-                                Text("Item \(element.name ?? "Item")")
+                                Text("\(element.name ?? "Item")")
                                 Text("\(element.pixels ?? 0) pixels")
                                     .foregroundColor(Color(UIColor.secondaryLabel))
                             }
@@ -44,6 +48,25 @@ struct OutletOrganizer: View {
                             .onTapGesture {
                                 selectedIndex = (port.id-1, index)
                                 showingPortItem = true
+                            }
+                            .contextMenu {
+                                Menu {
+                                    ForEach(ports) { newPort in
+                                        Button(action: {
+                                            ports[port.id-1].elements.remove(at: index)
+                                            ports[newPort.id-1].elements.append(element)
+                                        }, label: {
+                                            Label("Port \(newPort.id)", systemImage: "power")
+                                        })
+                                    }
+                                } label: {
+                                    Label("Move to...", systemImage: "arrow.turn.down.right")
+                                }
+                                Button {
+                                    ports[port.id-1].elements.remove(at: index)
+                                } label : {
+                                    Label("Remove", systemImage: "trash")
+                                }
                             }
                         }
                         Spacer()
@@ -56,19 +79,32 @@ struct OutletOrganizer: View {
         .background(Color(UIColor.systemGroupedBackground).ignoresSafeArea())
         .navigationTitle("Outlet Organizer")
         .toolbar(content: {
-            Button(action: {
-                let newItem = PortItem(name: nil, pixels: nil, controller: nil)
-                let portIndex = ports.endIndex - 1
-                let elementIndex = ports[portIndex].elements.endIndex
-                ports[portIndex].elements.append(newItem)
-                selectedIndex = (portIndex, elementIndex)
-                showingPortItem = true
-            }, label: {
-                Image(systemName: "plus.circle.fill")
-            })
+            ToolbarItem {
+                Menu {
+                    Button(action: {
+                        ports.append(Port(id: ports.endIndex+1, elements: []))
+                    }, label: {
+                        Label("Add Port", systemImage: "power")
+                    })
+                    Button(action: {
+                        // Show New Object
+                        let newItem = PortObject(name: nil, pixels: nil)
+                        let portIndex = ports.endIndex - 1
+                        let elementIndex = ports[portIndex].elements.endIndex
+                        ports[portIndex].elements.append(newItem)
+                        selectedIndex = (portIndex, elementIndex)
+                        showingPortItem = true
+                    }, label: {
+                        Label("Add Object", systemImage: "cube")
+                    })
+                } label: {
+                    Image(systemName: "plus.circle.fill")
+                        .imageScale(.large)
+                }
+            }
         })
         .sheet(isPresented: $showingPortItem) {
-            PortItemView(portItem: $ports[selectedIndex!.0].elements[selectedIndex!.1])
+            ItemView(portObject: $ports[selectedIndex!.0].elements[selectedIndex!.1])
         }
     }
 }

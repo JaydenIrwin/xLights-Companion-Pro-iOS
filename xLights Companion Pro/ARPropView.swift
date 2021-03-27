@@ -29,8 +29,4 @@ struct ARPropView: View {
     }
 }
 
-struct ARPropView_Previews: PreviewProvider {
-    static var previews: some View {
-        ARPropView()
-    }
-}
+
