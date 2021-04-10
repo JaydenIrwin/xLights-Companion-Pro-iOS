@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct xLights_Companion_ProApp: App {
+struct XLightsToolsApp: App {
     
     enum Tab {
         case home, arProps, tools, search

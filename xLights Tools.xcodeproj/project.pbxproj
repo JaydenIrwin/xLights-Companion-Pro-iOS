@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B0E3CF726058CBC00FBAAC0 /* MyARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E3CF626058CBC00FBAAC0 /* MyARView.swift */; };
-		1B5CB9AB25B35A810009CC59 /* xLights_Companion_ProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5CB9AA25B35A810009CC59 /* xLights_Companion_ProApp.swift */; };
+		1B5CB9AB25B35A810009CC59 /* XLightsToolsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5CB9AA25B35A810009CC59 /* XLightsToolsApp.swift */; };
 		1B5CB9AF25B35A870009CC59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B5CB9AE25B35A870009CC59 /* Assets.xcassets */; };
 		1B5CB9B225B35A870009CC59 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B5CB9B125B35A870009CC59 /* Preview Assets.xcassets */; };
 		1B62573725CE0B09003528FD /* PowerCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B62573625CE0B09003528FD /* PowerCalculator.swift */; };
@@ -46,8 +46,8 @@
 
 /* Begin PBXFileReference section */
 		1B0E3CF626058CBC00FBAAC0 /* MyARView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyARView.swift; sourceTree = "<group>"; };
-		1B5CB9A725B35A810009CC59 /* xLights Companion Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "xLights Companion Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1B5CB9AA25B35A810009CC59 /* xLights_Companion_ProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xLights_Companion_ProApp.swift; sourceTree = "<group>"; };
+		1B5CB9A725B35A810009CC59 /* xLights Tools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "xLights Tools.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B5CB9AA25B35A810009CC59 /* XLightsToolsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XLightsToolsApp.swift; sourceTree = "<group>"; };
 		1B5CB9AE25B35A870009CC59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B5CB9B125B35A870009CC59 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1B5CB9B325B35A870009CC59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 		1B5CB99E25B35A810009CC59 = {
 			isa = PBXGroup;
 			children = (
-				1B5CB9A925B35A810009CC59 /* xLights Companion Pro */,
+				1B5CB9A925B35A810009CC59 /* xLights Tools */,
 				1B5CB9A825B35A810009CC59 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -106,15 +106,15 @@
 		1B5CB9A825B35A810009CC59 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1B5CB9A725B35A810009CC59 /* xLights Companion Pro.app */,
+				1B5CB9A725B35A810009CC59 /* xLights Tools.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1B5CB9A925B35A810009CC59 /* xLights Companion Pro */ = {
+		1B5CB9A925B35A810009CC59 /* xLights Tools */ = {
 			isa = PBXGroup;
 			children = (
-				1B5CB9AA25B35A810009CC59 /* xLights_Companion_ProApp.swift */,
+				1B5CB9AA25B35A810009CC59 /* XLightsToolsApp.swift */,
 				1BC2702725C668560034761E /* HomeView.swift */,
 				1BF80FAB25E5EA9D00EB41CD /* ARPropView.swift */,
 				1B0E3CF626058CBC00FBAAC0 /* MyARView.swift */,
@@ -136,7 +136,7 @@
 				1B5CB9B325B35A870009CC59 /* Info.plist */,
 				1B5CB9B025B35A870009CC59 /* Preview Content */,
 			);
-			path = "xLights Companion Pro";
+			path = "xLights Tools";
 			sourceTree = "<group>";
 		};
 		1B5CB9B025B35A870009CC59 /* Preview Content */ = {
@@ -181,9 +181,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1B5CB9A625B35A810009CC59 /* xLights Companion Pro */ = {
+		1B5CB9A625B35A810009CC59 /* xLights Tools */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1B5CB9B625B35A870009CC59 /* Build configuration list for PBXNativeTarget "xLights Companion Pro" */;
+			buildConfigurationList = 1B5CB9B625B35A870009CC59 /* Build configuration list for PBXNativeTarget "xLights Tools" */;
 			buildPhases = (
 				1B5CB9A325B35A810009CC59 /* Sources */,
 				1B5CB9A425B35A810009CC59 /* Frameworks */,
@@ -193,9 +193,9 @@
 			);
 			dependencies = (
 			);
-			name = "xLights Companion Pro";
+			name = "xLights Tools";
 			productName = "xLights Companion Pro";
-			productReference = 1B5CB9A725B35A810009CC59 /* xLights Companion Pro.app */;
+			productReference = 1B5CB9A725B35A810009CC59 /* xLights Tools.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -212,7 +212,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1B5CB9A225B35A810009CC59 /* Build configuration list for PBXProject "xLights Companion Pro" */;
+			buildConfigurationList = 1B5CB9A225B35A810009CC59 /* Build configuration list for PBXProject "xLights Tools" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -225,7 +225,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1B5CB9A625B35A810009CC59 /* xLights Companion Pro */,
+				1B5CB9A625B35A810009CC59 /* xLights Tools */,
 			);
 		};
 /* End PBXProject section */
@@ -260,7 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B5CB9AB25B35A810009CC59 /* xLights_Companion_ProApp.swift in Sources */,
+				1B5CB9AB25B35A810009CC59 /* XLightsToolsApp.swift in Sources */,
 				1B7F2CE325CA6A640005813E /* ConsumptionCalculator.swift in Sources */,
 				1BF80FAF25E75BF200EB41CD /* DoubleInputRow.swift in Sources */,
 				1B89581425FC16410090FDED /* RelatedWebsite.swift in Sources */,
@@ -417,7 +417,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jaydenirwin.xLights-Helper";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jaydenirwin.xLights-Tools";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -439,7 +439,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jaydenirwin.xLights-Helper";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jaydenirwin.xLights-Tools";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -449,7 +449,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1B5CB9A225B35A810009CC59 /* Build configuration list for PBXProject "xLights Companion Pro" */ = {
+		1B5CB9A225B35A810009CC59 /* Build configuration list for PBXProject "xLights Tools" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1B5CB9B425B35A870009CC59 /* Debug */,
@@ -458,7 +458,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1B5CB9B625B35A870009CC59 /* Build configuration list for PBXNativeTarget "xLights Companion Pro" */ = {
+		1B5CB9B625B35A870009CC59 /* Build configuration list for PBXNativeTarget "xLights Tools" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1B5CB9B725B35A870009CC59 /* Debug */,
