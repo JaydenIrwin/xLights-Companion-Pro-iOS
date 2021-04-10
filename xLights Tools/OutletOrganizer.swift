@@ -9,14 +9,12 @@ import SwiftUI
 
 struct OutletOrganizer: View {
     
-    @State var ports: [Port] = [
-        Port(id: 1, objects: [PortObject(name: "Placeholder", pixels: 100)]),
-        Port(id: 2, objects: []),
-        Port(id: 3, objects: []),
-        Port(id: 4, objects: [])
-    ]
+    @State var ports: [Port] = {
+        OutletOrganizer.load()
+    }()
     @State var showingPortItem = false
     @State var selectedIndex: (Int, Int)?
+    @State var deleteAlert = false
     
     var body: some View {
         ScrollView {
@@ -88,7 +86,7 @@ struct OutletOrganizer: View {
         .background(Color(UIColor.systemGroupedBackground).ignoresSafeArea())
         .navigationTitle("Outlet Organizer")
         .toolbar(content: {
-            ToolbarItem {
+            ToolbarItem(placement: .navigationBarTrailing){
                 Menu {
                     Button(action: {
                         ports.append(Port(id: ports.endIndex+1, objects: []))
@@ -113,14 +111,62 @@ struct OutletOrganizer: View {
                         .imageScale(.large)
                 }
             }
+            ToolbarItem(placement: .navigationBarTrailing){
+                Button(action: {
+                    deleteAlert = true
+                }, label: {
+                    Image(systemName: "trash")
+                })
+            }
         })
+        .alert(isPresented: $deleteAlert) {
+            Alert(title: Text("Delete"),
+                  message: Text("Do you want to delete your progress?"),
+                  primaryButton: .destructive(Text("Delete")) {
+                    ports = [
+                        Port(id: 1, objects: [PortObject(name: "Mega Tree", pixels: 1000)]),
+                        Port(id: 2, objects: []),
+                        Port(id: 3, objects: []),
+                        Port(id: 4, objects: [])
+                    ]
+                    save()
+                  },
+                  secondaryButton: .cancel())
+        }
         .sheet(isPresented: $showingPortItem) {
             PortObjectView(portObject: $ports[selectedIndex!.0].objects[selectedIndex!.1])
+        }
+        .onAppear() {
+            ports = OutletOrganizer.load()
+        }
+        .onChange(of: showingPortItem) { newValue in
+            save()
+        }
+    }
+    
+    static func load() -> [Port] {
+        guard let fileURL  = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Outlet Org Ports").appendingPathExtension("json") else {return [
+            Port(id: 1, objects: [PortObject(name: "Mega Tree", pixels: 1000)]),
+            Port(id: 2, objects: []),
+            Port(id: 3, objects: []),
+            Port(id: 4, objects: [])
+        ]}
+        do {
+            let data = try Data(contentsOf: fileURL)
+            return try JSONDecoder().decode([Port].self, from: data)
+        } catch {
+            print("Unable to decode")
+            return [
+                Port(id: 1, objects: [PortObject(name: "Mega Tree", pixels: 1000)]),
+                Port(id: 2, objects: []),
+                Port(id: 3, objects: []),
+                Port(id: 4, objects: [])
+            ]
         }
     }
     
     func save() {
-        let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        guard let fileURL  = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Outlet Org Ports").appendingPathExtension("json") else {return}
         do {
             let data = try JSONEncoder().encode(ports)
             try data.write(to: fileURL)
@@ -128,7 +174,6 @@ struct OutletOrganizer: View {
             print("Failed to save ports")
         }
     }
-    
 }
 
 struct OutletOrganizer_Previews: PreviewProvider {

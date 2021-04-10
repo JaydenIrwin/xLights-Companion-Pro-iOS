@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @Binding var selectedTab: xLights_Companion_ProApp.Tab
+    @Binding var selectedTab: XLightsToolsApp.Tab
     
     var body: some View {
         NavigationView {
