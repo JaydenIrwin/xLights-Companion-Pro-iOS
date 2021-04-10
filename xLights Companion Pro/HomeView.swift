@@ -97,6 +97,19 @@ struct HomeView: View {
                     .frame(idealWidth: 500, maxWidth: 500, alignment: .leading)
                     .background(Color(UIColor.secondarySystemGroupedBackground))
                     .cornerRadius(16)
+                    VStack(alignment: .leading, spacing: 14) {
+                        Label("Facebook Groups", systemImage: "person.2.circle")
+                        ForEach(RelatedWebsite.facebookGroups) { website in
+                            Divider()
+                            Link(destination: website.url) {
+                                Label(website.name, systemImage: website.iconName)
+                            }
+                        }
+                    }
+                    .padding()
+                    .frame(idealWidth: 500, maxWidth: 500, alignment: .leading)
+                    .background(Color(UIColor.secondarySystemGroupedBackground))
+                    .cornerRadius(16)
                 }
                 .padding()
                 .frame(idealWidth: .infinity, maxWidth: .infinity)
