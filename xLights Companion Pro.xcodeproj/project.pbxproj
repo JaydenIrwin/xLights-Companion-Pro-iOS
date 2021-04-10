@@ -17,6 +17,19 @@
 		1B7F2CE925CA6A8F0005813E /* OutletOrganizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F2CE825CA6A8F0005813E /* OutletOrganizer.swift */; };
 		1B89581425FC16410090FDED /* RelatedWebsite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B89581325FC16410090FDED /* RelatedWebsite.swift */; };
 		1B89581725FC16CE0090FDED /* Prop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B89581625FC16CE0090FDED /* Prop.swift */; };
+		1BA985BF26213ED20047CD41 /* Matrix.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1BA985B226213ED10047CD41 /* Matrix.usdz */; };
+		1BA985C026213ED20047CD41 /* Mega Tree.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1BA985B326213ED10047CD41 /* Mega Tree.usdz */; };
+		1BA985C126213ED20047CD41 /* Present.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1BA985B426213ED10047CD41 /* Present.usdz */; };
+		1BA985C226213ED20047CD41 /* Circle Border.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1BA985B526213ED10047CD41 /* Circle Border.usdz */; };
+		1BA985C326213ED20047CD41 /* Spiral Tree.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1BA985B626213ED10047CD41 /* Spiral Tree.usdz */; };
+		1BA985C426213ED20047CD41 /* Square Border.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1BA985B726213ED20047CD41 /* Square Border.usdz */; };
+		1BA985C526213ED20047CD41 /* Snow Flake.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1BA985B826213ED20047CD41 /* Snow Flake.usdz */; };
+		1BA985C626213ED20047CD41 /* Pipe.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1BA985B926213ED20047CD41 /* Pipe.usdz */; };
+		1BA985C726213ED20047CD41 /* Star.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1BA985BA26213ED20047CD41 /* Star.usdz */; };
+		1BA985C826213ED20047CD41 /* Mini Tree.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1BA985BB26213ED20047CD41 /* Mini Tree.usdz */; };
+		1BA985C926213ED20047CD41 /* Arch.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1BA985BC26213ED20047CD41 /* Arch.usdz */; };
+		1BA985CA26213ED20047CD41 /* Candy Cane.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1BA985BD26213ED20047CD41 /* Candy Cane.usdz */; };
+		1BA985CB26213ED20047CD41 /* Sphere.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1BA985BE26213ED20047CD41 /* Sphere.usdz */; };
 		1BC2702825C668560034761E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC2702725C668560034761E /* HomeView.swift */; };
 		1BC2702B25C668650034761E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC2702A25C668650034761E /* SearchView.swift */; };
 		1BC2702E25C6687C0034761E /* ARPropsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC2702D25C6687C0034761E /* ARPropsView.swift */; };
@@ -24,7 +37,7 @@
 		1BF80FAC25E5EA9D00EB41CD /* ARPropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF80FAB25E5EA9D00EB41CD /* ARPropView.swift */; };
 		1BF80FAF25E75BF200EB41CD /* DoubleInputRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF80FAE25E75BF200EB41CD /* DoubleInputRow.swift */; };
 		1BF80FB225E75C1E00EB41CD /* IntegerInputRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF80FB125E75C1E00EB41CD /* IntegerInputRow.swift */; };
-		E10B3D29260142C9000CD525 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B3D28260142C9000CD525 /* ItemView.swift */; };
+		E10B3D29260142C9000CD525 /* PortObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B3D28260142C9000CD525 /* PortObjectView.swift */; };
 		E1534EA726013A00004E63C6 /* Port.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1534EA626013A00004E63C6 /* Port.swift */; };
 		E1534EAA26013B2C004E63C6 /* PortObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1534EA926013B2C004E63C6 /* PortObject.swift */; };
 		E1F3355825EEB7B500B64478 /* MixedLengthResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F3355725EEB7B500B64478 /* MixedLengthResultRow.swift */; };
@@ -44,6 +57,19 @@
 		1B7F2CE825CA6A8F0005813E /* OutletOrganizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletOrganizer.swift; sourceTree = "<group>"; };
 		1B89581325FC16410090FDED /* RelatedWebsite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedWebsite.swift; sourceTree = "<group>"; };
 		1B89581625FC16CE0090FDED /* Prop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prop.swift; sourceTree = "<group>"; };
+		1BA985B226213ED10047CD41 /* Matrix.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Matrix.usdz; sourceTree = "<group>"; };
+		1BA985B326213ED10047CD41 /* Mega Tree.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Mega Tree.usdz"; sourceTree = "<group>"; };
+		1BA985B426213ED10047CD41 /* Present.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Present.usdz; sourceTree = "<group>"; };
+		1BA985B526213ED10047CD41 /* Circle Border.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Circle Border.usdz"; sourceTree = "<group>"; };
+		1BA985B626213ED10047CD41 /* Spiral Tree.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Spiral Tree.usdz"; sourceTree = "<group>"; };
+		1BA985B726213ED20047CD41 /* Square Border.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Square Border.usdz"; sourceTree = "<group>"; };
+		1BA985B826213ED20047CD41 /* Snow Flake.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Snow Flake.usdz"; sourceTree = "<group>"; };
+		1BA985B926213ED20047CD41 /* Pipe.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Pipe.usdz; sourceTree = "<group>"; };
+		1BA985BA26213ED20047CD41 /* Star.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Star.usdz; sourceTree = "<group>"; };
+		1BA985BB26213ED20047CD41 /* Mini Tree.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Mini Tree.usdz"; sourceTree = "<group>"; };
+		1BA985BC26213ED20047CD41 /* Arch.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Arch.usdz; sourceTree = "<group>"; };
+		1BA985BD26213ED20047CD41 /* Candy Cane.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Candy Cane.usdz"; sourceTree = "<group>"; };
+		1BA985BE26213ED20047CD41 /* Sphere.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Sphere.usdz; sourceTree = "<group>"; };
 		1BC2702725C668560034761E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1BC2702A25C668650034761E /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		1BC2702D25C6687C0034761E /* ARPropsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARPropsView.swift; sourceTree = "<group>"; };
@@ -51,7 +77,7 @@
 		1BF80FAB25E5EA9D00EB41CD /* ARPropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARPropView.swift; sourceTree = "<group>"; };
 		1BF80FAE25E75BF200EB41CD /* DoubleInputRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleInputRow.swift; sourceTree = "<group>"; };
 		1BF80FB125E75C1E00EB41CD /* IntegerInputRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerInputRow.swift; sourceTree = "<group>"; };
-		E10B3D28260142C9000CD525 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		E10B3D28260142C9000CD525 /* PortObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortObjectView.swift; sourceTree = "<group>"; };
 		E1534EA626013A00004E63C6 /* Port.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Port.swift; sourceTree = "<group>"; };
 		E1534EA926013B2C004E63C6 /* PortObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortObject.swift; sourceTree = "<group>"; };
 		E1F3355725EEB7B500B64478 /* MixedLengthResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixedLengthResultRow.swift; sourceTree = "<group>"; };
@@ -102,9 +128,10 @@
 				E1F3355D25F148E600B64478 /* ResultRow.swift */,
 				E1F3355725EEB7B500B64478 /* MixedLengthResultRow.swift */,
 				1B7F2CE825CA6A8F0005813E /* OutletOrganizer.swift */,
-				E10B3D28260142C9000CD525 /* ItemView.swift */,
+				E10B3D28260142C9000CD525 /* PortObjectView.swift */,
 				1BC2702A25C668650034761E /* SearchView.swift */,
 				1B89581925FC16FC0090FDED /* Models */,
+				1BA985B126213EC00047CD41 /* 3D Models */,
 				1B5CB9AE25B35A870009CC59 /* Assets.xcassets */,
 				1B5CB9B325B35A870009CC59 /* Info.plist */,
 				1B5CB9B025B35A870009CC59 /* Preview Content */,
@@ -129,6 +156,26 @@
 				E1534EA926013B2C004E63C6 /* PortObject.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		1BA985B126213EC00047CD41 /* 3D Models */ = {
+			isa = PBXGroup;
+			children = (
+				1BA985BC26213ED20047CD41 /* Arch.usdz */,
+				1BA985BD26213ED20047CD41 /* Candy Cane.usdz */,
+				1BA985B526213ED10047CD41 /* Circle Border.usdz */,
+				1BA985B226213ED10047CD41 /* Matrix.usdz */,
+				1BA985B326213ED10047CD41 /* Mega Tree.usdz */,
+				1BA985BB26213ED20047CD41 /* Mini Tree.usdz */,
+				1BA985B926213ED20047CD41 /* Pipe.usdz */,
+				1BA985B426213ED10047CD41 /* Present.usdz */,
+				1BA985B826213ED20047CD41 /* Snow Flake.usdz */,
+				1BA985BE26213ED20047CD41 /* Sphere.usdz */,
+				1BA985B626213ED10047CD41 /* Spiral Tree.usdz */,
+				1BA985B726213ED20047CD41 /* Square Border.usdz */,
+				1BA985BA26213ED20047CD41 /* Star.usdz */,
+			);
+			path = "3D Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,8 +235,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BA985C226213ED20047CD41 /* Circle Border.usdz in Resources */,
+				1BA985C626213ED20047CD41 /* Pipe.usdz in Resources */,
+				1BA985C026213ED20047CD41 /* Mega Tree.usdz in Resources */,
+				1BA985BF26213ED20047CD41 /* Matrix.usdz in Resources */,
 				1B5CB9B225B35A870009CC59 /* Preview Assets.xcassets in Resources */,
+				1BA985C526213ED20047CD41 /* Snow Flake.usdz in Resources */,
 				1B5CB9AF25B35A870009CC59 /* Assets.xcassets in Resources */,
+				1BA985CB26213ED20047CD41 /* Sphere.usdz in Resources */,
+				1BA985C726213ED20047CD41 /* Star.usdz in Resources */,
+				1BA985C926213ED20047CD41 /* Arch.usdz in Resources */,
+				1BA985C826213ED20047CD41 /* Mini Tree.usdz in Resources */,
+				1BA985C326213ED20047CD41 /* Spiral Tree.usdz in Resources */,
+				1BA985C126213ED20047CD41 /* Present.usdz in Resources */,
+				1BA985C426213ED20047CD41 /* Square Border.usdz in Resources */,
+				1BA985CA26213ED20047CD41 /* Candy Cane.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,7 +271,7 @@
 				1B89581725FC16CE0090FDED /* Prop.swift in Sources */,
 				E1F3355E25F148E600B64478 /* ResultRow.swift in Sources */,
 				E1534EAA26013B2C004E63C6 /* PortObject.swift in Sources */,
-				E10B3D29260142C9000CD525 /* ItemView.swift in Sources */,
+				E10B3D29260142C9000CD525 /* PortObjectView.swift in Sources */,
 				E1F3355825EEB7B500B64478 /* MixedLengthResultRow.swift in Sources */,
 				1B62573725CE0B09003528FD /* PowerCalculator.swift in Sources */,
 				1BC2702E25C6687C0034761E /* ARPropsView.swift in Sources */,

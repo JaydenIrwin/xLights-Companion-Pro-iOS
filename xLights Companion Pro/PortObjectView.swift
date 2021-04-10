@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ItemView: View {
+struct PortObjectView: View {
     
     @Binding var portObject: PortObject
     
@@ -51,8 +51,8 @@ struct ItemView: View {
     }
 }
 
-struct ItemView_Previews: PreviewProvider {
+struct PortObjectView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemView(portObject: .constant(PortObject(name: "", pixels: nil)))
+        PortObjectView(portObject: .constant(PortObject(name: "", pixels: nil)))
     }
 }

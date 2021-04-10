@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OutletOrganizer: View {
     
-    @AppStorage("outletOrgPorts") var ports: [Port] = [
+    @State var ports: [Port] = [
         Port(id: 1, objects: [PortObject(name: "Placeholder", pixels: 100)]),
         Port(id: 2, objects: []),
         Port(id: 3, objects: []),
@@ -38,6 +38,7 @@ struct OutletOrganizer: View {
                                 for (pIndex) in ports.indices {
                                     ports[pIndex].id = pIndex + 1
                                 }
+                                save()
                             } label : {
                                 Label("Remove", systemImage: "trash")
                             }
@@ -71,6 +72,7 @@ struct OutletOrganizer: View {
                                 }
                                 Button {
                                     ports[port.id-1].objects.remove(at: index)
+                                    save()
                                 } label : {
                                     Label("Remove", systemImage: "trash")
                                 }
@@ -90,6 +92,7 @@ struct OutletOrganizer: View {
                 Menu {
                     Button(action: {
                         ports.append(Port(id: ports.endIndex+1, objects: []))
+                        save()
                     }, label: {
                         Label("Add Port", systemImage: "power")
                     })
@@ -101,6 +104,7 @@ struct OutletOrganizer: View {
                         ports[portIndex].objects.append(newItem)
                         selectedIndex = (portIndex, elementIndex)
                         showingPortItem = true
+                        save()
                     }, label: {
                         Label("Add Object", systemImage: "cube")
                     })
@@ -111,9 +115,20 @@ struct OutletOrganizer: View {
             }
         })
         .sheet(isPresented: $showingPortItem) {
-            ItemView(portObject: $ports[selectedIndex!.0].objects[selectedIndex!.1])
+            PortObjectView(portObject: $ports[selectedIndex!.0].objects[selectedIndex!.1])
         }
     }
+    
+    func save() {
+        let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        do {
+            let data = try JSONEncoder().encode(ports)
+            try data.write(to: fileURL)
+        } catch {
+            print("Failed to save ports")
+        }
+    }
+    
 }
 
 struct OutletOrganizer_Previews: PreviewProvider {

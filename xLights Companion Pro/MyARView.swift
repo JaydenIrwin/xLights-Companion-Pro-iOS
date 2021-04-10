@@ -25,16 +25,19 @@ struct MyARView: UIViewRepresentable {
     
     func updateUIView(_ uiView: ARView, context: Context) {
         #if !targetEnvironment(simulator)
-        let mesh = MeshResource.generateBox(size: 0.5)
-        let material = SimpleMaterial(color: .blue, isMetallic: false)
-        let model = ModelEntity(mesh: mesh, materials: [material])
-        let anchor = AnchorEntity(plane: .any)
-        anchor.name = "My Anchor"
-        anchor.addChild(model)
-        uiView.scene.addAnchor(anchor)
-        
-        model.generateCollisionShapes(recursive: true)
-        uiView.installGestures([.translation, .rotation, .scale], for: model)
+        guard let prop = selectedProp else { return }
+        do {
+            let model = try Entity.loadModel(named: prop.fileName)
+            let anchor = AnchorEntity(plane: .any)
+            anchor.name = "My Anchor"
+            anchor.addChild(model)
+            uiView.scene.addAnchor(anchor)
+            
+            model.generateCollisionShapes(recursive: true)
+            uiView.installGestures([.translation, .rotation, .scale], for: model)
+        } catch {
+            print("Failed to load prop model.")
+        }
         #endif
         
         selectedProp = nil
