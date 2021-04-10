@@ -85,16 +85,15 @@ class SearchModel: ObservableObject {
     
     init() {
         $searchText
-            .debounce(for: .milliseconds(800), scheduler: RunLoop.main) // debounces the string publisher, such that it delays the process of sending request to remote server.
-            .removeDuplicates()
+            .debounce(for: .milliseconds(500), scheduler: RunLoop.main) // debounces the string publisher, such that it delays the process of sending request to remote server.
             .map({ (string) -> String? in
                 if string.count < 1 {
                     self.results = []
                     return nil
                 }
-                
-                return string
+                return string.trimmingCharacters(in: .whitespacesAndNewlines)
             }) // prevents sending numerous requests and sends nil if the count of the characters is less than 1.
+            .removeDuplicates()
             .compactMap{ $0 } // removes the nil values so the search string does not get passed down to the publisher chain
             .sink { (_) in
                 //
@@ -107,8 +106,11 @@ class SearchModel: ObservableObject {
     private func searchItems(searchText: String) {
         var request = URLRequest(url: URL(string: "https://mysterious-coast-36838.herokuapp.com/feed/p")!)
         request.httpMethod = "POST"
-        let params: [String: Any] = ["title": searchText.addingPercentEncoding(withAllowedCharacters: .alphanumerics)!]
+        let params: [String: Any] = ["title": searchText]
         request.httpBody = try! JSONSerialization.data(withJSONObject: params)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data,
                   let response = response as? HTTPURLResponse,
@@ -125,7 +127,9 @@ class SearchModel: ObservableObject {
             
             do {
                 let songs = try JSONDecoder().decode(Results.self, from: data)
-                self.results = songs.results
+                DispatchQueue.main.async {
+                    self.results = songs.results
+                }
             } catch {
                 print("no results")
             }

@@ -26,7 +26,7 @@ struct ToolsView: View {
                         .padding(.vertical, 4)
                     }
                 }
-                .frame(minHeight: 100, idealHeight: 100)
+                .frame(minHeight: 130)
                 Section {
                     NavigationLink(destination: ACDCCalculator()) {
                         HStack {
@@ -42,7 +42,7 @@ struct ToolsView: View {
                         .padding(.vertical, 4)
                     }
                 }
-                .frame(minHeight: 100, idealHeight: 100)
+                .frame(minHeight: 130)
                 Section {
                     NavigationLink(destination: OutletOrganizer()) {
                         HStack {
@@ -58,7 +58,7 @@ struct ToolsView: View {
                         .padding(.vertical, 4)
                     }
                 }
-                .frame(minHeight: 100, idealHeight: 100)
+                .frame(minHeight: 130)
                 
 //                Section {
 //                    NavigationLink(destination: ConsumptionCalculator()) {
