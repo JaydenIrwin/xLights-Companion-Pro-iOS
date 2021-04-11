@@ -32,7 +32,7 @@ struct HomeView: View {
                         .background(Color(.displayP3, white: 0.0, opacity: 0.75))
                     }
                     .frame(minWidth: 0, maxWidth: 500, idealHeight: 200, alignment: .bottom)
-                    .background(Image("Home 1").resizable().aspectRatio(contentMode: .fill))
+                    .background(Image("Home AR").resizable().aspectRatio(contentMode: .fill))
                     .cornerRadius(16)
                     .foregroundColor(Color.white)
                     .onTapGesture {
@@ -55,7 +55,7 @@ struct HomeView: View {
                         .background(Color(.displayP3, white: 0.0, opacity: 0.75))
                     }
                     .frame(minWidth: 0, maxWidth: 500, idealHeight: 200, alignment: .bottom)
-                    .background(Image("Home 2").resizable().aspectRatio(contentMode: .fill))
+                    .background(Image("Home Power").resizable().aspectRatio(contentMode: .fill))
                     .cornerRadius(16)
                     .foregroundColor(Color.white)
                     .onTapGesture {
@@ -78,7 +78,7 @@ struct HomeView: View {
                         .background(Color(.displayP3, white: 0.0, opacity: 0.75))
                     }
                     .frame(minWidth: 0, maxWidth: 500, idealHeight: 200, alignment: .bottom)
-                    .background(Image("Home 1").resizable().aspectRatio(contentMode: .fill))
+                    .background(Image("Home Music").resizable().aspectRatio(contentMode: .fill))
                     .cornerRadius(16)
                     .foregroundColor(Color.white)
                     .onTapGesture {
