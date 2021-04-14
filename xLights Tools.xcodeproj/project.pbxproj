@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -37,6 +37,7 @@
 		1BF80FAC25E5EA9D00EB41CD /* ARPropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF80FAB25E5EA9D00EB41CD /* ARPropView.swift */; };
 		1BF80FAF25E75BF200EB41CD /* DoubleInputRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF80FAE25E75BF200EB41CD /* DoubleInputRow.swift */; };
 		1BF80FB225E75C1E00EB41CD /* IntegerInputRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF80FB125E75C1E00EB41CD /* IntegerInputRow.swift */; };
+		1BFEEB172627706400F13CB8 /* HomeFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFEEB162627706400F13CB8 /* HomeFeatureView.swift */; };
 		E10B3D29260142C9000CD525 /* PortObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B3D28260142C9000CD525 /* PortObjectView.swift */; };
 		E1534EA726013A00004E63C6 /* Port.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1534EA626013A00004E63C6 /* Port.swift */; };
 		E1534EAA26013B2C004E63C6 /* PortObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1534EA926013B2C004E63C6 /* PortObject.swift */; };
@@ -77,6 +78,7 @@
 		1BF80FAB25E5EA9D00EB41CD /* ARPropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARPropView.swift; sourceTree = "<group>"; };
 		1BF80FAE25E75BF200EB41CD /* DoubleInputRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleInputRow.swift; sourceTree = "<group>"; };
 		1BF80FB125E75C1E00EB41CD /* IntegerInputRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerInputRow.swift; sourceTree = "<group>"; };
+		1BFEEB162627706400F13CB8 /* HomeFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeatureView.swift; sourceTree = "<group>"; };
 		E10B3D28260142C9000CD525 /* PortObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortObjectView.swift; sourceTree = "<group>"; };
 		E1534EA626013A00004E63C6 /* Port.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Port.swift; sourceTree = "<group>"; };
 		E1534EA926013B2C004E63C6 /* PortObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortObject.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			children = (
 				1B5CB9AA25B35A810009CC59 /* XLightsToolsApp.swift */,
 				1BC2702725C668560034761E /* HomeView.swift */,
+				1BFEEB162627706400F13CB8 /* HomeFeatureView.swift */,
 				1BF80FAB25E5EA9D00EB41CD /* ARPropView.swift */,
 				1B0E3CF626058CBC00FBAAC0 /* MyARView.swift */,
 				1BC2702D25C6687C0034761E /* ARPropsView.swift */,
@@ -213,7 +216,7 @@
 				};
 			};
 			buildConfigurationList = 1B5CB9A225B35A810009CC59 /* Build configuration list for PBXProject "xLights Tools" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BFEEB172627706400F13CB8 /* HomeFeatureView.swift in Sources */,
 				1B5CB9AB25B35A810009CC59 /* XLightsToolsApp.swift in Sources */,
 				1BF80FAF25E75BF200EB41CD /* DoubleInputRow.swift in Sources */,
 				1B89581425FC16410090FDED /* RelatedWebsite.swift in Sources */,

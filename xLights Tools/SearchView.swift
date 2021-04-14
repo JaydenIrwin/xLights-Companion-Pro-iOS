@@ -60,10 +60,10 @@ struct SearchView: View {
                     }
                 }
             }
-            .navigationTitle("Search")
+            .navigationTitle("Song Search")
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .tabItem { Label("Search", systemImage: "magnifyingglass") }
+        .tabItem { Label("Search", systemImage: "music.note.list") }
     }
 }
 

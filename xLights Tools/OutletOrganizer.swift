@@ -120,8 +120,8 @@ struct OutletOrganizer: View {
             }
         })
         .alert(isPresented: $deleteAlert) {
-            Alert(title: Text("Delete"),
-                  message: Text("Do you want to delete your progress?"),
+            Alert(title: Text("Delete Data?"),
+                  message: Text("This will clear all outlet data."),
                   primaryButton: .destructive(Text("Delete")) {
                     ports = [
                         Port(id: 1, objects: [PortObject(name: "Mega Tree", pixels: 1000)]),

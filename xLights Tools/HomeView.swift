@@ -15,72 +15,15 @@ struct HomeView: View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 16) {
-                    VStack {
-                        Spacer()
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text("Getting Started".uppercased())
-                                    .font(.headline)
-                                    .foregroundColor(Color(UIColor.lightGray))
-                                Text("Preview Props In AR")
-                                    .font(.title)
-                            }
-                            Spacer()
-                        }
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color(.displayP3, white: 0.0, opacity: 0.75))
-                    }
-                    .frame(minWidth: 0, maxWidth: 500, idealHeight: 200, alignment: .bottom)
-                    .background(Image("Home AR").resizable().aspectRatio(contentMode: .fill))
-                    .cornerRadius(16)
-                    .foregroundColor(Color.white)
+                    HomeFeatureView(headline: "Getting Started", title: "Preview Props In AR", image: Image("Home AR"))
                     .onTapGesture {
                         selectedTab = .arProps
                     }
-                    VStack {
-                        Spacer()
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text("Setup Your Lights".uppercased())
-                                    .font(.headline)
-                                    .foregroundColor(Color(UIColor.lightGray))
-                                Text("Power Calculator")
-                                    .font(.title)
-                            }
-                            Spacer()
-                        }
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color(.displayP3, white: 0.0, opacity: 0.75))
-                    }
-                    .frame(minWidth: 0, maxWidth: 500, idealHeight: 200, alignment: .bottom)
-                    .background(Image("Home Power").resizable().aspectRatio(contentMode: .fill))
-                    .cornerRadius(16)
-                    .foregroundColor(Color.white)
+                    HomeFeatureView(headline: "Setup Your Lights", title: "Power Calculator", image: Image("Home Power"))
                     .onTapGesture {
                         selectedTab = .tools
                     }
-                    VStack {
-                        Spacer()
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text("Jam Out".uppercased())
-                                    .font(.headline)
-                                    .foregroundColor(Color(UIColor.lightGray))
-                                Text("Search For Songs")
-                                    .font(.title)
-                            }
-                            Spacer()
-                        }
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color(.displayP3, white: 0.0, opacity: 0.75))
-                    }
-                    .frame(minWidth: 0, maxWidth: 500, idealHeight: 200, alignment: .bottom)
-                    .background(Image("Home Music").resizable().aspectRatio(contentMode: .fill))
-                    .cornerRadius(16)
-                    .foregroundColor(Color.white)
+                    HomeFeatureView(headline: "Jam Out", title: "Search For Songs", image: Image("Home Music"))
                     .onTapGesture {
                         selectedTab = .search
                     }

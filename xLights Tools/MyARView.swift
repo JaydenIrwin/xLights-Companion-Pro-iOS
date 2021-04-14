@@ -12,6 +12,7 @@ import RealityKit
 struct MyARView: UIViewRepresentable {
     
     @Binding var selectedProp: Prop?
+    @Binding var isPaused: Bool
 
     func makeUIView(context: Context) -> ARView {
         #if targetEnvironment(simulator)
@@ -25,22 +26,29 @@ struct MyARView: UIViewRepresentable {
     
     func updateUIView(_ uiView: ARView, context: Context) {
         #if !targetEnvironment(simulator)
-        guard let prop = selectedProp else { return }
-        do {
-            let model = try Entity.loadModel(named: prop.fileName)
-            let anchor = AnchorEntity(plane: .any)
-            anchor.name = "My Anchor"
-            anchor.addChild(model)
-            uiView.scene.addAnchor(anchor)
-            
-            model.generateCollisionShapes(recursive: true)
-            uiView.installGestures([.translation, .rotation, .scale], for: model)
-        } catch {
-            print("Failed to load prop model.")
+        if isPaused {
+            uiView.session.pause()
+        } else {
+            let config = ARWorldTrackingConfiguration()
+            config.planeDetection = [.horizontal, .vertical]
+            uiView.session.run(config, options: [])
+        }
+        if let prop = selectedProp {
+            do {
+                let model = try Entity.loadModel(named: prop.fileName)
+                let anchor = AnchorEntity(plane: prop.plane)
+                anchor.name = "My Anchor"
+                anchor.addChild(model)
+                uiView.scene.addAnchor(anchor)
+                
+                model.generateCollisionShapes(recursive: true)
+                uiView.installGestures([.translation, .rotation, .scale], for: model)
+            } catch {
+                print("Failed to load prop model.")
+            }
+            selectedProp = nil
         }
         #endif
-        
-        selectedProp = nil
     }
     
 }
