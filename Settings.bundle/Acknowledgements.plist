@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>StringsFilename</key>
+	<string>Acknowledgements</string>
+	<key>StringsTable</key>
+	<string>Acknowledgements</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Music Photo</string>
+			<key>DefaultValue</key>
+			<string>Spencer Imbrock on Unsplash</string>
+			<key>Key</key>
+			<string>a</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Outdoor Photo</string>
+			<key>DefaultValue</key>
+			<string>Roberto Nickson on Unsplash</string>
+			<key>Key</key>
+			<string>b</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Light Photo</string>
+			<key>DefaultValue</key>
+			<string>Chad Dalke on Unsplash</string>
+			<key>Key</key>
+			<string>c</string>
+		</dict>
+	</array>
+</dict>
+</plist>
