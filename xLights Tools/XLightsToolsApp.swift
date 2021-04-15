@@ -21,8 +21,10 @@ struct XLightsToolsApp: App {
             TabView(selection: $selectedTab) {
                 HomeView(selectedTab: $selectedTab)
                     .tag(Tab.home)
+                #if !targetEnvironment(macCatalyst)
                 ARPropView()
                     .tag(Tab.arProps)
+                #endif
                 ToolsView()
                     .tag(Tab.tools)
                 SearchView()

@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct ToolsView: View {
+    
+    #if targetEnvironment(macCatalyst)
+    let isCatalyst = true
+    #else
+    let isCatalyst = false
+    #endif
+    
     var body: some View {
         NavigationView {
             List {
@@ -79,6 +86,7 @@ struct ToolsView: View {
             }
             .listStyle(InsetGroupedListStyle())
             .navigationTitle("Tools")
+            .navigationBarHidden(isCatalyst)
         }
         .tabItem { Label("Tools", systemImage: "hammer.fill") }
     }

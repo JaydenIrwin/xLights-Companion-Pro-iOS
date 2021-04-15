@@ -79,6 +79,7 @@
 		1BF80FAE25E75BF200EB41CD /* DoubleInputRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleInputRow.swift; sourceTree = "<group>"; };
 		1BF80FB125E75C1E00EB41CD /* IntegerInputRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerInputRow.swift; sourceTree = "<group>"; };
 		1BFEEB162627706400F13CB8 /* HomeFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeatureView.swift; sourceTree = "<group>"; };
+		1BFEEB252628DECD00F13CB8 /* xLights Tools.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "xLights Tools.entitlements"; sourceTree = "<group>"; };
 		E10B3D28260142C9000CD525 /* PortObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortObjectView.swift; sourceTree = "<group>"; };
 		E1534EA626013A00004E63C6 /* Port.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Port.swift; sourceTree = "<group>"; };
 		E1534EA926013B2C004E63C6 /* PortObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortObject.swift; sourceTree = "<group>"; };
@@ -117,6 +118,7 @@
 		1B5CB9A925B35A810009CC59 /* xLights Tools */ = {
 			isa = PBXGroup;
 			children = (
+				1BFEEB252628DECD00F13CB8 /* xLights Tools.entitlements */,
 				1B5CB9AA25B35A810009CC59 /* XLightsToolsApp.swift */,
 				1BC2702725C668560034761E /* HomeView.swift */,
 				1BFEEB162627706400F13CB8 /* HomeFeatureView.swift */,
@@ -411,6 +413,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "xLights Tools/xLights Tools.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = VA3SY54YU8;
@@ -423,6 +426,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jaydenirwin.xLights-Tools";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -433,6 +437,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "xLights Tools/xLights Tools.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = VA3SY54YU8;
@@ -445,6 +450,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jaydenirwin.xLights-Tools";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

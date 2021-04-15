@@ -9,16 +9,24 @@ import SwiftUI
 
 struct HomeView: View {
     
+    #if targetEnvironment(macCatalyst)
+    let isCatalyst = true
+    #else
+    let isCatalyst = false
+    #endif
+    
     @Binding var selectedTab: XLightsToolsApp.Tab
     
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 16) {
+                    #if !targetEnvironment(macCatalyst)
                     HomeFeatureView(headline: "Getting Started", title: "Preview Props In AR", image: Image("Home AR"))
                     .onTapGesture {
                         selectedTab = .arProps
                     }
+                    #endif
                     HomeFeatureView(headline: "Setup Your Lights", title: "Power Calculator", image: Image("Home Power"))
                     .onTapGesture {
                         selectedTab = .tools
@@ -59,6 +67,7 @@ struct HomeView: View {
             }
             .background(Color(UIColor.systemGroupedBackground))
             .navigationTitle("Home")
+            .navigationBarHidden(isCatalyst)
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .tabItem { Label("Home", systemImage: "house.fill") }
