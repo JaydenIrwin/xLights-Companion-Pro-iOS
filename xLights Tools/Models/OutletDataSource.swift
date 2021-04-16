@@ -29,8 +29,13 @@ class OutletDataSource: ObservableObject {
     
     @Published var ports: [Port] = OutletDataSource.load()
     
-    func createPortObject() -> (Int, Int) {
-        let newItem = PortObject(name: nil, pixels: nil)
+    func addNewPort() {
+        ports.append(Port(id: ports.endIndex+1, objects: []))
+        save()
+    }
+    
+    func addNewPortObject() -> (Int, Int) {
+        let newItem = PortObject(name: "", pixels: 0)
         let pIndex = ports.endIndex - 1
         let oIndex = ports[pIndex].objects.endIndex
         ports[pIndex].objects.append(newItem)
@@ -47,14 +52,20 @@ class OutletDataSource: ObservableObject {
         save()
     }
     
-    func movePortObject(_ object: PortObject, to newPort: Port) {
+    func removePortObject(_ object: PortObject) {
         for (pIndex, port) in ports.enumerated() {
             if let oIndex = port.objects.firstIndex(where: { $0.id == object.id }) {
                 ports[pIndex].objects.remove(at: oIndex)
                 break
             }
         }
+        save()
+    }
+    
+    func movePortObject(_ object: PortObject, to newPort: Port) {
+        removePortObject(object)
         ports[newPort.id-1].objects.append(object)
+        save()
     }
     
     func deleteAll() {

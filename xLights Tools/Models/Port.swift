@@ -12,13 +12,7 @@ struct Port : Identifiable, Codable {
     var id : Int
     var objects : [PortObject]
     var pixels : Int {
-        var totalPixels = 0
-        for object in objects {
-            if let pixels = object.pixels {
-                totalPixels += pixels
-            }
-        }
-        return totalPixels
+        objects.map({ $0.pixels }).reduce(0, +)
     }
     
     init(id: Int, objects: [PortObject]) {

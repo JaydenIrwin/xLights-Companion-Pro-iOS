@@ -32,7 +32,7 @@ struct OutletOrganizer: View {
                         }
                         
                         ForEach(Array(port.objects.enumerated()), id: \.1.id) { index, object in
-                            PortObjectCell(title: object.name ?? "Item", description: "\(object.pixels ?? 0) pixels")
+                            PortObjectCell(title: object.name, description: "\(object.pixels) pixels")
                             .onTapGesture {
                                 selectedIndex = (port.id-1, index)
                                 showingPortItem = true
@@ -50,8 +50,7 @@ struct OutletOrganizer: View {
                                     Label("Move to...", systemImage: "arrow.turn.down.right")
                                 }
                                 Button {
-                                    data.ports[port.id-1].objects.remove(at: index)
-                                    data.save()
+                                    data.removePortObject(object)
                                 } label : {
                                     Label("Remove", systemImage: "trash")
                                 }
@@ -70,14 +69,13 @@ struct OutletOrganizer: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Menu {
                     Button(action: {
-                        data.ports.append(Port(id: data.ports.endIndex+1, objects: []))
-                        data.save()
+                        data.addNewPort()
                     }, label: {
                         Label("Add Port", systemImage: "power")
                     })
                     Button(action: {
                         // Show New Object
-                        selectedIndex = data.createPortObject()
+                        selectedIndex = data.addNewPortObject()
                         showingPortItem = true
                     }, label: {
                         Label("Add Object", systemImage: "cube")
@@ -104,13 +102,15 @@ struct OutletOrganizer: View {
                   secondaryButton: .cancel())
         }
         .sheet(isPresented: $showingPortItem) {
-            PortObjectView(portObject: $data.ports[selectedIndex!.0].objects[selectedIndex!.1])
+            PortObjectView(portObject: Binding(get: {
+                data.ports[selectedIndex!.0].objects[selectedIndex!.1]
+            }, set: { newValue in
+                data.ports[selectedIndex!.0].objects[selectedIndex!.1] = newValue
+                data.save()
+            }))
         }
         .onAppear() {
             data.ports = OutletDataSource.load()
-        }
-        .onChange(of: showingPortItem) { newValue in
-            data.save()
         }
     }
     

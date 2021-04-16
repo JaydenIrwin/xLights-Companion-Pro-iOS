@@ -21,16 +21,14 @@ struct PortObjectView: View {
                         Text("Name")
                         Spacer()
                             .frame(width: 20)
-                        TextField("", text: Binding(get: {portObject.name ?? ""}, set: { newValue in
-                            portObject.name = newValue
-                        }))
+                        TextField("", text: $portObject.name)
                     }
                     HStack {
                         Text("Pixels")
                         Spacer()
                             .frame(width: 20)
-                        TextField("", text: Binding(get: {"\(portObject.pixels ?? 0)"}, set: { newValue in
-                            portObject.pixels = Int(newValue)
+                        TextField("", text: Binding(get: { String(portObject.pixels) }, set: { newValue in
+                            portObject.pixels = Int(newValue) ?? 0
                         }))
                             .keyboardType(.numberPad)
                     }
@@ -54,6 +52,6 @@ struct PortObjectView: View {
 
 struct PortObjectView_Previews: PreviewProvider {
     static var previews: some View {
-        PortObjectView(portObject: .constant(PortObject(name: "", pixels: nil)))
+        PortObjectView(portObject: .constant(PortObject(name: "", pixels: 0)))
     }
 }

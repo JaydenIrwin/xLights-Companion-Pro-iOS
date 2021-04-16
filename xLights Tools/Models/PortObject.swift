@@ -9,6 +9,6 @@ import Foundation
 
 struct PortObject : Identifiable, Codable {
     let id = UUID()
-    var name : String?
-    var pixels : Int?
+    var name : String
+    var pixels : Int
 }
