@@ -8,9 +8,7 @@
 import Foundation
 
 struct PortObject : Identifiable, Codable {
-    var id: UUID {
-        UUID()
-    }
+    let id = UUID()
     var name : String?
     var pixels : Int?
 }

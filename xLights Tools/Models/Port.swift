@@ -12,7 +12,7 @@ struct Port : Identifiable, Codable {
     var id : Int
     var objects : [PortObject]
     var pixels : Int {
-        var totalPixels = 0;
+        var totalPixels = 0
         for object in objects {
             if let pixels = object.pixels {
                 totalPixels += pixels

@@ -38,6 +38,8 @@
 		1BF80FAF25E75BF200EB41CD /* DoubleInputRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF80FAE25E75BF200EB41CD /* DoubleInputRow.swift */; };
 		1BF80FB225E75C1E00EB41CD /* IntegerInputRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF80FB125E75C1E00EB41CD /* IntegerInputRow.swift */; };
 		1BFEEB172627706400F13CB8 /* HomeFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFEEB162627706400F13CB8 /* HomeFeatureView.swift */; };
+		E10827A0262A35E100BB9D82 /* PortObjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108279F262A35E100BB9D82 /* PortObjectCell.swift */; };
+		E10827A5262A3CED00BB9D82 /* OutletDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10827A4262A3CED00BB9D82 /* OutletDataSource.swift */; };
 		E10B3D29260142C9000CD525 /* PortObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B3D28260142C9000CD525 /* PortObjectView.swift */; };
 		E1534EA726013A00004E63C6 /* Port.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1534EA626013A00004E63C6 /* Port.swift */; };
 		E1534EAA26013B2C004E63C6 /* PortObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1534EA926013B2C004E63C6 /* PortObject.swift */; };
@@ -80,6 +82,8 @@
 		1BF80FB125E75C1E00EB41CD /* IntegerInputRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerInputRow.swift; sourceTree = "<group>"; };
 		1BFEEB162627706400F13CB8 /* HomeFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeatureView.swift; sourceTree = "<group>"; };
 		1BFEEB252628DECD00F13CB8 /* xLights Tools.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "xLights Tools.entitlements"; sourceTree = "<group>"; };
+		E108279F262A35E100BB9D82 /* PortObjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortObjectCell.swift; sourceTree = "<group>"; };
+		E10827A4262A3CED00BB9D82 /* OutletDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletDataSource.swift; sourceTree = "<group>"; };
 		E10B3D28260142C9000CD525 /* PortObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortObjectView.swift; sourceTree = "<group>"; };
 		E1534EA626013A00004E63C6 /* Port.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Port.swift; sourceTree = "<group>"; };
 		E1534EA926013B2C004E63C6 /* PortObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortObject.swift; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 				E1F3355D25F148E600B64478 /* ResultRow.swift */,
 				E1F3355725EEB7B500B64478 /* MixedLengthResultRow.swift */,
 				1B7F2CE825CA6A8F0005813E /* OutletOrganizer.swift */,
+				E108279F262A35E100BB9D82 /* PortObjectCell.swift */,
 				E10B3D28260142C9000CD525 /* PortObjectView.swift */,
 				1BC2702A25C668650034761E /* SearchView.swift */,
 				1B89581925FC16FC0090FDED /* Models */,
@@ -157,6 +162,7 @@
 			children = (
 				1B89581325FC16410090FDED /* RelatedWebsite.swift */,
 				1B89581625FC16CE0090FDED /* Prop.swift */,
+				E10827A4262A3CED00BB9D82 /* OutletDataSource.swift */,
 				E1534EA626013A00004E63C6 /* Port.swift */,
 				E1534EA926013B2C004E63C6 /* PortObject.swift */,
 			);
@@ -266,8 +272,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E10827A0262A35E100BB9D82 /* PortObjectCell.swift in Sources */,
 				1BFEEB172627706400F13CB8 /* HomeFeatureView.swift in Sources */,
 				1B5CB9AB25B35A810009CC59 /* XLightsToolsApp.swift in Sources */,
+				E10827A5262A3CED00BB9D82 /* OutletDataSource.swift in Sources */,
 				1BF80FAF25E75BF200EB41CD /* DoubleInputRow.swift in Sources */,
 				1B89581425FC16410090FDED /* RelatedWebsite.swift in Sources */,
 				1BC2702B25C668650034761E /* SearchView.swift in Sources */,
@@ -416,7 +424,7 @@
 				CODE_SIGN_ENTITLEMENTS = "xLights Tools/xLights Tools.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = VA3SY54YU8;
+				DEVELOPMENT_TEAM = 67HDD4RTGM;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/xLights Tools/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -440,7 +448,7 @@
 				CODE_SIGN_ENTITLEMENTS = "xLights Tools/xLights Tools.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = VA3SY54YU8;
+				DEVELOPMENT_TEAM = 67HDD4RTGM;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/xLights Tools/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

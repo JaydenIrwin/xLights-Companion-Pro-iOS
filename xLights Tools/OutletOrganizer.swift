@@ -9,58 +9,39 @@ import SwiftUI
 
 struct OutletOrganizer: View {
     
-    @State var ports: [Port] = {
-        OutletOrganizer.load()
-    }()
+    @ObservedObject var data = OutletDataSource()
+    
     @State var showingPortItem = false
     @State var selectedIndex: (Int, Int)?
     @State var deleteAlert = false
     
+    let columns = [GridItem(.adaptive(minimum: 100))]
+    
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading) {
-                ForEach(ports) { (port) in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text("Port \(port.id)")
-                            Text("\(port.pixels) pixels")
-                                .foregroundColor(Color(UIColor.secondaryLabel))
-                        }
-                        .padding()
-                        .background(Color(UIColor.secondarySystemGroupedBackground))
-                        .cornerRadius(16)
+            LazyVGrid(columns: columns, spacing: 20) {
+                ForEach(data.ports) { (port) in
+                    Section {
+                        PortObjectCell(title: "Port \(port.id)", description: "\(port.pixels) pixels")
                         .contextMenu {
                             Button {
-                                ports.remove(at: port.id-1)
-                                // Recalculate port ids after removal
-                                for (pIndex) in ports.indices {
-                                    ports[pIndex].id = pIndex + 1
-                                }
-                                save()
+                                data.removePort(port)
                             } label : {
                                 Label("Remove", systemImage: "trash")
                             }
                         }
                         
-                        ForEach(Array(port.objects.enumerated()), id: \.offset) { index, object in
-                            VStack(alignment: .leading) {
-                                Text("\(object.name ?? "Item")")
-                                Text("\(object.pixels ?? 0) pixels")
-                                    .foregroundColor(Color(UIColor.secondaryLabel))
-                            }
-                            .padding()
-                            .background(Color(UIColor.secondarySystemGroupedBackground))
-                            .cornerRadius(16)
+                        ForEach(Array(port.objects.enumerated()), id: \.1.id) { index, object in
+                            PortObjectCell(title: object.name ?? "Item", description: "\(object.pixels ?? 0) pixels")
                             .onTapGesture {
                                 selectedIndex = (port.id-1, index)
                                 showingPortItem = true
                             }
                             .contextMenu {
                                 Menu {
-                                    ForEach(ports) { newPort in
+                                    ForEach(data.ports) { newPort in
                                         Button(action: {
-                                            ports[port.id-1].objects.remove(at: index)
-                                            ports[newPort.id-1].objects.append(object)
+                                            data.movePortObject(object, to: newPort)
                                         }, label: {
                                             Label("Port \(newPort.id)", systemImage: "power")
                                         })
@@ -69,8 +50,8 @@ struct OutletOrganizer: View {
                                     Label("Move to...", systemImage: "arrow.turn.down.right")
                                 }
                                 Button {
-                                    ports[port.id-1].objects.remove(at: index)
-                                    save()
+                                    data.ports[port.id-1].objects.remove(at: index)
+                                    data.save()
                                 } label : {
                                     Label("Remove", systemImage: "trash")
                                 }
@@ -86,23 +67,18 @@ struct OutletOrganizer: View {
         .background(Color(UIColor.systemGroupedBackground).ignoresSafeArea())
         .navigationTitle("Outlet Organizer")
         .toolbar(content: {
-            ToolbarItem(placement: .navigationBarTrailing){
+            ToolbarItem(placement: .navigationBarTrailing) {
                 Menu {
                     Button(action: {
-                        ports.append(Port(id: ports.endIndex+1, objects: []))
-                        save()
+                        data.ports.append(Port(id: data.ports.endIndex+1, objects: []))
+                        data.save()
                     }, label: {
                         Label("Add Port", systemImage: "power")
                     })
                     Button(action: {
                         // Show New Object
-                        let newItem = PortObject(name: nil, pixels: nil)
-                        let portIndex = ports.endIndex - 1
-                        let elementIndex = ports[portIndex].objects.endIndex
-                        ports[portIndex].objects.append(newItem)
-                        selectedIndex = (portIndex, elementIndex)
+                        selectedIndex = data.createPortObject()
                         showingPortItem = true
-                        save()
                     }, label: {
                         Label("Add Object", systemImage: "cube")
                     })
@@ -111,7 +87,7 @@ struct OutletOrganizer: View {
                         .imageScale(.large)
                 }
             }
-            ToolbarItem(placement: .navigationBarTrailing){
+            ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {
                     deleteAlert = true
                 }, label: {
@@ -123,57 +99,21 @@ struct OutletOrganizer: View {
             Alert(title: Text("Delete Data?"),
                   message: Text("This will clear all outlet data."),
                   primaryButton: .destructive(Text("Delete")) {
-                    ports = [
-                        Port(id: 1, objects: [PortObject(name: "Mega Tree", pixels: 1000)]),
-                        Port(id: 2, objects: []),
-                        Port(id: 3, objects: []),
-                        Port(id: 4, objects: [])
-                    ]
-                    save()
+                    data.deleteAll()
                   },
                   secondaryButton: .cancel())
         }
         .sheet(isPresented: $showingPortItem) {
-            PortObjectView(portObject: $ports[selectedIndex!.0].objects[selectedIndex!.1])
+            PortObjectView(portObject: $data.ports[selectedIndex!.0].objects[selectedIndex!.1])
         }
         .onAppear() {
-            ports = OutletOrganizer.load()
+            data.ports = OutletDataSource.load()
         }
         .onChange(of: showingPortItem) { newValue in
-            save()
+            data.save()
         }
     }
     
-    static func load() -> [Port] {
-        guard let fileURL  = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Outlet Org Ports").appendingPathExtension("json") else {return [
-            Port(id: 1, objects: [PortObject(name: "Mega Tree", pixels: 1000)]),
-            Port(id: 2, objects: []),
-            Port(id: 3, objects: []),
-            Port(id: 4, objects: [])
-        ]}
-        do {
-            let data = try Data(contentsOf: fileURL)
-            return try JSONDecoder().decode([Port].self, from: data)
-        } catch {
-            print("Unable to decode")
-            return [
-                Port(id: 1, objects: [PortObject(name: "Mega Tree", pixels: 1000)]),
-                Port(id: 2, objects: []),
-                Port(id: 3, objects: []),
-                Port(id: 4, objects: [])
-            ]
-        }
-    }
-    
-    func save() {
-        guard let fileURL  = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Outlet Org Ports").appendingPathExtension("json") else {return}
-        do {
-            let data = try JSONEncoder().encode(ports)
-            try data.write(to: fileURL)
-        } catch {
-            print("Failed to save ports")
-        }
-    }
 }
 
 struct OutletOrganizer_Previews: PreviewProvider {
