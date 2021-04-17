@@ -424,7 +424,7 @@
 				CODE_SIGN_ENTITLEMENTS = "xLights Tools/xLights Tools.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = 67HDD4RTGM;
+				DEVELOPMENT_TEAM = VA3SY54YU8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/xLights Tools/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -432,7 +432,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jaydenirwin.xLights-Tools";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jaydenirwin.xlightstools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -448,7 +448,7 @@
 				CODE_SIGN_ENTITLEMENTS = "xLights Tools/xLights Tools.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = 67HDD4RTGM;
+				DEVELOPMENT_TEAM = VA3SY54YU8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/xLights Tools/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -456,7 +456,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jaydenirwin.xLights-Tools";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jaydenirwin.xlightstools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
