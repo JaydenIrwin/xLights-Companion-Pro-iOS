@@ -18,7 +18,7 @@ struct MyARView: UIViewRepresentable {
         #if targetEnvironment(simulator)
         let uiView = ARView()
         #else
-        let uiView = ARView(frame: .zero, cameraMode: ARView.CameraMode.ar, automaticallyConfigureSession: true)
+        let uiView = ARView(frame: .zero, cameraMode: ARView.CameraMode.ar, automaticallyConfigureSession: false)
         uiView.enableObjectRemoval()
         #endif
         return uiView
