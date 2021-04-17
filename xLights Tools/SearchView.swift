@@ -53,10 +53,18 @@ struct SearchView: View {
                         .foregroundColor(Color.accentColor)
                     Spacer()
                 } else {
-                    List {
-                        ForEach(searchModel.results) { result in
-                            Link(result.title, destination: URL(string: result.url)!)
+                    if searchModel.results.isEmpty && searchModel.doneSearching{
+                        Spacer()
+                        Text("No results")
+                            .foregroundColor(Color(UIColor.secondaryLabel))
+                        Spacer()
+                    } else {
+                        List {
+                            ForEach(searchModel.results) { result in
+                                Link(result.title, destination: URL(string: result.url)!)
+                            }
                         }
+                        
                     }
                 }
             }
@@ -81,6 +89,8 @@ class SearchModel: ObservableObject {
     
     @Published var searchText: String = ""
     
+    @Published var doneSearching = false
+    
     // MARK:- Initiliazer for product via model.
     
     init() {
@@ -104,6 +114,7 @@ class SearchModel: ObservableObject {
     
     
     private func searchItems(searchText: String) {
+        doneSearching = false
         var request = URLRequest(url: URL(string: "https://mysterious-coast-36838.herokuapp.com/feed/p")!)
         request.httpMethod = "POST"
         let params: [String: Any] = ["title": searchText]
@@ -129,6 +140,7 @@ class SearchModel: ObservableObject {
                 let songs = try JSONDecoder().decode(Results.self, from: data)
                 DispatchQueue.main.async {
                     self.results = songs.results
+                    self.doneSearching = true
                 }
             } catch {
                 print("no results")
