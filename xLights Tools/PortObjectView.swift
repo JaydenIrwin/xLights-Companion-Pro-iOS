@@ -9,7 +9,11 @@ import SwiftUI
 
 struct PortObjectView: View {
     
-    @Binding var portObject: PortObject
+    @ObservedObject var data: OutletDataSource
+    
+    @State var uuid: UUID
+    @State var name: String
+    @State var pixels: Int
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -21,14 +25,17 @@ struct PortObjectView: View {
                         Text("Name")
                         Spacer()
                             .frame(width: 20)
-                        TextField("", text: $portObject.name)
+                        TextField("", text: $name, onEditingChanged: { isEditing in
+                            data.editPortObject(uuid: uuid, name: name, pixels: pixels)
+                        })
                     }
                     HStack {
                         Text("Pixels")
                         Spacer()
                             .frame(width: 20)
-                        TextField("", text: Binding(get: { String(portObject.pixels) }, set: { newValue in
-                            portObject.pixels = Int(newValue) ?? 0
+                        TextField("", text: Binding(get: { String(pixels) }, set: { newValue in
+                            pixels = Int(newValue) ?? 0
+                            data.editPortObject(uuid: uuid, name: name, pixels: pixels)
                         }))
                             .keyboardType(.numberPad)
                     }
@@ -38,8 +45,8 @@ struct PortObjectView: View {
             .navigationTitle("New Item")
             .toolbar {
                 Button("Done") {
+                    data.editPortObject(uuid: uuid, name: name, pixels: pixels)
                     presentationMode.wrappedValue.dismiss()
-                    
                 }
             }
         }
@@ -52,6 +59,6 @@ struct PortObjectView: View {
 
 struct PortObjectView_Previews: PreviewProvider {
     static var previews: some View {
-        PortObjectView(portObject: .constant(PortObject(name: "", pixels: 0)))
+        PortObjectView(data: OutletDataSource(), uuid: UUID(), name: "", pixels: 0)
     }
 }

@@ -98,11 +98,7 @@ struct OutletOrganizer: View {
                   secondaryButton: .cancel())
         }
         .sheet(item: $showingPortObject) { object in
-            PortObjectView(portObject: Binding(get: {
-                object
-            }, set: { newValue in
-                data.editPortObject(newValue)
-            }))
+            PortObjectView(data: data, uuid: object.uuid, name: object.name, pixels: object.pixels)
         }
         .onAppear() {
             data.ports = OutletDataSource.load()

@@ -14,7 +14,7 @@ struct Port : Identifiable, Codable {
     var pixels : Int {
         objects.map({ $0.pixels }).reduce(0, +)
     }
-    var id: String {
+    var id: String { // Long id string to update view when any value changes
         "\(number)-\(pixels)"
     }
     

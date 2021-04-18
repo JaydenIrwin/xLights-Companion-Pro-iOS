@@ -53,7 +53,7 @@ class OutletDataSource: ObservableObject {
     
     func removePortObject(_ object: PortObject) {
         for (pIndex, port) in ports.enumerated() {
-            if let oIndex = port.objects.firstIndex(where: { $0.id == object.id }) {
+            if let oIndex = port.objects.firstIndex(where: { $0.uuid == object.uuid }) {
                 ports[pIndex].objects.remove(at: oIndex)
                 break
             }
@@ -61,10 +61,11 @@ class OutletDataSource: ObservableObject {
         save()
     }
     
-    func editPortObject(_ object: PortObject) {
+    func editPortObject(uuid: UUID, name: String, pixels: Int) {
         for (pIndex, port) in ports.enumerated() {
-            if let oIndex = port.objects.firstIndex(where: { $0.id == object.id }) {
-                ports[pIndex].objects[oIndex] = object
+            if let oIndex = port.objects.firstIndex(where: { $0.uuid == uuid }) {
+                ports[pIndex].objects[oIndex].name = name
+                ports[pIndex].objects[oIndex].pixels = pixels
                 break
             }
         }
