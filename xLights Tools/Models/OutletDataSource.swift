@@ -10,10 +10,10 @@ import Foundation
 class OutletDataSource: ObservableObject {
     
     static let defaultData = [
-        Port(id: 1, objects: [PortObject(name: "Mega Tree", pixels: 1000)]),
-        Port(id: 2, objects: []),
-        Port(id: 3, objects: []),
-        Port(id: 4, objects: [])
+        Port(number: 1, objects: [PortObject(name: "Mega Tree", pixels: 1000)]),
+        Port(number: 2, objects: []),
+        Port(number: 3, objects: []),
+        Port(number: 4, objects: [])
     ]
     
     static func load() -> [Port] {
@@ -30,24 +30,23 @@ class OutletDataSource: ObservableObject {
     @Published var ports: [Port] = OutletDataSource.load()
     
     func addNewPort() {
-        ports.append(Port(id: ports.endIndex+1, objects: []))
+        ports.append(Port(number: ports.endIndex+1, objects: []))
         save()
     }
     
-    func addNewPortObject() -> (Int, Int) {
+    func addNewPortObject() -> PortObject {
         let newItem = PortObject(name: "", pixels: 0)
         let pIndex = ports.endIndex - 1
-        let oIndex = ports[pIndex].objects.endIndex
         ports[pIndex].objects.append(newItem)
         save()
-        return (pIndex, oIndex)
+        return newItem
     }
     
     func removePort(_ port: Port) {
-        ports.remove(at: port.id-1)
+        ports.remove(at: port.number-1)
         // Recalculate port ids after removal
         for (index) in ports.indices {
-            ports[index].id = index + 1
+            ports[index].number = index + 1
         }
         save()
     }
@@ -62,9 +61,19 @@ class OutletDataSource: ObservableObject {
         save()
     }
     
+    func editPortObject(_ object: PortObject) {
+        for (pIndex, port) in ports.enumerated() {
+            if let oIndex = port.objects.firstIndex(where: { $0.id == object.id }) {
+                ports[pIndex].objects[oIndex] = object
+                break
+            }
+        }
+        save()
+    }
+    
     func movePortObject(_ object: PortObject, to newPort: Port) {
-        removePortObject(object)
-        ports[newPort.id-1].objects.append(object)
+        self.removePortObject(object)
+        self.ports[newPort.number-1].objects.append(object)
         save()
     }
     

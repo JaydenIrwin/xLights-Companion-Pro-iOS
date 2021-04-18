@@ -21,7 +21,7 @@ struct PortObjectCell: View {
             }
             Spacer()
         }
-        .padding()
+        .padding(12)
         .background(Color(UIColor.secondarySystemGroupedBackground))
         .cornerRadius(16)
     }

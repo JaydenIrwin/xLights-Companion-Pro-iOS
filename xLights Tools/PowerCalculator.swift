@@ -147,7 +147,6 @@ struct ACDCCalculator: View {
             }
         }
         .listStyle(InsetGroupedListStyle())
-        .frame(maxWidth: 512)
         .navigationTitle("Power Calculator")
     }
 }

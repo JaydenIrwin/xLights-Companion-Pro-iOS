@@ -9,14 +9,17 @@ import Foundation
 
 struct Port : Identifiable, Codable {
     
-    var id : Int
+    var number : Int
     var objects : [PortObject]
     var pixels : Int {
         objects.map({ $0.pixels }).reduce(0, +)
     }
+    var id: String {
+        "\(number)-\(pixels)"
+    }
     
-    init(id: Int, objects: [PortObject]) {
-        self.id = id
+    init(number: Int, objects: [PortObject]) {
+        self.number = number
         self.objects = objects
     }
     

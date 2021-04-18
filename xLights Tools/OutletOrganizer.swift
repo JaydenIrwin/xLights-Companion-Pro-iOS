@@ -11,8 +11,7 @@ struct OutletOrganizer: View {
     
     @ObservedObject var data = OutletDataSource()
     
-    @State var showingPortItem = false
-    @State var selectedIndex: (Int, Int)?
+    @State var showingPortObject: PortObject?
     @State var deleteAlert = false
     
     let columns = [GridItem(.adaptive(minimum: 100))]
@@ -22,7 +21,7 @@ struct OutletOrganizer: View {
             LazyVGrid(columns: columns, spacing: 20) {
                 ForEach(data.ports) { (port) in
                     Section {
-                        PortObjectCell(title: "Port \(port.id)", description: "\(port.pixels) pixels")
+                        PortObjectCell(title: "Port \(port.number)", description: "\(port.pixels) px")
                         .contextMenu {
                             Button {
                                 data.removePort(port)
@@ -32,10 +31,9 @@ struct OutletOrganizer: View {
                         }
                         
                         ForEach(Array(port.objects.enumerated()), id: \.1.id) { index, object in
-                            PortObjectCell(title: object.name, description: "\(object.pixels) pixels")
+                            PortObjectCell(title: object.name, description: "\(object.pixels) px")
                             .onTapGesture {
-                                selectedIndex = (port.id-1, index)
-                                showingPortItem = true
+                                showingPortObject = object
                             }
                             .contextMenu {
                                 Menu {
@@ -43,7 +41,7 @@ struct OutletOrganizer: View {
                                         Button(action: {
                                             data.movePortObject(object, to: newPort)
                                         }, label: {
-                                            Label("Port \(newPort.id)", systemImage: "power")
+                                            Label("Port \(newPort.number)", systemImage: "power")
                                         })
                                     }
                                 } label: {
@@ -74,9 +72,7 @@ struct OutletOrganizer: View {
                         Label("Add Port", systemImage: "power")
                     })
                     Button(action: {
-                        // Show New Object
-                        selectedIndex = data.addNewPortObject()
-                        showingPortItem = true
+                        showingPortObject = data.addNewPortObject()
                     }, label: {
                         Label("Add Object", systemImage: "cube")
                     })
@@ -101,12 +97,11 @@ struct OutletOrganizer: View {
                   },
                   secondaryButton: .cancel())
         }
-        .sheet(isPresented: $showingPortItem) {
+        .sheet(item: $showingPortObject) { object in
             PortObjectView(portObject: Binding(get: {
-                data.ports[selectedIndex!.0].objects[selectedIndex!.1]
+                object
             }, set: { newValue in
-                data.ports[selectedIndex!.0].objects[selectedIndex!.1] = newValue
-                data.save()
+                data.editPortObject(newValue)
             }))
         }
         .onAppear() {
