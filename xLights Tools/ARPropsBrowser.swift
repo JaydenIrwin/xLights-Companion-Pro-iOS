@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ARPropsView: View {
+struct ARPropsBrowser: View {
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -22,7 +22,13 @@ struct ARPropsView: View {
                             .resizable()
                             .aspectRatio(1, contentMode: ContentMode.fit)
                             .background(Color(UIColor.secondarySystemGroupedBackground))
-                            .overlay(Image(systemName: "arkit").imageScale(.large).foregroundColor(.white).padding(), alignment: .bottomTrailing)
+                            .overlay(prop == selectedProp ? RoundedRectangle(cornerRadius: 16).strokeBorder(Color.accentColor, lineWidth: 4) : nil)
+                            .overlay(
+                                Image(systemName: "arkit")
+                                    .imageScale(.large)
+                                    .foregroundColor(.white)
+                                    .padding()
+                            , alignment: .bottomTrailing)
                             .cornerRadius(16)
                             .onTapGesture {
                                 selectedProp = prop

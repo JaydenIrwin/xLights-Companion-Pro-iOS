@@ -19,6 +19,7 @@ struct MyARView: UIViewRepresentable {
         let uiView = ARView()
         #else
         let uiView = ARView(frame: .zero, cameraMode: ARView.CameraMode.ar, automaticallyConfigureSession: false)
+        uiView.session.pause()
         uiView.enableObjectRemoval()
         #endif
         return uiView
@@ -46,7 +47,9 @@ struct MyARView: UIViewRepresentable {
             } catch {
                 print("Failed to load prop model.")
             }
-            selectedProp = nil
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { // Delay so selected prop will stay highlighted in UI for 0.1 sec after tap
+                selectedProp = nil
+            }
         }
         #endif
     }

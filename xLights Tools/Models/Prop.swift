@@ -7,7 +7,7 @@
 
 import RealityKit
 
-struct Prop: Identifiable {
+struct Prop: Equatable, Identifiable {
     
     let iconName: String
     let fileName: String

@@ -15,6 +15,7 @@ struct ARPropView: View {
     
     var body: some View {
         MyARView(selectedProp: $selectedProp, isPaused: $arIsPaused)
+            .ignoresSafeArea()
             .overlay(Button(action: {
                 showingPropPicker = true
             }, label: {
@@ -24,7 +25,7 @@ struct ARPropView: View {
                     .foregroundColor(.white)
             }).padding(), alignment: .bottom)
             .sheet(isPresented: $showingPropPicker) {
-                ARPropsView(selectedProp: $selectedProp)
+                ARPropsBrowser(selectedProp: $selectedProp)
             }
             .onAppear() {
                 arIsPaused = false
