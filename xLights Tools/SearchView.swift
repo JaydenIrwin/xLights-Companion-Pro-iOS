@@ -53,10 +53,15 @@ struct SearchView: View {
                         .foregroundColor(Color.accentColor)
                     Spacer()
                 } else {
-                    if searchModel.results.isEmpty && searchModel.doneSearching{
+                    if searchModel.results.isEmpty && searchModel.doneSearching {
                         Spacer()
                         Text("No results")
                             .foregroundColor(Color(UIColor.secondaryLabel))
+                        Spacer()
+                    } else if searchModel.results.isEmpty && !searchModel.doneSearching {
+                        Spacer()
+                        ProgressView()
+                            .scaleEffect(1.5)
                         Spacer()
                     } else {
                         List {

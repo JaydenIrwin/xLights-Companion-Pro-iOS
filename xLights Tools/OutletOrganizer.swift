@@ -21,7 +21,7 @@ struct OutletOrganizer: View {
             LazyVGrid(columns: columns, spacing: 20) {
                 ForEach(data.ports) { (port) in
                     Section {
-                        PortObjectCell(title: "Port \(port.number)", description: "\(port.pixels) px")
+                        PortObjectCell(title: "Port \(port.number)", description: "\(port.pixels) px", isPort: true)
                         .contextMenu {
                             Button {
                                 data.removePort(port)
@@ -31,7 +31,7 @@ struct OutletOrganizer: View {
                         }
                         
                         ForEach(Array(port.objects.enumerated()), id: \.1.id) { index, object in
-                            PortObjectCell(title: object.name, description: "\(object.pixels) px")
+                            PortObjectCell(title: object.name, description: "\(object.pixels) px", isPort: false)
                             .onTapGesture {
                                 showingPortObject = object
                             }
