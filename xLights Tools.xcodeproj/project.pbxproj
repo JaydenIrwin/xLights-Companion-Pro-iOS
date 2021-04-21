@@ -13,9 +13,9 @@
 		1B5CB9B225B35A870009CC59 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B5CB9B125B35A870009CC59 /* Preview Assets.xcassets */; };
 		1B62573725CE0B09003528FD /* PowerCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B62573625CE0B09003528FD /* PowerCalculator.swift */; };
 		1B7F2CE625CA6A770005813E /* TreeLightsCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F2CE525CA6A770005813E /* TreeLightsCalculator.swift */; };
-		1B7F2CE925CA6A8F0005813E /* OutletOrganizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F2CE825CA6A8F0005813E /* OutletOrganizer.swift */; };
+		1B7F2CE925CA6A8F0005813E /* PropOrganizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F2CE825CA6A8F0005813E /* PropOrganizer.swift */; };
 		1B89581425FC16410090FDED /* RelatedWebsite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B89581325FC16410090FDED /* RelatedWebsite.swift */; };
-		1B89581725FC16CE0090FDED /* Prop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B89581625FC16CE0090FDED /* Prop.swift */; };
+		1B89581725FC16CE0090FDED /* PropModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B89581625FC16CE0090FDED /* PropModel.swift */; };
 		1BC2702825C668560034761E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC2702725C668560034761E /* HomeView.swift */; };
 		1BC2702B25C668650034761E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC2702A25C668650034761E /* SearchView.swift */; };
 		1BC2702E25C6687C0034761E /* ARPropsBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC2702D25C6687C0034761E /* ARPropsBrowser.swift */; };
@@ -38,11 +38,11 @@
 		1BFEEB44262A6C1400F13CB8 /* Arch.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1BFEEB37262A6C1400F13CB8 /* Arch.usdz */; };
 		1BFEEB45262A6C1400F13CB8 /* Snow Flake.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1BFEEB38262A6C1400F13CB8 /* Snow Flake.usdz */; };
 		1BFEEB46262A6C1400F13CB8 /* Circle Border.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1BFEEB39262A6C1400F13CB8 /* Circle Border.usdz */; };
-		E10827A0262A35E100BB9D82 /* PortObjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108279F262A35E100BB9D82 /* PortObjectCell.swift */; };
+		E10827A0262A35E100BB9D82 /* PropCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108279F262A35E100BB9D82 /* PropCell.swift */; };
 		E10827A5262A3CED00BB9D82 /* OutletDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10827A4262A3CED00BB9D82 /* OutletDataSource.swift */; };
-		E10B3D29260142C9000CD525 /* PortObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B3D28260142C9000CD525 /* PortObjectView.swift */; };
+		E10B3D29260142C9000CD525 /* PropEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B3D28260142C9000CD525 /* PropEditView.swift */; };
 		E1534EA726013A00004E63C6 /* Port.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1534EA626013A00004E63C6 /* Port.swift */; };
-		E1534EAA26013B2C004E63C6 /* PortObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1534EA926013B2C004E63C6 /* PortObject.swift */; };
+		E1534EAA26013B2C004E63C6 /* OrganizerProp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1534EA926013B2C004E63C6 /* OrganizerProp.swift */; };
 		E1F3355825EEB7B500B64478 /* MixedLengthResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F3355725EEB7B500B64478 /* MixedLengthResultRow.swift */; };
 		E1F3355E25F148E600B64478 /* ResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F3355D25F148E600B64478 /* ResultRow.swift */; };
 /* End PBXBuildFile section */
@@ -56,9 +56,9 @@
 		1B5CB9B325B35A870009CC59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B62573625CE0B09003528FD /* PowerCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerCalculator.swift; sourceTree = "<group>"; };
 		1B7F2CE525CA6A770005813E /* TreeLightsCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeLightsCalculator.swift; sourceTree = "<group>"; };
-		1B7F2CE825CA6A8F0005813E /* OutletOrganizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletOrganizer.swift; sourceTree = "<group>"; };
+		1B7F2CE825CA6A8F0005813E /* PropOrganizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropOrganizer.swift; sourceTree = "<group>"; };
 		1B89581325FC16410090FDED /* RelatedWebsite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedWebsite.swift; sourceTree = "<group>"; };
-		1B89581625FC16CE0090FDED /* Prop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prop.swift; sourceTree = "<group>"; };
+		1B89581625FC16CE0090FDED /* PropModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropModel.swift; sourceTree = "<group>"; };
 		1BC2702725C668560034761E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1BC2702A25C668650034761E /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		1BC2702D25C6687C0034761E /* ARPropsBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARPropsBrowser.swift; sourceTree = "<group>"; };
@@ -82,11 +82,11 @@
 		1BFEEB37262A6C1400F13CB8 /* Arch.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Arch.usdz; sourceTree = "<group>"; };
 		1BFEEB38262A6C1400F13CB8 /* Snow Flake.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Snow Flake.usdz"; sourceTree = "<group>"; };
 		1BFEEB39262A6C1400F13CB8 /* Circle Border.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Circle Border.usdz"; sourceTree = "<group>"; };
-		E108279F262A35E100BB9D82 /* PortObjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortObjectCell.swift; sourceTree = "<group>"; };
+		E108279F262A35E100BB9D82 /* PropCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropCell.swift; sourceTree = "<group>"; };
 		E10827A4262A3CED00BB9D82 /* OutletDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletDataSource.swift; sourceTree = "<group>"; };
-		E10B3D28260142C9000CD525 /* PortObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortObjectView.swift; sourceTree = "<group>"; };
+		E10B3D28260142C9000CD525 /* PropEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropEditView.swift; sourceTree = "<group>"; };
 		E1534EA626013A00004E63C6 /* Port.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Port.swift; sourceTree = "<group>"; };
-		E1534EA926013B2C004E63C6 /* PortObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortObject.swift; sourceTree = "<group>"; };
+		E1534EA926013B2C004E63C6 /* OrganizerProp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizerProp.swift; sourceTree = "<group>"; };
 		E1F3355725EEB7B500B64478 /* MixedLengthResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixedLengthResultRow.swift; sourceTree = "<group>"; };
 		E1F3355D25F148E600B64478 /* ResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,9 +136,9 @@
 				1BF80FB125E75C1E00EB41CD /* IntegerInputRow.swift */,
 				E1F3355D25F148E600B64478 /* ResultRow.swift */,
 				E1F3355725EEB7B500B64478 /* MixedLengthResultRow.swift */,
-				1B7F2CE825CA6A8F0005813E /* OutletOrganizer.swift */,
-				E108279F262A35E100BB9D82 /* PortObjectCell.swift */,
-				E10B3D28260142C9000CD525 /* PortObjectView.swift */,
+				1B7F2CE825CA6A8F0005813E /* PropOrganizer.swift */,
+				E108279F262A35E100BB9D82 /* PropCell.swift */,
+				E10B3D28260142C9000CD525 /* PropEditView.swift */,
 				1BC2702A25C668650034761E /* SearchView.swift */,
 				1B89581925FC16FC0090FDED /* Models */,
 				1BA985B126213EC00047CD41 /* 3D Models */,
@@ -161,10 +161,10 @@
 			isa = PBXGroup;
 			children = (
 				1B89581325FC16410090FDED /* RelatedWebsite.swift */,
-				1B89581625FC16CE0090FDED /* Prop.swift */,
+				1B89581625FC16CE0090FDED /* PropModel.swift */,
 				E10827A4262A3CED00BB9D82 /* OutletDataSource.swift */,
 				E1534EA626013A00004E63C6 /* Port.swift */,
-				E1534EA926013B2C004E63C6 /* PortObject.swift */,
+				E1534EA926013B2C004E63C6 /* OrganizerProp.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -272,7 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E10827A0262A35E100BB9D82 /* PortObjectCell.swift in Sources */,
+				E10827A0262A35E100BB9D82 /* PropCell.swift in Sources */,
 				1BFEEB172627706400F13CB8 /* HomeFeatureView.swift in Sources */,
 				1B5CB9AB25B35A810009CC59 /* XLightsToolsApp.swift in Sources */,
 				E10827A5262A3CED00BB9D82 /* OutletDataSource.swift in Sources */,
@@ -282,16 +282,16 @@
 				1B0E3CF726058CBC00FBAAC0 /* MyARView.swift in Sources */,
 				1BF80FB225E75C1E00EB41CD /* IntegerInputRow.swift in Sources */,
 				E1534EA726013A00004E63C6 /* Port.swift in Sources */,
-				1B89581725FC16CE0090FDED /* Prop.swift in Sources */,
+				1B89581725FC16CE0090FDED /* PropModel.swift in Sources */,
 				E1F3355E25F148E600B64478 /* ResultRow.swift in Sources */,
-				E1534EAA26013B2C004E63C6 /* PortObject.swift in Sources */,
-				E10B3D29260142C9000CD525 /* PortObjectView.swift in Sources */,
+				E1534EAA26013B2C004E63C6 /* OrganizerProp.swift in Sources */,
+				E10B3D29260142C9000CD525 /* PropEditView.swift in Sources */,
 				E1F3355825EEB7B500B64478 /* MixedLengthResultRow.swift in Sources */,
 				1B62573725CE0B09003528FD /* PowerCalculator.swift in Sources */,
 				1BC2702E25C6687C0034761E /* ARPropsBrowser.swift in Sources */,
 				1BC2702825C668560034761E /* HomeView.swift in Sources */,
 				1B7F2CE625CA6A770005813E /* TreeLightsCalculator.swift in Sources */,
-				1B7F2CE925CA6A8F0005813E /* OutletOrganizer.swift in Sources */,
+				1B7F2CE925CA6A8F0005813E /* PropOrganizer.swift in Sources */,
 				1BC2703125C668910034761E /* ToolsView.swift in Sources */,
 				1BF80FAC25E5EA9D00EB41CD /* ARPropView.swift in Sources */,
 			);

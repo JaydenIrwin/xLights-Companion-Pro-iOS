@@ -10,10 +10,10 @@ import Foundation
 class OutletDataSource: ObservableObject {
     
     static let defaultData = [
-        Port(number: 1, objects: [PortObject(name: "Mega Tree", pixels: 1000)]),
-        Port(number: 2, objects: []),
-        Port(number: 3, objects: []),
-        Port(number: 4, objects: [])
+        Port(number: 1, props: [OrganizerProp(name: "Mega Tree", pixels: 1000)]),
+        Port(number: 2, props: []),
+        Port(number: 3, props: []),
+        Port(number: 4, props: [])
     ]
     
     static func load() -> [Port] {
@@ -30,14 +30,14 @@ class OutletDataSource: ObservableObject {
     @Published var ports: [Port] = OutletDataSource.load()
     
     func addNewPort() {
-        ports.append(Port(number: ports.endIndex+1, objects: []))
+        ports.append(Port(number: ports.endIndex+1, props: []))
         save()
     }
     
-    func addNewPortObject() -> PortObject {
-        let newItem = PortObject(name: "", pixels: 0)
+    func addNewPortObject() -> OrganizerProp {
+        let newItem = OrganizerProp(name: "", pixels: 0)
         let pIndex = ports.endIndex - 1
-        ports[pIndex].objects.append(newItem)
+        ports[pIndex].props.append(newItem)
         save()
         return newItem
     }
@@ -51,30 +51,30 @@ class OutletDataSource: ObservableObject {
         save()
     }
     
-    func removePortObject(_ object: PortObject) {
+    func removeProp(_ prop: OrganizerProp) {
         for (pIndex, port) in ports.enumerated() {
-            if let oIndex = port.objects.firstIndex(where: { $0.uuid == object.uuid }) {
-                ports[pIndex].objects.remove(at: oIndex)
+            if let oIndex = port.props.firstIndex(where: { $0.uuid == prop.uuid }) {
+                ports[pIndex].props.remove(at: oIndex)
                 break
             }
         }
         save()
     }
     
-    func editPortObject(uuid: UUID, name: String, pixels: Int) {
+    func editProp(uuid: UUID, name: String, pixels: Int) {
         for (pIndex, port) in ports.enumerated() {
-            if let oIndex = port.objects.firstIndex(where: { $0.uuid == uuid }) {
-                ports[pIndex].objects[oIndex].name = name
-                ports[pIndex].objects[oIndex].pixels = pixels
+            if let oIndex = port.props.firstIndex(where: { $0.uuid == uuid }) {
+                ports[pIndex].props[oIndex].name = name
+                ports[pIndex].props[oIndex].pixels = pixels
                 break
             }
         }
         save()
     }
     
-    func movePortObject(_ object: PortObject, to newPort: Port) {
-        self.removePortObject(object)
-        self.ports[newPort.number-1].objects.append(object)
+    func moveProp(_ prop: OrganizerProp, to newPort: Port) {
+        self.removeProp(prop)
+        self.ports[newPort.number-1].props.append(prop)
         save()
     }
     

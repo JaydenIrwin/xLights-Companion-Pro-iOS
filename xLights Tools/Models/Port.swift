@@ -10,17 +10,17 @@ import Foundation
 struct Port : Identifiable, Codable {
     
     var number : Int
-    var objects : [PortObject]
+    var props : [OrganizerProp]
     var pixels : Int {
-        objects.map({ $0.pixels }).reduce(0, +)
+        props.map({ $0.pixels }).reduce(0, +)
     }
     var id: String { // Long id string to update view when any value changes
         "\(number)-\(pixels)"
     }
     
-    init(number: Int, objects: [PortObject]) {
+    init(number: Int, props: [OrganizerProp]) {
         self.number = number
-        self.objects = objects
+        self.props = props
     }
     
 }

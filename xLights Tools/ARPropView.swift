@@ -10,7 +10,7 @@ import SwiftUI
 struct ARPropView: View {
     
     @State var showingPropPicker = false
-    @State var selectedProp: Prop?
+    @State var selectedProp: PropModel?
     @State var arIsPaused = true
     
     var body: some View {

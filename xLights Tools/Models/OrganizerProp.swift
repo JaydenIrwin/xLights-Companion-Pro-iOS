@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct PortObject : Identifiable, Codable {
+// THIS IS THE PIXEL REPRESENTATION FOR PROP ORGANIZER, NOT FOR AR.
+
+struct OrganizerProp : Identifiable, Codable {
     let uuid = UUID()
     var name : String
     var pixels : Int

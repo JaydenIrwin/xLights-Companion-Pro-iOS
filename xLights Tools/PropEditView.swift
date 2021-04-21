@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PortObjectView: View {
+struct PropEditView: View {
     
     @ObservedObject var data: OutletDataSource
     
@@ -26,7 +26,7 @@ struct PortObjectView: View {
                         Spacer()
                             .frame(width: 20)
                         TextField("", text: $name, onEditingChanged: { isEditing in
-                            data.editPortObject(uuid: uuid, name: name, pixels: pixels)
+                            data.editProp(uuid: uuid, name: name, pixels: pixels)
                         })
                     }
                     HStack {
@@ -35,17 +35,17 @@ struct PortObjectView: View {
                             .frame(width: 20)
                         TextField("", text: Binding(get: { String(pixels) }, set: { newValue in
                             pixels = Int(newValue) ?? 0
-                            data.editPortObject(uuid: uuid, name: name, pixels: pixels)
+                            data.editProp(uuid: uuid, name: name, pixels: pixels)
                         }))
                             .keyboardType(.numberPad)
                     }
                 }
                 .onTapGesture {hideKeyboard()}
             }
-            .navigationTitle("New Item")
+            .navigationTitle("New Prop")
             .toolbar {
                 Button("Done") {
-                    data.editPortObject(uuid: uuid, name: name, pixels: pixels)
+                    data.editProp(uuid: uuid, name: name, pixels: pixels)
                     presentationMode.wrappedValue.dismiss()
                 }
             }
@@ -59,6 +59,6 @@ struct PortObjectView: View {
 
 struct PortObjectView_Previews: PreviewProvider {
     static var previews: some View {
-        PortObjectView(data: OutletDataSource(), uuid: UUID(), name: "", pixels: 0)
+        PropEditView(data: OutletDataSource(), uuid: UUID(), name: "", pixels: 0)
     }
 }

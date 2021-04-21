@@ -11,7 +11,7 @@ import RealityKit
 
 struct MyARView: UIViewRepresentable {
     
-    @Binding var selectedProp: Prop?
+    @Binding var selectedProp: PropModel?
     @Binding var isPaused: Bool
 
     func makeUIView(context: Context) -> ARView {
@@ -47,9 +47,7 @@ struct MyARView: UIViewRepresentable {
             } catch {
                 print("Failed to load prop model.")
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { // Delay so selected prop will stay highlighted in UI for 0.1 sec after tap
-                selectedProp = nil
-            }
+            selectedProp = nil
         }
         #endif
     }

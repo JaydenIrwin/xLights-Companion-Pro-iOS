@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct OutletOrganizer: View {
+struct PropOrganizer: View {
     
     @ObservedObject var data = OutletDataSource()
     
-    @State var showingPortObject: PortObject?
+    @State var showingProp: OrganizerProp?
     @State var deleteAlert = false
     
     let columns = [GridItem(.adaptive(minimum: 100))]
@@ -21,7 +21,7 @@ struct OutletOrganizer: View {
             LazyVGrid(columns: columns, spacing: 20) {
                 ForEach(data.ports) { (port) in
                     Section {
-                        PortObjectCell(title: "Port \(port.number)", description: "\(port.pixels) px", isPort: true)
+                        PropCell(title: "Port \(port.number)", description: "\(port.pixels) px", isPort: true)
                         .contextMenu {
                             Button {
                                 data.removePort(port)
@@ -30,16 +30,16 @@ struct OutletOrganizer: View {
                             }
                         }
                         
-                        ForEach(Array(port.objects.enumerated()), id: \.1.id) { index, object in
-                            PortObjectCell(title: object.name, description: "\(object.pixels) px", isPort: false)
+                        ForEach(Array(port.props.enumerated()), id: \.1.id) { index, object in
+                            PropCell(title: object.name, description: "\(object.pixels) px", isPort: false)
                             .onTapGesture {
-                                showingPortObject = object
+                                showingProp = object
                             }
                             .contextMenu {
                                 Menu {
                                     ForEach(data.ports) { newPort in
                                         Button(action: {
-                                            data.movePortObject(object, to: newPort)
+                                            data.moveProp(object, to: newPort)
                                         }, label: {
                                             Label("Port \(newPort.number)", systemImage: "power")
                                         })
@@ -48,7 +48,7 @@ struct OutletOrganizer: View {
                                     Label("Move to...", systemImage: "arrow.turn.down.right")
                                 }
                                 Button {
-                                    data.removePortObject(object)
+                                    data.removeProp(object)
                                 } label : {
                                     Label("Remove", systemImage: "trash")
                                 }
@@ -62,7 +62,7 @@ struct OutletOrganizer: View {
         }
         .frame(idealWidth: .infinity, maxWidth: .infinity)
         .background(Color(UIColor.systemGroupedBackground).ignoresSafeArea())
-        .navigationTitle("Outlet Organizer")
+        .navigationTitle("Prop Organizer")
         .toolbar(content: {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Menu {
@@ -72,9 +72,9 @@ struct OutletOrganizer: View {
                         Label("Add Port", systemImage: "power")
                     })
                     Button(action: {
-                        showingPortObject = data.addNewPortObject()
+                        showingProp = data.addNewPortObject()
                     }, label: {
-                        Label("Add Object", systemImage: "cube")
+                        Label("Add Prop", systemImage: "lightbulb")
                     })
                 } label: {
                     Image(systemName: "plus.circle.fill")
@@ -97,8 +97,8 @@ struct OutletOrganizer: View {
                   },
                   secondaryButton: .cancel())
         }
-        .sheet(item: $showingPortObject) { object in
-            PortObjectView(data: data, uuid: object.uuid, name: object.name, pixels: object.pixels)
+        .sheet(item: $showingProp) { object in
+            PropEditView(data: data, uuid: object.uuid, name: object.name, pixels: object.pixels)
         }
         .onAppear() {
             data.ports = OutletDataSource.load()
@@ -107,10 +107,10 @@ struct OutletOrganizer: View {
     
 }
 
-struct OutletOrganizer_Previews: PreviewProvider {
+struct PropOrganizer_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            OutletOrganizer()
+            PropOrganizer()
         }
     }
 }

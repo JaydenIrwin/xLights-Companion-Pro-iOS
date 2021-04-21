@@ -45,10 +45,10 @@ struct ToolsView: View {
                 }
                 .frame(minHeight: 130)
                 Section {
-                    NavigationLink(destination: OutletOrganizer()) {
+                    NavigationLink(destination: PropOrganizer()) {
                         HStack {
                             VStack(alignment: .leading, spacing: 4) {
-                                Label("Outlet Organizer", systemImage: "power")
+                                Label("Prop Organizer", systemImage: "power")
                                     .font(.title2)
                                     .foregroundColor(Color(UIColor.systemBlue))
                                 Text("Keep track of which props are plugged into which outlets.")

@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct PortObjectCell: View {
+struct PropCell: View {
     
     @State var title: String
     @State var description: String
-    @State var isPort : Bool
+    @State var isPort: Bool
     
     var body: some View {
         HStack {
@@ -30,11 +30,9 @@ struct PortObjectCell: View {
                     .foregroundColor(Color(UIColor.secondaryLabel))
                     .font(.system(size: 16, weight: isPort ? .medium : .regular))
             }
-            
             Spacer()
-            
         }
-        .padding(12)
+        .padding(isPort ? 6 : 12)
         .frame(minHeight: 100)
         .background(Color(UIColor.secondarySystemGroupedBackground))
         .cornerRadius(16)
@@ -43,6 +41,6 @@ struct PortObjectCell: View {
 
 struct PortObjectCell_Previews: PreviewProvider {
     static var previews: some View {
-        PortObjectCell(title: "", description: "", isPort: true)
+        PropCell(title: "", description: "", isPort: true)
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ACDCCalculator: View {
     
-    enum LightType : String{
+    enum LightType : String {
         case pixels = "Pixels"
         case incandecent = "Incandecent"
     }
@@ -34,21 +34,17 @@ struct ACDCCalculator: View {
     }
     
     var ampsPerString : Double? {
-        if lightType == .pixels{
+        if lightType == .pixels {
             if let milliampsPerLight = milliampsPerLight, let lightsPerString = lightsPerString, let runningBrightness = runningBrightness {
                 //Convert running brightness to decimal to find how many milliamps we are running per bulb multiplied by the lights per string and then converted to amps
                 return ((milliampsPerLight * (runningBrightness/100)) * Double(lightsPerString))/1000
-            } else {
-                return nil
             }
         } else {
             if let milliampsPerLight = milliampsPerLight, let lightsPerString = lightsPerString {
                 return (milliampsPerLight * Double(lightsPerString))/1000
-            } else {
-                return nil
             }
         }
-        
+        return nil
     }
     
     var totalAmps : Double? {
@@ -86,7 +82,7 @@ struct ACDCCalculator: View {
     
     var numberOfPowerSupplies : Int? {
         if let stringsPerPowerSupply = stringsPerPowerSupply, let numberOfStrings = numberOfStrings, let totalWattage = totalWattage, let powerSupplyWattage = powerSupplyWattage, let maximumSupplyUsage = maximumSupplyUsage {
-            if stringsPerPowerSupply < numberOfStrings{
+            if stringsPerPowerSupply < numberOfStrings {
                 let powerSupplies = totalWattage / (Double(powerSupplyWattage) * (maximumSupplyUsage / 100))
                 return Int(powerSupplies.rounded(.up))
             } else {
