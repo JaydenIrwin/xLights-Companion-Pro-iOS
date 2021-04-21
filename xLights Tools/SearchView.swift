@@ -17,15 +17,23 @@ struct SearchView: View {
             VStack(spacing: 16) {
                 TextField("Search songs", text: $searchModel.searchText)
                     .padding(7)
-                    .padding(.horizontal, 25)
+                    .padding(.horizontal, 28)
                     .background(Color(.systemGray6))
                     .cornerRadius(8)
                     .overlay(
                         Image(systemName: "magnifyingglass")
                             .foregroundColor(.gray)
-                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                             .padding(.leading, 8)
                     , alignment: .leading)
+                    .overlay(
+                        Button(action: {
+                            searchModel.searchText = ""
+                        }, label: {
+                            Image(systemName: "xmark.circle.fill")
+                                .foregroundColor(.gray)
+                                .padding(.trailing, 8)
+                        })
+                    , alignment: .trailing)
                     .padding(.horizontal, 10)
                 if searchModel.searchText == "" {
                     Spacer()
@@ -102,7 +110,7 @@ class SearchModel: ObservableObject {
         $searchText
             .debounce(for: .milliseconds(500), scheduler: RunLoop.main) // debounces the string publisher, such that it delays the process of sending request to remote server.
             .map({ (string) -> String? in
-                if string.count < 1 {
+                if string.isEmpty {
                     self.results = []
                     return nil
                 }
