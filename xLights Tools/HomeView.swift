@@ -39,7 +39,7 @@ struct HomeView: View {
                         Button {
                             let fileURL = Bundle.main.url(forResource: "", withExtension: "")!
                             let exportVC = UIDocumentPickerViewController(forExporting: [fileURL])
-                            if let rootVC = UIApplication.shared.windows.first?.rootViewController?.presentedViewController {
+                            if let rootVC = UIApplication.shared.windows.first?.rootViewController {
                                 rootVC.present(exportVC, animated: true, completion: nil)
                             }
                         } label: {
