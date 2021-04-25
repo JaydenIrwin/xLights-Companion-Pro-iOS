@@ -36,11 +36,20 @@ struct HomeView: View {
                         selectedTab = .search
                     }
                     VStack(alignment: .leading, spacing: 14) {
-                        Label("Promotion", systemImage: "musicnote")
                         Button {
-                            
-                        } label: {Label("Promotion", systemImage: "musicnote")}
+                            let fileURL = Bundle.main.url(forResource: "", withExtension: "")!
+                            let exportVC = UIDocumentPickerViewController(forExporting: [fileURL])
+                            if let rootVC = UIApplication.shared.windows.first?.rootViewController?.presentedViewController {
+                                rootVC.present(exportVC, animated: true, completion: nil)
+                            }
+                        } label: {
+                            Label("Promotion", systemImage: "music.note")
+                        }
                     }
+                    .padding()
+                    .frame(idealWidth: 500, maxWidth: 500, alignment: .leading)
+                    .background(Color(UIColor.secondarySystemGroupedBackground))
+                    .cornerRadius(16)
                     VStack(alignment: .leading, spacing: 14) {
                         Label("Links", systemImage: "link")
                         ForEach(RelatedWebsite.websites) { website in
