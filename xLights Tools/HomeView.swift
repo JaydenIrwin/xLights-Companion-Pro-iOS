@@ -36,6 +36,12 @@ struct HomeView: View {
                         selectedTab = .search
                     }
                     VStack(alignment: .leading, spacing: 14) {
+                        Label("Promotion", systemImage: "musicnote")
+                        Button {
+                            
+                        } label: {Label("Promotion", systemImage: "musicnote")}
+                    }
+                    VStack(alignment: .leading, spacing: 14) {
                         Label("Links", systemImage: "link")
                         ForEach(RelatedWebsite.websites) { website in
                             Divider()
