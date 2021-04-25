@@ -7,14 +7,13 @@
 
 import SwiftUI
 
-struct ACDCCalculator: View {
+struct PowerCalculator: View {
     
     enum LightType : String {
         case pixels = "Pixels"
         case incandecent = "Incandecent"
     }
     
-    @State var unitSystem = UnitSystem.metric
     @State var lightType : LightType = .pixels
     @State var pixelVoltage : Double?
     @State var milliampsPerLight : Double?
@@ -125,7 +124,7 @@ struct ACDCCalculator: View {
                 ResultRow(title: "Watts per String", value: Binding(get: {wattsPerString}, set: {_ in}), unit: "watts", unitFrame: 50)
                 ResultRow(title: "Total Wattage", value: Binding(get: {totalWattage}, set: {_ in}), unit: "watts", unitFrame: 50)
                 
-                ResultRow(title: "Strings per Power Supply", value: Binding(get: {
+                ResultRow(title: "Strings Possible per Supply", value: Binding(get: {
                     if let stringsPerPowerSupply = stringsPerPowerSupply {
                         return Double(stringsPerPowerSupply)
                     } else {
@@ -150,7 +149,7 @@ struct ACDCCalculator: View {
 struct ACDCCalculator_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            ACDCCalculator()
+            PowerCalculator()
         }
     }
 }

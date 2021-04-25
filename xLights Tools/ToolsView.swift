@@ -29,7 +29,7 @@ struct ToolsView: View {
                 }
                 .frame(minHeight: 130)
                 Section {
-                    NavigationLink(destination: ACDCCalculator()) {
+                    NavigationLink(destination: PowerCalculator()) {
                         HStack {
                             VStack(alignment: .leading, spacing: 4) {
                                 Label("Power Calculator", systemImage: "bolt.fill")
