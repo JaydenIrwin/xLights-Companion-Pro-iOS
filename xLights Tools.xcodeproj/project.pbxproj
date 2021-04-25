@@ -45,7 +45,18 @@
 		E1534EAA26013B2C004E63C6 /* OrganizerProp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1534EA926013B2C004E63C6 /* OrganizerProp.swift */; };
 		E1F3355825EEB7B500B64478 /* MixedLengthResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F3355725EEB7B500B64478 /* MixedLengthResultRow.swift */; };
 		E1F3355E25F148E600B64478 /* ResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F3355D25F148E600B64478 /* ResultRow.swift */; };
+		E1FE76A02635E8D7002BD3CA /* xLightsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FE769F2635E8D7002BD3CA /* xLightsTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E1FE76982635E80E002BD3CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B5CB99F25B35A810009CC59 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B5CB9A625B35A810009CC59;
+			remoteInfo = "xLights Tools";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1B0E3CF626058CBC00FBAAC0 /* MyARView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyARView.swift; sourceTree = "<group>"; };
@@ -89,10 +100,20 @@
 		E1534EA926013B2C004E63C6 /* OrganizerProp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizerProp.swift; sourceTree = "<group>"; };
 		E1F3355725EEB7B500B64478 /* MixedLengthResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixedLengthResultRow.swift; sourceTree = "<group>"; };
 		E1F3355D25F148E600B64478 /* ResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultRow.swift; sourceTree = "<group>"; };
+		E1FE76932635E80E002BD3CA /* xLightsToolsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = xLightsToolsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1FE76972635E80E002BD3CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1FE769F2635E8D7002BD3CA /* xLightsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xLightsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1B5CB9A425B35A810009CC59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1FE76902635E80E002BD3CA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -107,6 +128,7 @@
 			children = (
 				1BD7C4AF2622BADB00D97D95 /* Settings.bundle */,
 				1B5CB9A925B35A810009CC59 /* xLights Tools */,
+				E1FE76942635E80E002BD3CA /* xLightsToolsTests */,
 				1B5CB9A825B35A810009CC59 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -115,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				1B5CB9A725B35A810009CC59 /* xLights Tools.app */,
+				E1FE76932635E80E002BD3CA /* xLightsToolsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,6 +212,15 @@
 			path = "3D Models";
 			sourceTree = "<group>";
 		};
+		E1FE76942635E80E002BD3CA /* xLightsToolsTests */ = {
+			isa = PBXGroup;
+			children = (
+				E1FE769F2635E8D7002BD3CA /* xLightsTests.swift */,
+				E1FE76972635E80E002BD3CA /* Info.plist */,
+			);
+			path = xLightsToolsTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -209,17 +241,39 @@
 			productReference = 1B5CB9A725B35A810009CC59 /* xLights Tools.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E1FE76922635E80E002BD3CA /* xLightsToolsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1FE769A2635E80E002BD3CA /* Build configuration list for PBXNativeTarget "xLightsToolsTests" */;
+			buildPhases = (
+				E1FE768F2635E80E002BD3CA /* Sources */,
+				E1FE76902635E80E002BD3CA /* Frameworks */,
+				E1FE76912635E80E002BD3CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E1FE76992635E80E002BD3CA /* PBXTargetDependency */,
+			);
+			name = xLightsToolsTests;
+			productName = xLightsToolsTests;
+			productReference = E1FE76932635E80E002BD3CA /* xLightsToolsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		1B5CB99F25B35A810009CC59 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1230;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
 					1B5CB9A625B35A810009CC59 = {
 						CreatedOnToolsVersion = 12.3;
+					};
+					E1FE76922635E80E002BD3CA = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 1B5CB9A625B35A810009CC59;
 					};
 				};
 			};
@@ -237,6 +291,7 @@
 			projectRoot = "";
 			targets = (
 				1B5CB9A625B35A810009CC59 /* xLights Tools */,
+				E1FE76922635E80E002BD3CA /* xLightsToolsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -262,6 +317,13 @@
 				1BD7C4B02622BADB00D97D95 /* Settings.bundle in Resources */,
 				1BFEEB40262A6C1400F13CB8 /* Present.usdz in Resources */,
 				1BFEEB41262A6C1400F13CB8 /* Mega Tree.usdz in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1FE76912635E80E002BD3CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +359,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E1FE768F2635E80E002BD3CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1FE76A02635E8D7002BD3CA /* xLightsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E1FE76992635E80E002BD3CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B5CB9A625B35A810009CC59 /* xLights Tools */;
+			targetProxy = E1FE76982635E80E002BD3CA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1B5CB9B425B35A870009CC59 /* Debug */ = {
@@ -424,7 +502,7 @@
 				CODE_SIGN_ENTITLEMENTS = "xLights Tools/xLights Tools.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = VA3SY54YU8;
+				DEVELOPMENT_TEAM = 67HDD4RTGM;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/xLights Tools/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -432,7 +510,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jaydenirwin.xlightstools;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jaydenirwin.xlightstools2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -448,7 +526,7 @@
 				CODE_SIGN_ENTITLEMENTS = "xLights Tools/xLights Tools.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = VA3SY54YU8;
+				DEVELOPMENT_TEAM = 67HDD4RTGM;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/xLights Tools/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -456,11 +534,53 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jaydenirwin.xlightstools;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jaydenirwin.xlightstools2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E1FE769B2635E80E002BD3CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 67HDD4RTGM;
+				INFOPLIST_FILE = xLightsToolsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ca.nicklong.xLightsToolsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/xLights Tools.app/xLights Tools";
+			};
+			name = Debug;
+		};
+		E1FE769C2635E80E002BD3CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 67HDD4RTGM;
+				INFOPLIST_FILE = xLightsToolsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ca.nicklong.xLightsToolsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/xLights Tools.app/xLights Tools";
 			};
 			name = Release;
 		};
@@ -481,6 +601,15 @@
 			buildConfigurations = (
 				1B5CB9B725B35A870009CC59 /* Debug */,
 				1B5CB9B825B35A870009CC59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1FE769A2635E80E002BD3CA /* Build configuration list for PBXNativeTarget "xLightsToolsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1FE769B2635E80E002BD3CA /* Debug */,
+				E1FE769C2635E80E002BD3CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
