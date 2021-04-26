@@ -37,13 +37,13 @@ struct HomeView: View {
                     }
                     VStack(alignment: .leading, spacing: 14) {
                         Button {
-                            let fileURL = Bundle.main.url(forResource: "", withExtension: "")!
-                            let exportVC = UIDocumentPickerViewController(forExporting: [fileURL])
+                            let fileURL = Bundle.main.url(forResource: "Sweet Caroline - Its Christmas Time (XMAS Version)", withExtension: "zip")!
+                            let exportVC = UIDocumentPickerViewController(forExporting: [fileURL], asCopy: true)
                             if let rootVC = UIApplication.shared.windows.first?.rootViewController {
                                 rootVC.present(exportVC, animated: true, completion: nil)
                             }
                         } label: {
-                            Label("Promotion", systemImage: "music.note")
+                            Label("Free Song Sequence Promo", systemImage: "music.note")
                         }
                     }
                     .padding()

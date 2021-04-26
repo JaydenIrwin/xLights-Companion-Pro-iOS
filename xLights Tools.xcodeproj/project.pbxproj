@@ -14,6 +14,11 @@
 		1B62573725CE0B09003528FD /* PowerCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B62573625CE0B09003528FD /* PowerCalculator.swift */; };
 		1B7F2CE625CA6A770005813E /* TreeLightsCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F2CE525CA6A770005813E /* TreeLightsCalculator.swift */; };
 		1B7F2CE925CA6A8F0005813E /* PropOrganizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F2CE825CA6A8F0005813E /* PropOrganizer.swift */; };
+		1B83990A2635EE2300B4892A /* PowerCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B62573625CE0B09003528FD /* PowerCalculator.swift */; };
+		1B83991B2635F03100B4892A /* IntegerInputRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF80FB125E75C1E00EB41CD /* IntegerInputRow.swift */; };
+		1B83991E2635F03300B4892A /* ResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F3355D25F148E600B64478 /* ResultRow.swift */; };
+		1B8399212635F03700B4892A /* DoubleInputRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF80FAE25E75BF200EB41CD /* DoubleInputRow.swift */; };
+		1B83992B26371F0800B4892A /* Sweet Caroline - Its Christmas Time (XMAS Version).zip in Resources */ = {isa = PBXBuildFile; fileRef = 1B83992A26371F0800B4892A /* Sweet Caroline - Its Christmas Time (XMAS Version).zip */; };
 		1B89581425FC16410090FDED /* RelatedWebsite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B89581325FC16410090FDED /* RelatedWebsite.swift */; };
 		1B89581725FC16CE0090FDED /* PropModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B89581625FC16CE0090FDED /* PropModel.swift */; };
 		1BC2702825C668560034761E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC2702725C668560034761E /* HomeView.swift */; };
@@ -68,6 +73,7 @@
 		1B62573625CE0B09003528FD /* PowerCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerCalculator.swift; sourceTree = "<group>"; };
 		1B7F2CE525CA6A770005813E /* TreeLightsCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeLightsCalculator.swift; sourceTree = "<group>"; };
 		1B7F2CE825CA6A8F0005813E /* PropOrganizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropOrganizer.swift; sourceTree = "<group>"; };
+		1B83992A26371F0800B4892A /* Sweet Caroline - Its Christmas Time (XMAS Version).zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "Sweet Caroline - Its Christmas Time (XMAS Version).zip"; sourceTree = "<group>"; };
 		1B89581325FC16410090FDED /* RelatedWebsite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedWebsite.swift; sourceTree = "<group>"; };
 		1B89581625FC16CE0090FDED /* PropModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropModel.swift; sourceTree = "<group>"; };
 		1BC2702725C668560034761E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -163,6 +169,7 @@
 				E108279F262A35E100BB9D82 /* PropCell.swift */,
 				E10B3D28260142C9000CD525 /* PropEditView.swift */,
 				1BC2702A25C668650034761E /* SearchView.swift */,
+				1B83992A26371F0800B4892A /* Sweet Caroline - Its Christmas Time (XMAS Version).zip */,
 				1B89581925FC16FC0090FDED /* Models */,
 				1BA985B126213EC00047CD41 /* 3D Models */,
 				1B5CB9AE25B35A870009CC59 /* Assets.xcassets */,
@@ -310,6 +317,7 @@
 				1BFEEB46262A6C1400F13CB8 /* Circle Border.usdz in Resources */,
 				1BFEEB3D262A6C1400F13CB8 /* Star.usdz in Resources */,
 				1BFEEB45262A6C1400F13CB8 /* Snow Flake.usdz in Resources */,
+				1B83992B26371F0800B4892A /* Sweet Caroline - Its Christmas Time (XMAS Version).zip in Resources */,
 				1BFEEB44262A6C1400F13CB8 /* Arch.usdz in Resources */,
 				1BFEEB42262A6C1400F13CB8 /* Spiral Tree.usdz in Resources */,
 				1BFEEB43262A6C1400F13CB8 /* Candy Cane.usdz in Resources */,
@@ -363,7 +371,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B83991B2635F03100B4892A /* IntegerInputRow.swift in Sources */,
+				1B83991E2635F03300B4892A /* ResultRow.swift in Sources */,
 				E1FE76A02635E8D7002BD3CA /* xLightsTests.swift in Sources */,
+				1B8399212635F03700B4892A /* DoubleInputRow.swift in Sources */,
+				1B83990A2635EE2300B4892A /* PowerCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,7 +514,7 @@
 				CODE_SIGN_ENTITLEMENTS = "xLights Tools/xLights Tools.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = 67HDD4RTGM;
+				DEVELOPMENT_TEAM = VA3SY54YU8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/xLights Tools/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -510,7 +522,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jaydenirwin.xlightstools2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jaydenirwin.xlightstools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -526,7 +538,7 @@
 				CODE_SIGN_ENTITLEMENTS = "xLights Tools/xLights Tools.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = 67HDD4RTGM;
+				DEVELOPMENT_TEAM = VA3SY54YU8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/xLights Tools/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -534,7 +546,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jaydenirwin.xlightstools2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jaydenirwin.xlightstools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -547,7 +559,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 67HDD4RTGM;
+				DEVELOPMENT_TEAM = VA3SY54YU8;
 				INFOPLIST_FILE = xLightsToolsTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -568,7 +580,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 67HDD4RTGM;
+				DEVELOPMENT_TEAM = VA3SY54YU8;
 				INFOPLIST_FILE = xLightsToolsTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (

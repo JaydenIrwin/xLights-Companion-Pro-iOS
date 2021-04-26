@@ -19,7 +19,7 @@ class xLightsTests: XCTestCase {
         XCTAssertEqual(powerCalculator.stringsPerPowerSupply!, 20)
     }
     
-    func testTreeLightsCalculatorNormalValues(){
+    func testTreeLightsCalculatorNormalValues() {
         let treeLightsCalculator = TreeLightsCalculator(unitSystem: .metric, autoHeight: true, enteredHeight: nil, topDiameter: 0.30, bottomDiameter: 1.8, circumferenceCovered: 50, numberOfStrings: 16, lightToTopSpacing: 10, bottomToLightSpacing: 3, lightSpacing: 8, lightsPerString: 50)
         XCTAssertEqual(treeLightsCalculator.computedHeight!, 4.03, accuracy: 0.1)
     }
